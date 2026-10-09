@@ -1,31 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fernanda & Gustavo | Bienvenidos</title>
-    <!-- Tailwind CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fernanda & Gustavo | Invitación de Boda</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        olive: { 900: '#2F241E', 800: '#4A382F', 700: '#695548', 500: '#9A7E6A' },
-                        cream: { 50: '#FDF9F4', 100: '#F7F1E7', 200: '#EDE1D1' },
-                        gold: { 500: '#D4B167', 600: '#B88A3D' }
+                        olive: {
+                            900: '#2F241E',
+                            800: '#4A382F',
+                            700: '#695548',
+                            600: '#7E685D',
+                            500: '#9A7E6A',
+                            100: '#F0E6DC',
+                            50: '#F7F2EC'
+                        },
+                        cream: {
+                            50: '#FDF9F4',
+                            100: '#F7F1E7',
+                            200: '#EDE1D1',
+                            300: '#E2D1B3'
+                        },
+                        gold: {
+                            500: '#D4B167',
+                            600: '#B88A3D'
+                        }
                     },
                     fontFamily: {
                         script: ['"Great Vibes"', 'cursive'],
                         serif: ['"Cormorant Garamond"', 'serif'],
                         sans: ['"Montserrat"', 'sans-serif']
+                    },
+                    boxShadow: {
+                        soft: '0 20px 45px rgba(47, 36, 30, 0.10)'
                     }
                 }
             }
@@ -33,163 +51,283 @@
     </script>
 
     <style>
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #000;
-            margin: 0;
+            background:
+                radial-gradient(circle at top, rgba(212, 177, 103, 0.14), transparent 30%),
+                linear-gradient(180deg, #f9f4ee 0%, #f4efe9 100%);
+            color: #2f241e;
+        }
+
+        .grain {
+            background-image:
+                linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
+                radial-gradient(circle at 20% 20%, rgba(121, 102, 80, 0.08) 0, rgba(121, 102, 80, 0.08) 1px, transparent 1px);
+            background-size: cover, 16px 16px;
+        }
+
+        .card-glow {
+            box-shadow: 0 18px 40px rgba(79, 62, 50, 0.08);
+        }
+
+        .soft-divider {
+            background: linear-gradient(90deg, transparent, rgba(90, 74, 58, 0.32), transparent);
+            height: 1px;
+        }
+
+        .pulse-heart {
+            animation: pulseHeart 1.8s ease-in-out infinite;
+        }
+
+        .romantic-shell {
+            position: relative;
             overflow: hidden;
         }
 
-        .font-script { font-family: 'Great Vibes', cursive; }
-        .font-serif { font-family: 'Cormorant Garamond', serif; }
-
-        @keyframes timerProgress {
-            from { stroke-dashoffset: 100; }
-            to { stroke-dashoffset: 0; }
-        }
-        .animate-timer {
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            animation: timerProgress 15s linear forwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in { animation: fadeInUp 0.8s ease-out both; }
-
-        /* Floating background items */
-        .intro-flower, .intro-bell, .intro-dove {
+        .floating-orb {
             position: absolute;
+            border-radius: 9999px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(212,177,103,0.18));
+            filter: blur(4px);
+            animation: drift 14s ease-in-out infinite alternate;
+        }
+
+        .floating-heart {
+            position: absolute;
+            font-size: 1.2rem;
+            color: rgba(184, 138, 61, 0.45);
+            animation: heartFloat 8s ease-in-out infinite;
+        }
+
+        .image-stack {
+            position: relative;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        .romantic-photo {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 2rem;
+            box-shadow: 0 32px 80px rgba(47, 36, 30, 0.16);
+            border: 8px solid rgba(255,255,255,0.7);
+        }
+
+        .mini-photo {
+            position: absolute;
+            bottom: -28px;
+            left: -18px;
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            border: 6px solid rgba(255,255,255,0.85);
+            box-shadow: 0 18px 40px rgba(47, 36, 30, 0.16);
+        }
+
+        .mini-badge {
+            position: absolute;
+            right: 12px;
+            bottom: 20px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.82);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 18px 30px rgba(47, 36, 30, 0.08);
+            padding: 0.8rem 1rem;
+            text-align: center;
+        }
+
+        .story-grid {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .soft-card {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(120, 104, 90, 0.12);
+            box-shadow: 0 20px 55px rgba(79, 62, 50, 0.08);
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        .story-image {
+            position: relative;
+            min-height: 360px;
+            overflow: hidden;
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
-            user-select: none;
-            pointer-events: none;
-            filter: drop-shadow(0 10px 16px rgba(0,0,0,0.2));
-            z-index: 5;
         }
 
-        .intro-flower { font-size: 1.8rem; opacity: 0.85; animation: romanticFloat 7s ease-in-out infinite; }
-        .intro-bell { font-size: 1.5rem; opacity: 0.8; animation: bellSwing 2.8s ease-in-out infinite; }
-        .intro-dove { font-size: 2rem; opacity: 0.75; animation: doveFly 8s ease-in-out infinite; }
-
-        .flower-1 { top: 10%; left: 8%; animation-delay: 0.3s; }
-        .flower-2 { top: 15%; right: 10%; animation-delay: 1s; }
-        .flower-3 { top: 65%; left: 10%; animation-delay: 2.8s; }
-        .flower-4 { top: 70%; right: 12%; animation-delay: 3.2s; }
-
-        .bell-1 { top: 22%; left: 24%; animation-delay: 0.5s; }
-        .bell-2 { top: 18%; right: 26%; animation-delay: 1.2s; }
-
-        .dove-1 { top: 28%; left: 45%; animation-delay: 0.6s; }
-        .dove-2 { top: 58%; right: 38%; animation-delay: 2.4s; }
-
-        @keyframes romanticFloat {
-            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-            50% { transform: translate3d(-10px, 10px, 0) rotate(-12deg); }
+        .story-copy {
+            padding: 2rem 1.6rem;
         }
-        @keyframes bellSwing {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(12deg); }
+
+        .gallery-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin-top: 1.5rem;
         }
-        @keyframes doveFly {
-            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-            50% { transform: translate3d(-18px, 8px, 0) scale(0.95); }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.75rem;
+            height: 280px;
+            box-shadow: 0 18px 35px rgba(47, 36, 30, 0.08);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
+
+        @keyframes pulseHeart {
+            0%, 100% { transform: scale(0.95); opacity: 0.25; }
+            50% { transform: scale(1.1); opacity: 0.55; }
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(18px, -18px) scale(1.12); }
+        }
+
+        @keyframes heartFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.35; }
+            50% { transform: translateY(-14px) scale(1.1); opacity: 0.7; }
+        }
+
+        .toast-slide-up {
+            animation: toastSlide 0.35s ease both;
+        }
+
+        @keyframes toastSlide {
+            from { opacity: 0; transform: translate(-50%, 12px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .story-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .romantic-photo {
+                height: 420px;
+            }
+
+            .mini-photo {
+                width: 140px;
+                height: 140px;
+            }
         }
     </style>
 </head>
-<body class="relative h-screen w-screen flex items-center justify-center">
-
-    <!-- FLOATING DECORATIONS -->
-    <span class="intro-flower flower-1">🌸</span>
-    <span class="intro-flower flower-2">🌺</span>
-    <span class="intro-flower flower-3">🌹</span>
-    <span class="intro-flower flower-4">🌸</span>
-    <span class="intro-bell bell-1">🔔</span>
-    <span class="intro-bell bell-2">🔔</span>
-    <span class="intro-dove dove-1">🕊️</span>
-    <span class="intro-dove dove-2">🕊️</span>
-
-    <!-- BACKGROUND VIDEO -->
-    <video id="introVideo" autoplay muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-80">
-        <source src="https://v1.pinimg.com/videos/iht/hls/b8/21/2e/b8212edd135485ea1f38071b22b27050.m3u8" type="video/mp4">
-        Your browser does not support the video tag.
+<body class="min-h-screen antialiased entrance-body">
+    <video id="entranceVideo" class="fixed inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
+        <source src="https://v1.pinimg.com/videos/iht/hls/b8/21/2e/b8212edd135485ea1f38071b22b27050.m3u8 " type="video/mp4" />
     </video>
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,177,103,0.35),_rgba(15,10,8,0.78))]"></div>
 
-    <!-- OVERLAY GRADIENT -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 pointer-events-none"></div>
+    <div class="relative z-10 flex min-h-screen items-center justify-center px-5 py-10">
+        <div class="w-full max-w-2xl text-center">
+            <p class="text-[11px] uppercase tracking-[0.45em] text-cream-100/85">Save the date</p>
+            <h1 class="mt-6 font-script text-6xl text-cream-50 sm:text-7xl">Fernanda & Gustavo</h1>
+            <div class="mt-6 flex items-center justify-center gap-4 text-gold-500">
+                <span class="h-px w-12 bg-gold-500/70"></span>
+                <i class="fa-solid fa-heart text-xl"></i>
+                <span class="h-px w-12 bg-gold-500/70"></span>
+            </div>
 
-    <!-- SOUND TOGGLE -->
-    <button id="toggleSoundBtn" onclick="toggleIntroSound()" class="absolute top-6 left-6 z-20 bg-black/40 hover:bg-black/70 backdrop-blur-md text-white text-xs px-3.5 py-2 rounded-full border border-white/20 flex items-center gap-2 transition cursor-pointer">
-        <i id="soundIcon" class="fa-solid fa-volume-xmark text-gold-500"></i>
-        <span id="soundText" class="uppercase tracking-wider text-[10px]">Turn on Audio</span>
-    </button>
+            <p class="mt-6 text-sm uppercase tracking-[0.35em] text-cream-100/80">Friday, 14 November 2025</p>
 
-    <!-- SKIP BUTTON -->
-    <button onclick="navigateToInvitation()" class="absolute top-6 right-6 z-20 bg-black/40 hover:bg-black/70 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/20 uppercase tracking-widest font-medium transition flex items-center gap-2 hover:scale-105 active:scale-95 cursor-pointer">
-        Skip <i class="fa-solid fa-chevron-right text-[10px]"></i>
-    </button>
+            <div class="mt-8 inline-block rounded-full border border-white/20 bg-white/5 px-4 py-3 text-xs uppercase tracking-[0.28em] text-cream-100/90">
+                We are getting married
+            </div>
 
-    <!-- MAIN HEADING -->
-    <div class="relative z-10 text-center px-6 text-cream-50 max-w-md animate-fade-in">
-        <span class="text-xs uppercase tracking-[0.35em] text-gold-500 font-light block mb-3">Welcome to the celebration</span>
-        
-        <h1 class="font-script text-6xl sm:text-7xl text-cream-50 my-2 leading-tight drop-shadow-lg">
-            Fernanda <br>
-            <span class="text-3xl font-serif text-gold-500 my-1 block">&</span>
-            Gustavo
-        </h1>
+            <div class="mt-8 flex items-center justify-center gap-4">
+                <button id="musicToggle" class="inline-flex items-center gap-2 rounded-full border border-gold-500 bg-gold-500/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cream-50 transition hover:bg-gold-500/20">
+                    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
+                    <span id="musicText">Music on</span>
+                </button>
+            </div>
 
-        <p class="mt-4 text-xs tracking-[0.3em] uppercase text-cream-100 font-light">
-            14 • 11 • 2025
-        </p>
-    </div>
-
-    <!-- COUNTDOWN TIMER -->
-    <div class="absolute bottom-10 z-10 flex flex-col items-center gap-2">
-        <div class="relative w-12 h-12 flex items-center justify-center">
-            <svg class="w-12 h-12 transform -rotate-90" viewBox="0 0 36 36">
-                <path class="text-white/20" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                <path id="timerCirclePath" class="text-gold-500 animate-timer" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-            </svg>
-            <span id="countdownSecs" class="absolute text-xs font-semibold text-cream-50">15</span>
+            <div class="mt-6 h-2 w-full overflow-hidden rounded-full bg-white/10">
+                <div id="redirectBar" class="h-full w-full rounded-full bg-gradient-to-r from-gold-500 to-cream-100 transition-all duration-1000 ease-linear"></div>
+            </div>
         </div>
-        <span class="text-[10px] uppercase tracking-widest text-cream-200/80">Entering the invitation...</span>
     </div>
+
+    <audio id="musicPlayer" autoplay loop preload="auto">
+        <source src="m2.mp3" type="audio/mpeg" />
+    </audio>
 
     <script>
-        let timeLeft = 15;
-        const countdownEl = document.getElementById('countdownSecs');
-        const video = document.getElementById('introVideo');
+        const redirectUrl = 'invitation.html';
+        const redirectSeconds = 15;
+        const redirectTimer = document.getElementById('redirectTimer');
+        const redirectBar = document.getElementById('redirectBar');
+        const musicPlayer = document.getElementById('musicPlayer');
+        const musicToggle = document.getElementById('musicToggle');
+        const musicIcon = document.getElementById('musicIcon');
+        const musicText = document.getElementById('musicText');
+        let remainingSeconds = redirectSeconds;
+        let redirectInterval = null;
 
-        // Countdown mechanism
-        const countdownInterval = setInterval(() => {
-            timeLeft--;
-            if (countdownEl) countdownEl.textContent = timeLeft;
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                navigateToInvitation();
-            }
-        }, 1000);
+        function startMusic() {
+            musicPlayer.volume = 0.35;
+            musicPlayer.play().catch(() => {
+                document.body.addEventListener('pointerdown', () => {
+                    musicPlayer.play().catch(() => {});
+                }, { once: true });
+            });
+        }
 
-        function toggleIntroSound() {
-            const soundIcon = document.getElementById('soundIcon');
-            const soundText = document.getElementById('soundText');
-
-            if (video.muted) {
-                video.muted = false;
-                soundIcon.className = 'fa-solid fa-volume-high text-gold-500';
-                soundText.textContent = 'Mute Audio';
+        function toggleMusic() {
+            if (musicPlayer.paused) {
+                musicPlayer.play();
+                musicIcon.className = 'fa-solid fa-volume-high';
+                musicText.textContent = 'Music on';
             } else {
-                video.muted = true;
-                soundIcon.className = 'fa-solid fa-volume-xmark text-gold-500';
-                soundText.textContent = 'Turn on Audio';
+                musicPlayer.pause();
+                musicIcon.className = 'fa-solid fa-volume-xmark';
+                musicText.textContent = 'Music off';
             }
         }
 
-        function navigateToInvitation() {
-            window.location.href = 'invitation.html';
+        function updateRedirect() {
+            remainingSeconds -= 1;
+            if (remainingSeconds <= 0) {
+                clearInterval(redirectInterval);
+                window.location.href = redirectUrl;
+                return;
+            }
+
+            redirectTimer.textContent = String(remainingSeconds);
+            const progress = (remainingSeconds / redirectSeconds) * 100;
+            redirectBar.style.width = `${progress}%`;
         }
+
+        musicToggle.addEventListener('click', toggleMusic);
+        startMusic();
+        redirectInterval = setInterval(updateRedirect, 1000);
+        redirectBar.style.width = '100%';
     </script>
 </body>
 </html>
+
