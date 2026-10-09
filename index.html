@@ -327,7 +327,7 @@
     <!-- Floating Toggle Petals Control -->
     <button id="togglePetalsBtn" onclick="togglePetalRain()" class="fixed bottom-4 left-4 z-40 bg-white/80 hover:bg-white text-olive-800 text-xs px-3 py-2 rounded-full shadow-md backdrop-blur border border-cream-300 flex items-center gap-1.5 transition text-[11px]">
         <i class="fa-solid fa-spa text-gold-600"></i>
-        <span id="petalsBtnText">Lluvia de Flores: ON</span>
+        <span id="petalsBtnText">Flower Rain: ON</span>
     </button>
 
     <!-- ==================== FULLSCREEN INTRO VIDEO OVERLAY ==================== -->
@@ -340,22 +340,22 @@
             class="absolute inset-0 w-full h-full object-cover opacity-80"
         >
             <source src="https://v1.pinimg.com/videos/iht/hls/b8/21/2e/b8212edd135485ea1f38071b22b27050.m3u8" type="video/mp4">
-            Tu navegador no soporta el reproductor de video.
+            Your browser does not support the video tag.
         </video>
 
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 pointer-events-none"></div>
 
         <button id="toggleSoundBtn" onclick="toggleIntroSound()" class="absolute top-6 left-6 z-10 bg-black/40 hover:bg-black/70 backdrop-blur-md text-white text-xs px-3.5 py-2 rounded-full border border-white/20 flex items-center gap-2 transition">
             <i id="soundIcon" class="fa-solid fa-volume-xmark text-gold-500"></i>
-            <span id="soundText" class="uppercase tracking-wider text-[10px]">Activar Audio</span>
+            <span id="soundText" class="uppercase tracking-wider text-[10px]">Turn on Audio</span>
         </button>
 
         <button onclick="dismissIntro()" class="absolute top-6 right-6 z-10 bg-black/40 hover:bg-black/70 backdrop-blur-md text-white text-xs px-4 py-2 rounded-full border border-white/20 uppercase tracking-widest font-medium transition flex items-center gap-2 hover:scale-105 active:scale-95">
-            Saltar <i class="fa-solid fa-chevron-right text-[10px]"></i>
+            Skip <i class="fa-solid fa-chevron-right text-[10px]"></i>
         </button>
 
         <div class="relative z-10 text-center px-6 text-cream-50 max-w-md animate-fade-in">
-            <span class="text-xs uppercase tracking-[0.35em] text-gold-500 font-light block mb-3">Bienvenidos a la celebración</span>
+            <span class="text-xs uppercase tracking-[0.35em] text-gold-500 font-light block mb-3">Welcome to the celebration</span>
             
             <h1 class="font-script text-6xl sm:text-7xl text-cream-50 my-2 leading-tight drop-shadow-lg">
                 Fernanda <br>
@@ -374,9 +374,9 @@
                     <path class="text-white/20" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                     <path id="timerCirclePath" class="text-gold-500 animate-timer" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                 </svg>
-                <span id="countdownSecs" class="absolute text-xs font-semibold text-cream-50">6</span>
+                <span id="countdownSecs" class="absolute text-xs font-semibold text-cream-50">15</span>
             </div>
-            <span class="text-[10px] uppercase tracking-widest text-cream-200/80">Entrando en la invitación...</span>
+            <span class="text-[10px] uppercase tracking-widest text-cream-200/80">Entering the invitation...</span>
         </div>
     </div>
 
@@ -384,29 +384,36 @@
     <main class="w-full max-w-[440px] bg-cream-100 shadow-2xl relative overflow-hidden sm:rounded-3xl border-0 sm:border-8 border-olive-800/20 my-0 sm:my-auto">
         
         <!-- HEADER / ENVELOPE -->
-        <header class="relative bg-olive-700 text-cream-50 pt-12 pb-16 px-6 text-center shadow-md overflow-hidden">
-            <div class="absolute inset-0 opacity-10 pointer-events-none flex justify-between p-2">
-                <i class="fa-solid font-900 fa-leaf text-6xl transform -rotate-45"></i>
-                <i class="fa-solid font-900 fa-leaf text-6xl transform rotate-45"></i>
+        <header class="relative bg-gradient-to-b from-olive-700 via-olive-700 to-olive-800 text-cream-50 pt-16 pb-20 px-6 text-center shadow-lg overflow-hidden">
+            <!-- Animated background leaves -->
+            <div class="absolute inset-0 opacity-15 pointer-events-none flex justify-between p-2">
+                <i class="fa-solid font-900 fa-leaf text-7xl transform -rotate-45 animate-pulse"></i>
+                <i class="fa-solid font-900 fa-leaf text-7xl transform rotate-45 animate-pulse" style="animation-delay: 1s;"></i>
             </div>
 
-            <div class="mb-4 inline-block">
-                <span class="text-xs uppercase tracking-[0.3em] font-light text-cream-200/90 border-b border-cream-200/30 pb-1">Nuestra Boda</span>
+            <!-- Decorative gold line -->
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-60"></div>
+
+            <div class="mb-5 inline-block relative">
+                <span class="text-xs uppercase tracking-[0.4em] font-light text-gold-300 border-b-2 border-gold-500/60 pb-2">✦ Our Wedding ✦</span>
             </div>
 
-            <h1 class="font-script text-5xl sm:text-6xl text-cream-50 my-2 leading-tight tracking-wide drop-shadow-sm">
+            <h1 class="font-script text-6xl sm:text-7xl text-cream-50 my-3 leading-tight tracking-wider drop-shadow-lg font-bold">
                 Fernanda <br>
-                <span class="text-3xl font-serif text-gold-500 my-1 block">&</span>
+                <span class="text-4xl font-serif text-gold-400 my-2 block animate-pulse">✦ & ✦</span>
                 Gustavo
             </h1>
 
-            <div class="mt-6 flex items-center justify-center space-x-3 text-sm tracking-[0.25em] font-light text-cream-100">
-                <span>14</span>
-                <span class="text-gold-500">•</span>
-                <span>11</span>
-                <span class="text-gold-500">•</span>
-                <span>2025</span>
+            <div class="mt-8 flex items-center justify-center space-x-4 text-base tracking-[0.25em] font-light text-cream-100/95">
+                <span class="font-semibold text-gold-400">14</span>
+                <span class="text-gold-500 text-xl">•</span>
+                <span class="font-semibold text-gold-400">11</span>
+                <span class="text-gold-500 text-xl">•</span>
+                <span class="font-semibold text-gold-400">2025</span>
             </div>
+
+            <!-- Decorative gold line -->
+            <div class="absolute bottom-6 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-500/40 to-transparent opacity-60"></div>
 
             <div class="absolute bottom-0 left-0 right-0 h-6 bg-cream-100 envelope-notch"></div>
         </header>
@@ -416,7 +423,7 @@
             <div class="relative p-2 bg-white rounded-2xl shadow-lg mb-6 group overflow-hidden transition-transform duration-500 hover:scale-[1.01]">
                 <img 
                     src="https://i.pinimg.com/1200x/48/2c/3d/482c3d47884b000e6fe41f1ffb58ea9a.jpg" 
-                    alt="Fernanda y Gustavo" 
+                    alt="Fernanda and Gustavo" 
                     class="w-full h-80 object-cover rounded-xl transition-transform duration-700 group-hover:scale-105"
                     onerror="this.src='https://placehold.co/600x800/4E583E/FFFFFF?text=Fernanda+%26+Gustavo'"
                 />
@@ -424,13 +431,13 @@
             </div>
 
             <p class="font-serif italic text-base sm:text-lg text-gray-700 px-4 leading-relaxed">
-                "De nadie seré, solo de ti. Hasta que mis huesos se vuelvan cenizas y mi corazón deje de latir."
+                "I will not belong to anyone but you. Until my bones turn to dust and my heart stops beating."
             </p>
 
             <!-- MUSIC PLAYER -->
             <div class="mt-8 bg-white p-4 rounded-2xl shadow-sm border border-cream-300/60 max-w-xs mx-auto">
                 <p class="text-xs uppercase tracking-widest text-olive-700 font-semibold mb-3 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-music text-gold-500"></i> Dale play a nuestra canción
+                    <i class="fa-solid fa-music text-gold-500"></i> Play our song
                 </p>
 
                 <div id="audioVisualizer" class="flex justify-center items-end gap-1 h-5 mb-3 opacity-40 transition-opacity">
@@ -446,13 +453,13 @@
                 </audio>
 
                 <div class="flex items-center justify-center gap-4">
-                    <button id="prevTrackBtn" class="text-gray-400 hover:text-olive-700 transition" title="Anterior">
+                    <button id="prevTrackBtn" class="text-gray-400 hover:text-olive-700 transition" title="Previous">
                         <i class="fa-solid fa-backward-step"></i>
                     </button>
                     <button id="playPauseBtn" class="w-12 h-12 rounded-full bg-olive-700 hover:bg-olive-800 text-white flex items-center justify-center shadow-md transform active:scale-95 transition">
                         <i id="playIcon" class="fa-solid fa-play ml-0.5 text-lg"></i>
                     </button>
-                    <button id="nextTrackBtn" class="text-gray-400 hover:text-olive-700 transition" title="Siguiente">
+                    <button id="nextTrackBtn" class="text-gray-400 hover:text-olive-700 transition" title="Next">
                         <i class="fa-solid fa-forward-step"></i>
                     </button>
                 </div>
@@ -470,27 +477,27 @@
             <div class="max-w-xs mx-auto">
                 <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block"></i>
                 <p class="text-xs sm:text-sm font-light tracking-wide text-cream-200 mb-6 leading-relaxed">
-                    Con la bendición de Dios y nuestros padres, tenemos el honor de invitarles a nuestra boda religiosa
+                    With God's blessing and our parents, we have the honor of inviting you to our religious wedding
                 </p>
 
                 <div class="border-y border-cream-100/30 py-3 my-4 flex items-center justify-between text-cream-100">
-                    <span class="text-xs uppercase tracking-widest font-medium">VIERNES</span>
+                    <span class="text-xs uppercase tracking-widest font-medium">FRIDAY</span>
                     <span class="text-4xl font-serif text-gold-500 font-bold px-2">14</span>
-                    <span class="text-xs uppercase tracking-widest font-medium">NOVIEMBRE 2025</span>
+                    <span class="text-xs uppercase tracking-widest font-medium">NOVEMBER 2025</span>
                 </div>
             </div>
 
             <div class="mt-8 pt-2">
-                <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-gold-500 mb-4">Faltan</h3>
+                <h3 class="text-xs uppercase tracking-[0.2em] font-semibold text-gold-500 mb-4">Countdown</h3>
                 
                 <div class="grid grid-cols-4 gap-2 text-center max-w-xs mx-auto">
                     <div class="bg-olive-800/80 p-2 rounded-xl border border-olive-600/40">
                         <span id="timerDays" class="text-2xl font-serif font-bold text-cream-50 block">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Días</span>
+                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Days</span>
                     </div>
                     <div class="bg-olive-800/80 p-2 rounded-xl border border-olive-600/40">
                         <span id="timerHours" class="text-2xl font-serif font-bold text-cream-50 block">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Horas</span>
+                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Hours</span>
                     </div>
                     <div class="bg-olive-800/80 p-2 rounded-xl border border-olive-600/40">
                         <span id="timerMinutes" class="text-2xl font-serif font-bold text-cream-50 block">00</span>
@@ -498,18 +505,18 @@
                     </div>
                     <div class="bg-olive-800/80 p-2 rounded-xl border border-olive-600/40">
                         <span id="timerSeconds" class="text-2xl font-serif font-bold text-cream-50 block">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Seg</span>
+                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Sec</span>
                     </div>
                 </div>
             </div>
 
             <!-- CALENDAR -->
             <div class="mt-10 bg-olive-800/60 p-4 rounded-2xl border border-olive-600/30 max-w-xs mx-auto">
-                <h4 class="text-xs uppercase tracking-widest font-bold text-cream-100 mb-1">El Gran Día</h4>
-                <p class="text-xs text-gold-500 tracking-wider uppercase mb-3">Noviembre 2025</p>
+                <h4 class="text-xs uppercase tracking-widest font-bold text-cream-100 mb-1">The Big Day</h4>
+                <p class="text-xs text-gold-500 tracking-wider uppercase mb-3">November 2025</p>
 
                 <div class="grid grid-cols-7 gap-1 text-[10px] text-cream-200 mb-2 font-medium">
-                    <span>LUN</span><span>MAR</span><span>MIÉ</span><span>JUE</span><span>VIE</span><span>SÁB</span><span>DOM</span>
+                    <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
                 </div>
                 <div class="grid grid-cols-7 gap-1 text-xs text-cream-100 items-center">
                     <span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span>
@@ -527,66 +534,40 @@
             </div>
         </section>
 
-        <!-- ==================== CEREMONIA CON SKETCH DE LA IGLESIA ==================== -->
+        <!-- ==================== CEREMONY WITH CHURCH SKETCH ==================== -->
         <section class="py-12 px-6 text-center space-y-10 bg-cream-100">
             
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200 relative overflow-hidden">
                 <!-- CHURCH VECTOR SKETCH DRAWING -->
                 <div class="w-full bg-cream-50/80 p-4 rounded-xl border border-cream-300/80 mb-4 flex flex-col items-center justify-center relative">
                     <svg class="w-48 h-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Sky hatch / cloud subtle lines -->
                         <path d="M 20 25 Q 50 20 80 25" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
                         <path d="M 120 20 Q 150 15 180 22" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
-
-                        <!-- Central Bell Tower Base & Outline -->
                         <path d="M85 70 L85 180 M115 70 L115 180" stroke-width="1.5" stroke-linecap="round"/>
-                        <!-- Steeple Triangle / Roof -->
                         <path d="M100 15 L80 70 L120 70 Z" stroke-width="1.8" stroke-linejoin="round"/>
-                        <!-- Cross on Tower -->
                         <path d="M100 3 L100 18 M95 8 L105 8" stroke-width="1.8" stroke-linecap="round"/>
-                        
-                        <!-- Arch Bell Window in Tower -->
                         <path d="M92 90 C 92 80, 108 80, 108 90 L108 110 L92 110 Z" stroke-width="1.2"/>
-                        <!-- Hanging Bell Inside -->
                         <path d="M97 95 C97 90, 103 90, 103 95 L104 102 L96 102 Z M100 102 L100 105" stroke-width="1"/>
-
-                        <!-- Circular Rose Window -->
                         <circle cx="100" cy="130" r="10" stroke-width="1.2"/>
                         <circle cx="100" cy="130" r="4" stroke-width="0.8" stroke-dasharray="1 1"/>
                         <line x1="100" y1="120" x2="100" y2="140" stroke-width="0.8"/>
                         <line x1="90" y1="130" x2="110" y2="130" stroke-width="0.8"/>
-
-                        <!-- Main Portal Arch Door -->
                         <path d="M88 180 C88 152, 112 152, 112 180 Z" stroke-width="1.5"/>
                         <path d="M94 180 C94 160, 106 160, 106 180 Z" stroke-width="1"/>
                         <line x1="100" y1="160" x2="100" y2="180" stroke-width="1"/>
-
-                        <!-- Left Wing Structure -->
                         <path d="M35 110 L85 100 M35 110 L35 180 L85 180" stroke-width="1.5"/>
-                        <!-- Roof Hatch Left Wing -->
                         <path d="M35 110 L85 70" stroke-width="1.5"/>
                         <path d="M42 108 L85 74 M52 106 L85 80 M62 104 L85 86" stroke-width="0.8" opacity="0.7"/>
-
-                        <!-- Left Wing Windows -->
                         <path d="M45 130 C45 122, 57 122, 57 130 L57 155 L45 155 Z" stroke-width="1.2"/>
                         <path d="M63 130 C63 122, 75 122, 75 130 L75 155 L63 155 Z" stroke-width="1.2"/>
-
-                        <!-- Right Wing Structure -->
                         <path d="M165 110 L115 100 M165 110 L165 180 L115 180" stroke-width="1.5"/>
-                        <!-- Roof Hatch Right Wing -->
                         <path d="M165 110 L115 70" stroke-width="1.5"/>
                         <path d="M158 108 L115 74 M148 106 L115 80 M138 104 L115 86" stroke-width="0.8" opacity="0.7"/>
-
-                        <!-- Right Wing Windows -->
                         <path d="M125 130 C125 122, 137 122, 137 130 L137 155 L125 155 Z" stroke-width="1.2"/>
                         <path d="M143 130 C143 122, 155 122, 155 130 L155 155 L143 155 Z" stroke-width="1.2"/>
-
-                        <!-- Ground Base Lines & Hatching -->
                         <line x1="15" y1="180" x2="185" y2="180" stroke-width="1.8" stroke-linecap="round"/>
                         <line x1="25" y1="184" x2="175" y2="184" stroke-width="1" stroke-dasharray="3 2"/>
                         <line x1="40" y1="188" x2="160" y2="188" stroke-width="0.8" stroke-dasharray="2 3"/>
-
-                        <!-- Hand Sketch Shading Hatch Lines -->
                         <path d="M38 160 L42 178 M48 160 L52 178 M148 160 L152 178 M158 160 L162 178" stroke="#4E583E" stroke-width="0.6" opacity="0.6"/>
                     </svg>
 
@@ -595,34 +576,34 @@
                     </span>
                 </div>
 
-                <h3 class="font-script text-4xl text-olive-800 mb-1">Ceremonia Religiosa</h3>
+                <h3 class="font-script text-4xl text-olive-800 mb-1">Religious Ceremony</h3>
                 <p class="text-sm font-semibold text-gold-600 mb-2">4:30 pm</p>
                 <p class="text-sm font-bold text-gray-800 uppercase tracking-wide">Iglesia San Francisco</p>
                 <p class="text-xs text-gray-500 mb-4">Santa Cruz de la Sierra</p>
 
                 <button onclick="openLocationModal('church')" class="inline-flex items-center gap-2 px-5 py-2 border border-olive-700 text-olive-700 hover:bg-olive-700 hover:text-white text-xs font-medium uppercase tracking-wider rounded-full transition-all">
-                    <i class="fa-solid fa-location-dot"></i> Ver ubicación
+                    <i class="fa-solid fa-location-dot"></i> View location
                 </button>
             </div>
 
-            <!-- RECEPCIóN -->
+            <!-- RECEPTION -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200 relative">
                 <div class="w-12 h-12 bg-cream-200 text-olive-700 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
                     <i class="fa-solid fa-champagne-glasses"></i>
                 </div>
-                <h3 class="font-script text-4xl text-olive-800 mb-1">Recepción</h3>
+                <h3 class="font-script text-4xl text-olive-800 mb-1">Reception</h3>
                 <p class="text-sm font-semibold text-gold-600 mb-2">5:30 pm</p>
                 <p class="text-sm font-bold text-gray-800 uppercase tracking-wide">Salón Vendimia</p>
                 <p class="text-xs text-gray-500 mb-4">Santa Cruz de la Sierra</p>
 
                 <button onclick="openLocationModal('venue')" class="inline-flex items-center gap-2 px-5 py-2 border border-olive-700 text-olive-700 hover:bg-olive-700 hover:text-white text-xs font-medium uppercase tracking-wider rounded-full transition-all">
-                    <i class="fa-solid fa-location-dot"></i> Ver ubicación
+                    <i class="fa-solid fa-location-dot"></i> View location
                 </button>
             </div>
 
-            <!-- ITINERARIO -->
+            <!-- ITINERARY -->
             <div class="pt-4">
-                <h3 class="font-script text-4xl text-olive-800 mb-8">Itinerario de Actividades</h3>
+                <h3 class="font-script text-4xl text-olive-800 mb-8">Schedule of Events</h3>
 
                 <div class="relative border-l-2 border-olive-700/30 mx-auto max-w-xs text-left pl-6 space-y-8">
                     <div class="relative">
@@ -630,7 +611,7 @@
                             <i class="fa-solid fa-church"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">4:30 pm</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Iglesia</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Church</h4>
                     </div>
 
                     <div class="relative">
@@ -638,7 +619,7 @@
                             <i class="fa-solid fa-wine-glass"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">5:30 pm</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Coctel de Bienvenida</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Welcome Cocktail</h4>
                     </div>
 
                     <div class="relative">
@@ -646,7 +627,7 @@
                             <i class="fa-solid fa-person-dancing"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">7:00 pm</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Primer Baile, Vals y Brindis</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">First Dance, Waltz and Toast</h4>
                     </div>
 
                     <div class="relative">
@@ -654,7 +635,7 @@
                             <i class="fa-solid fa-utensils"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">7:30 pm</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Cena</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Dinner</h4>
                     </div>
 
                     <div class="relative">
@@ -662,7 +643,7 @@
                             <i class="fa-solid fa-compact-disc"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">8:30 pm</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Fiesta</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Party</h4>
                     </div>
 
                     <div class="relative">
@@ -670,90 +651,90 @@
                             <i class="fa-regular fa-clock"></i>
                         </div>
                         <span class="text-xs font-bold text-gold-600 block">3:00 am</span>
-                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">Fin</h4>
+                        <h4 class="text-sm font-bold text-gray-800 uppercase tracking-wide">End</h4>
                     </div>
                 </div>
             </div>
 
-            <!-- CÓDIGO DE VESTIMENTA -->
+            <!-- DRESS CODE -->
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-cream-200">
-                <h3 class="font-script text-4xl text-olive-800 mb-2">Código de Vestimenta</h3>
-                <p class="text-base font-bold text-gray-800 tracking-wider uppercase mb-4">Elegante</p>
+                <h3 class="font-script text-4xl text-olive-800 mb-2">Dress Code</h3>
+                <p class="text-base font-bold text-gray-800 tracking-wider uppercase mb-4">Elegant</p>
 
                 <div class="flex justify-center items-center gap-6 my-4 text-olive-700 text-4xl">
-                    <i class="fa-solid fa-user-tie" title="Traje elegante"></i>
-                    <i class="fa-solid fa-person-dress" title="Vestido de noche"></i>
+                    <i class="fa-solid fa-user-tie" title="Elegant suit"></i>
+                    <i class="fa-solid fa-person-dress" title="Evening dress"></i>
                 </div>
 
                 <p class="text-xs italic text-gray-600 px-4 leading-relaxed">
-                    Con cariño les pedimos evitar prendas en color blanco y tonos similares.
+                    With love, we kindly ask that you avoid white and similar shades.
                 </p>
             </div>
         </section>
 
-        <!-- SUGERENCIA DE REGALO -->
+        <!-- GIFT SUGGESTION -->
         <section class="bg-olive-700 text-cream-50 py-10 px-6 text-center relative">
             <div class="max-w-xs mx-auto">
                 <div class="w-12 h-12 bg-olive-800 rounded-full flex items-center justify-center mx-auto mb-3 text-gold-500 text-2xl border border-olive-600">
                     <i class="fa-solid fa-gift"></i>
                 </div>
 
-                <h3 class="font-script text-4xl text-cream-50 mb-3">Sugerencia de Regalo</h3>
+                <h3 class="font-script text-4xl text-cream-50 mb-3">Gift Suggestion</h3>
 
                 <p class="text-xs text-cream-200 font-light mb-6 leading-relaxed">
-                    El mejor regalo es tu presencia, pero si deseas tener un detalle con nosotros, les dejamos esta opción.
+                    Your presence is the greatest gift, but if you would like to give us a little something, we have this option for you.
                 </p>
 
                 <div class="bg-white p-4 rounded-2xl inline-block shadow-lg border-2 border-gold-500/40 cursor-pointer group" onclick="openGiftModal()">
                     <div class="relative">
                         <img 
                             src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fernandaygustavo.wedding/regalos" 
-                            alt="Código QR Regalo" 
+                            alt="Gift QR Code" 
                             class="w-40 h-40 mx-auto transition-transform duration-300 group-hover:scale-105"
                         />
                         <div class="absolute inset-0 bg-olive-900/10 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity rounded-lg">
-                            <span class="bg-olive-800 text-white text-[10px] uppercase tracking-wider px-2 py-1 rounded shadow">Ver Datos</span>
+                            <span class="bg-olive-800 text-white text-[10px] uppercase tracking-wider px-2 py-1 rounded shadow">View Details</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="mt-4">
                     <button onclick="openGiftModal()" class="text-xs text-gold-500 hover:text-cream-50 underline tracking-wider uppercase font-medium transition">
-                        Ver datos bancarios / Transferencia
+                        View bank details / transfer
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- CONFIRMACIÓN (RSVP) -->
+        <!-- RSVP -->
         <section class="py-12 px-6 bg-cream-100 text-center">
             <div class="bg-olive-800 text-cream-50 p-6 rounded-2xl shadow-md border border-olive-700">
                 <div class="w-10 h-10 bg-olive-700 rounded-full flex items-center justify-center mx-auto mb-3 text-gold-500 text-lg">
                     <i class="fa-solid fa-envelope-open-text"></i>
                 </div>
 
-                <h3 class="font-script text-4xl text-cream-50 mb-2">Confirmación</h3>
+                <h3 class="font-script text-4xl text-cream-50 mb-2">RSVP</h3>
 
                 <p class="text-xs text-cream-200 mb-6 leading-relaxed">
-                    Agradecemos que confirmes tu asistencia antes del <strong>01 de noviembre</strong>.
+                    We would be grateful if you could confirm your attendance before <strong>November 1st</strong>.
                 </p>
 
                 <button onclick="openRSVPModal()" class="w-full bg-gold-500 hover:bg-gold-600 text-olive-900 font-bold py-3 px-6 rounded-full uppercase tracking-wider text-xs shadow-md transform active:scale-95 transition-all flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-check-circle"></i> Confirmar aquí
+                    <i class="fa-solid fa-check-circle"></i> Confirm here
                 </button>
             </div>
 
             <div class="mt-8 space-y-6 text-center">
                 <div>
                     <i class="fa-solid fa-heart text-gold-600 text-sm mb-1 block"></i>
-                    <h4 class="text-xs uppercase tracking-widest font-bold text-olive-800 mb-1">Recomendaciones</h4>
-                    <p class="text-xs text-gray-600">Seguir las indicaciones del personal de la boda. Ser puntual.</p>
+                    <h4 class="text-xs uppercase tracking-widest font-bold text-olive-800 mb-1">Recommendations</h4>
+                    <p class="text-xs text-gray-600">Follow the wedding staff instructions. Please be on time.</p>
                 </div>
 
                 <div class="pt-2 border-t border-cream-300/60">
-                    <h4 class="text-xs uppercase tracking-widest font-bold text-olive-800 mb-1">Sin Niños</h4>
+                    <h4 class="text-xs uppercase tracking-widest font-bold text-olive-800 mb-1">Adults Only</h4>
                     <p class="text-xs text-gray-600 px-2 leading-relaxed">
-                        Un evento para adultos está en camino. ¡Así que prepárense para una noche llena de diversión! Dejemos a los niños en casa esta vez.
+                        An adults-only event is coming soon. So get ready for a night full of fun! We'll leave the kids at home this time.
                     </p>
                 </div>
             </div>
@@ -764,8 +745,8 @@
             <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');"></div>
             
             <div class="relative z-10">
-                <p class="text-xs uppercase tracking-[0.25em] text-gold-500 font-medium mb-2">Esperamos contar con su presencia</p>
-                <h2 class="font-script text-5xl text-cream-50 mt-1 mb-4">¡Muchas Gracias!</h2>
+                <p class="text-xs uppercase tracking-[0.25em] text-gold-500 font-medium mb-2">We hope to count on your presence</p>
+                <h2 class="font-script text-5xl text-cream-50 mt-1 mb-4">Thank You!</h2>
                 <p class="text-[10px] text-cream-300/60 uppercase tracking-widest">Fernanda & Gustavo • 2025</p>
             </div>
         </footer>
@@ -782,14 +763,14 @@
             <div class="w-12 h-12 bg-olive-100 text-olive-800 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
                 <i id="locModalIcon" class="fa-solid fa-map-location-dot"></i>
             </div>
-            <h3 id="locModalTitle" class="font-serif-title text-2xl font-bold text-olive-800 mb-1">Ubicación</h3>
-            <p id="locModalTime" class="text-xs font-semibold text-gold-600 mb-2">Hora</p>
-            <p id="locModalAddress" class="text-xs text-gray-600 mb-4">Dirección</p>
+            <h3 id="locModalTitle" class="font-serif-title text-2xl font-bold text-olive-800 mb-1">Location</h3>
+            <p id="locModalTime" class="text-xs font-semibold text-gold-600 mb-2">Time</p>
+            <p id="locModalAddress" class="text-xs text-gray-600 mb-4">Address</p>
             <div class="w-full h-44 bg-gray-200 rounded-xl overflow-hidden mb-4 border border-cream-300">
                 <iframe id="locModalMap" class="w-full h-full border-0" loading="lazy" allowfullscreen src=""></iframe>
             </div>
             <a id="locModalGmapsLink" href="#" target="_blank" class="w-full bg-olive-700 hover:bg-olive-800 text-white text-xs uppercase font-bold py-3 px-4 rounded-full inline-flex items-center justify-center gap-2 shadow">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir en Google Maps
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Google Maps
             </a>
         </div>
     </div>
@@ -801,27 +782,27 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="text-center mb-4">
-                <h3 class="font-script text-4xl text-olive-800">Confirmar Asistencia</h3>
-                <p class="text-xs text-gray-600">Por favor, completa los campos para tu registro.</p>
+                <h3 class="font-script text-4xl text-olive-800">Confirm Attendance</h3>
+                <p class="text-xs text-gray-600">Please complete the fields for your registration.</p>
             </div>
             <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">Nombre Completo *</label>
-                    <input type="text" required placeholder="Ej. Ana García" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-olive-700 focus:outline-none">
+                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">Full Name *</label>
+                    <input type="text" required placeholder="e.g. Ana García" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-olive-700 focus:outline-none">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">¿Asistirás? *</label>
+                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">Will you attend? *</label>
                     <select required class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-olive-700 focus:outline-none">
-                        <option value="si">¡Sí, con mucho gusto asistiré!</option>
-                        <option value="no">Lamentablemente no podré asistir</option>
+                        <option value="si">Yes, I would be delighted to attend!</option>
+                        <option value="no">Unfortunately, I will not be able to attend</option>
                     </select>
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">Número de Pases</label>
+                    <label class="block text-xs uppercase tracking-wider text-gray-700 font-semibold mb-1">Number of Passes</label>
                     <input type="number" min="1" max="4" value="1" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs focus:ring-2 focus:ring-olive-700 focus:outline-none">
                 </div>
                 <button type="submit" class="w-full mt-4 bg-olive-700 hover:bg-olive-800 text-white font-bold py-3 rounded-full text-xs uppercase tracking-wider shadow-md transition">
-                    Enviar Confirmación
+                    Send Confirmation
                 </button>
             </form>
         </div>
@@ -836,11 +817,11 @@
             <div class="w-12 h-12 bg-gold-500/20 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-2 text-xl">
                 <i class="fa-solid fa-building-columns"></i>
             </div>
-            <h3 class="font-script text-3xl text-olive-800 mb-1">Datos Bancarios</h3>
-            <p class="text-xs text-gray-600 mb-4">Agradecemos profundamente tu muestra de cariño.</p>
+            <h3 class="font-script text-3xl text-olive-800 mb-1">Bank Details</h3>
+            <p class="text-xs text-gray-600 mb-4">We are deeply grateful for your love and support.</p>
             <div class="bg-white p-4 rounded-xl border border-cream-300 text-left space-y-3 mb-4">
                 <div>
-                    <span class="text-[10px] text-gray-400 uppercase tracking-widest block">CBU / Cuenta</span>
+                    <span class="text-[10px] text-gray-400 uppercase tracking-widest block">CBU / Account</span>
                     <div class="flex justify-between items-center bg-gray-50 p-2 rounded border mt-0.5">
                         <span class="text-xs font-mono text-gray-700">1234567890123456789012</span>
                         <button onclick="copyToClipboard('1234567890123456789012')" class="text-olive-700 hover:text-olive-800 text-xs font-semibold">
@@ -859,7 +840,7 @@
                 </div>
             </div>
             <button onclick="closeModal('giftModal')" class="w-full bg-olive-700 hover:bg-olive-800 text-white text-xs uppercase font-bold py-2.5 rounded-full">
-                Entendido
+                Got it
             </button>
         </div>
     </div>
@@ -880,7 +861,6 @@
         window.addEventListener("resize", resizeCanvas);
         resizeCanvas();
 
-        // Petal Object Definition
         class Petal {
             constructor() {
                 this.reset();
@@ -889,7 +869,7 @@
             reset() {
                 this.x = Math.random() * petalsCanvas.width;
                 this.y = -20 - Math.random() * 50;
-                this.size = 8 + Math.random() * 12; // Thin, delicate petals
+                this.size = 8 + Math.random() * 12;
                 this.speedY = 0.8 + Math.random() * 1.5;
                 this.speedX = Math.sin(Math.random() * Math.PI) * 0.8;
                 this.rotation = Math.random() * 360;
@@ -897,12 +877,11 @@
                 this.oscillation = Math.random() * Math.PI * 2;
                 this.oscillationSpeed = 0.01 + Math.random() * 0.02;
 
-                // Color Palette: Soft Blush White, Gentle Rose Cream, Light Olive Petal Leaf
                 const colors = [
                     'rgba(255, 248, 240, 0.85)',
                     'rgba(250, 235, 230, 0.8)',
                     'rgba(240, 220, 215, 0.75)',
-                    'rgba(215, 225, 205, 0.7)' // soft botanical leaf petal
+                    'rgba(215, 225, 205, 0.7)'
                 ];
                 this.color = colors[Math.floor(Math.random() * colors.length)];
             }
@@ -923,23 +902,21 @@
                 ctx.translate(this.x, this.y);
                 ctx.rotate((this.rotation * Math.PI) / 180);
                 
-                // Draw delicate smooth flower petal curve
                 ctx.beginPath();
                 ctx.fillStyle = this.color;
                 ctx.moveTo(0, 0);
                 ctx.bezierCurveTo(
-                    this.size / 2, -this.size / 2, 
-                    this.size, 0, 
+                    this.size / 2, -this.size / 2,
+                    this.size, 0,
                     0, this.size * 1.3
                 );
                 ctx.bezierCurveTo(
-                    -this.size, 0, 
-                    -this.size / 2, -this.size / 2, 
+                    -this.size, 0,
+                    -this.size / 2, -this.size / 2,
                     0, 0
                 );
                 ctx.fill();
 
-                // Subtle petal central vein line
                 ctx.beginPath();
                 ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
                 ctx.lineWidth = 0.6;
@@ -955,7 +932,6 @@
             petals = [];
             for (let i = 0; i < count; i++) {
                 const petal = new Petal();
-                // Distribute vertically at initialization
                 petal.y = Math.random() * petalsCanvas.height;
                 petals.push(petal);
             }
@@ -984,16 +960,16 @@
             petalRainActive = !petalRainActive;
             const btnText = document.getElementById("petalsBtnText");
             if (petalRainActive) {
-                btnText.textContent = "Lluvia de Flores: ON";
+                btnText.textContent = "Flower Rain: ON";
                 animatePetals();
             } else {
-                btnText.textContent = "Lluvia de Flores: OFF";
+                btnText.textContent = "Flower Rain: OFF";
                 ctx.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
             }
         }
 
-        // --- 2. FULLSCREEN INTRO VIDEO & 6s TIMER LOGIC ---
-        let introSecondsLeft = 6;
+        // --- 2. FULLSCREEN INTRO VIDEO & 15s TIMER LOGIC ---
+        let introSecondsLeft = 15;
         let introTimerInterval = null;
         let introDismissed = false;
 
@@ -1019,14 +995,9 @@
             introDismissed = true;
 
             if (introTimerInterval) clearInterval(introTimerInterval);
-
-            // Fade out overlay
             introOverlay.classList.add("opacity-0", "pointer-events-none");
-
-            // Trigger smooth falling flower shower!
             startPetalShower();
 
-            // Pause video after transition completes to save resources
             setTimeout(() => {
                 introVideo.pause();
                 introOverlay.style.display = "none";
@@ -1040,15 +1011,16 @@
             if (introVideo.muted) {
                 introVideo.muted = false;
                 soundIcon.className = "fa-solid fa-volume-high text-gold-500";
-                soundText.textContent = "Silenciar";
+                soundText.textContent = "Mute";
             } else {
                 introVideo.muted = true;
                 soundIcon.className = "fa-solid fa-volume-xmark text-gold-500";
-                soundText.textContent = "Activar Audio";
+                soundText.textContent = "Turn on Audio";
             }
         }
 
         window.addEventListener("DOMContentLoaded", () => {
+            introVideo.playbackRate = 1.8;
             introVideo.play().catch(e => console.log("Autoplay prevented:", e));
             startIntroTimer();
         });
@@ -1173,7 +1145,7 @@
             if (typeof confetti === 'function') {
                 confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
             }
-            showToast("¡Muchas gracias! Tu confirmación ha sido recibida.");
+            showToast("Thank you! Your RSVP has been received.");
             document.getElementById("rsvpForm").reset();
         }
 
@@ -1184,7 +1156,7 @@
             tempInput.select();
             document.execCommand("copy");
             document.body.removeChild(tempInput);
-            showToast("¡Copiado al portapapeles!");
+            showToast("Copied to clipboard!");
         }
 
         function showToast(message) {
