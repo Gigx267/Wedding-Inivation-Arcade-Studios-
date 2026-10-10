@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Nadia &amp; Austin | Save The Date</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Tailwind CSS with custom theme configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: {
+                            900: '#2F241E',
+                            800: '#4A382F',
+                            700: '#695548',
+                            600: '#7E685D',
+                            500: '#9A7E6A',
+                            100: '#F0E6DC',
+                            50: '#F7F2EC'
+                        },
+                        cream: {
+                            50: '#FDF9F4',
+                            100: '#F7F1E7',
+                            200: '#EDE1D1',
+                            300: '#E2D1B3'
+                        },
+                        gold: {
+                            500: '#D4B167',
+                            600: '#B88A3D'
+                        }
+                    },
+                    fontFamily: {
+                        script: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-6px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Montserrat', sans-serif;
+            color: #2F241E;
+            background-color: #0f0a08; /* Updated to match deepest vignette color */
+        }
+
+        /* 1. Seamless Video Canvas Setup */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: translate(-50%, -50%) scale(1.05); /* Slight scale prevents white edge bleeds during resize */
+            opacity: 0;
+            filter: contrast(1.04) saturate(0.92) brightness(0.88); /* Color match to overall site aesthetic */
+            transition: opacity 2s ease-in-out, filter 1.5s ease;
+            will-change: transform, opacity;
+        }
+
+        /* Active fade-in class for video when ready */
+        .video-background video.is-ready {
+            opacity: 0.72; /* Blends base HTML color through video for organic depth */
+        }
+
+        /* 2. Soft Organic Vignette & Multi-Blend Layer */
+        .video-overlay {
+            position: fixed;
+            inset: 0;
+            /* Multi-stage organic gradient: prevents harsh circular banding */
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(47, 36, 30, 0.25) 0%, rgba(30, 22, 18, 0.65) 60%, rgba(15, 10, 8, 0.92) 100%),
+                linear-gradient(to bottom, rgba(15, 10, 8, 0.4) 0%, transparent 30%, transparent 70%, rgba(15, 10, 8, 0.6) 100%);
+            mix-blend-mode: multiply;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* 3. Micro Noise Grain: Eliminates video compression pixelation & loop cuts */
+        .film-grain {
+            position: fixed;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.035;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Ambient text shadows for seamless overlay floating */
+        .text-shadow-glow {
+            text-shadow: 0 0 25px rgba(212, 177, 103, 0.55), 0 2px 10px rgba(0, 0, 0, 0.85);
+        }
+
+        .text-shadow-subtle {
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.85), 0 0 14px rgba(47, 36, 30, 0.95);
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased select-none flex items-center justify-center">
+
+    <!-- Background Video Layer -->
+    <div class="video-background">
+        <video id="entranceVideo" autoplay muted loop playsinline preload="auto">
+            <source src="fr (2).mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-romantic-wedding-couple-walking-in-a-park-42353-large.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+    <!-- Organic Vignette & Soft Gradient Blur Overlays -->
+    <div class="video-overlay"></div>
+    <div class="film-grain"></div>
+
+    <!-- Main Content floating directly over video background -->
+    <main class="relative z-10 w-full max-w-2xl px-6 py-8 mx-auto text-center animate-float">
+        
+        <!-- Ornamental Top Filigree SVG -->
+        <div class="flex justify-center mb-3 text-gold-500 opacity-90 drop-shadow">
+            <svg class="w-28 h-8" viewBox="0 0 100 30" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M10,15 Q30,5 50,15 Q70,25 90,15" />
+                <path d="M25,15 Q50,0 75,15" />
+                <circle cx="50" cy="15" r="3" fill="currentColor" />
+                <circle cx="20" cy="15" r="1.5" fill="currentColor" />
+                <circle cx="80" cy="15" r="1.5" fill="currentColor" />
+            </svg>
+        </div>
+
+        <!-- Save the Date Subheader -->
+        <p class="text-xs sm:text-sm uppercase tracking-[0.5em] text-cream-100 font-serif italic font-semibold text-shadow-subtle">
+            Save the date
+        </p>
+
+        <!-- Couple's Names -->
+        <h1 class="mt-4 font-script text-6xl sm:text-8xl text-cream-50 text-shadow-glow tracking-wide leading-tight">
+            Nadia &amp; Austin
+        </h1>
+
+        <!-- Glowing Heart & Lines Divider -->
+        <div class="mt-3 flex items-center justify-center gap-4 text-gold-500">
+            <span class="h-px w-16 sm:w-20 bg-gradient-to-r from-transparent to-gold-500/80"></span>
+            <i class="fa-solid fa-heart text-lg sm:text-xl text-gold-500 animate-pulse-slow drop-shadow"></i>
+            <span class="h-px w-16 sm:w-20 bg-gradient-to-l from-transparent to-gold-500/80"></span>
+        </div>
+
+
+        <!-- Unboxed Minimal Badge -->
+        <div class="mt-5 inline-block py-1 text-xs uppercase tracking-[0.3em] text-cream-100/90 font-serif border-b border-gold-500/50 text-shadow-subtle">
+            We are getting married
+        </div>
+
+        <!-- Interactive Audio Control -->
+        <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+            <button id="musicToggle" type="button" aria-label="Toggle background music" 
+                class="inline-flex items-center gap-2.5 rounded-full border border-gold-500/60 bg-gold-500/10 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-cream-50 transition-all duration-300 hover:bg-gold-500/30 hover:border-gold-500 active:scale-95 font-serif text-shadow-subtle backdrop-blur-sm">
+                <i id="musicIcon" class="fa-solid fa-volume-high text-gold-500"></i>
+                <span id="musicText">Music On</span>
+            </button>
+        </div>
+
+        <!-- Seamless Countdown Progress & Enter Link -->
+        <div class="mt-7 mx-auto max-w-xs">
+            <!-- Sleek Transparent Progress Bar -->
+            <div class="h-1 w-full overflow-hidden rounded-full bg-white/20 p-0 backdrop-blur-sm">
+                <div id="redirectBar" class="h-full w-full rounded-full bg-gradient-to-r from-gold-500 via-cream-100 to-gold-600 transition-all duration-1000 ease-linear shadow"></div>
+            </div>
+            
+            <!-- Countdown Text -->
+            <p class="mt-2.5 text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-cream-200/90 font-serif text-shadow-subtle">
+                Redirecting in <span id="redirectTimer" class="font-bold text-gold-500">15</span>s
+            </p>
+
+            <!-- Frameless Redirect Link -->
+            <a href="invitation.html" id="enterBtn" class="mt-3.5 inline-flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.25em] text-cream-100 hover:text-gold-500 transition-all duration-300 font-serif text-shadow-subtle border-b border-transparent hover:border-gold-500 pb-0.5">
+                <span>Enter Invitation Now</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+        </div>
+
+        <!-- Ornamental Bottom Filigree SVG -->
+        <div class="flex justify-center mt-6 text-gold-500/80 drop-shadow">
+            <svg class="w-16 h-5" viewBox="0 0 60 20" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M0,10 Q30,20 60,10" />
+                <circle cx="30" cy="10" r="2" fill="currentColor" />
+            </svg>
+        </div>
+
+    </main>
+
+    <!-- Background Audio -->
+    <audio id="musicPlayer" loop preload="auto">
+        <source src="m2.mp3" type="audio/mpeg" />
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-113538.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Interactive JavaScript Engine -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const redirectUrl = 'invitation.html';
+            const redirectSeconds = 15;
+            const redirectTimer = document.getElementById('redirectTimer');
+            const redirectBar = document.getElementById('redirectBar');
+            const musicPlayer = document.getElementById('musicPlayer');
+            const musicToggle = document.getElementById('musicToggle');
+            const musicIcon = document.getElementById('musicIcon');
+            const musicText = document.getElementById('musicText');
+            const entranceVideo = document.getElementById('entranceVideo');
+
+            let remainingSeconds = redirectSeconds;
+            let redirectInterval = null;
+
+            musicPlayer.volume = 0.35;
+
+            // Smooth crossfade on video load and loop points
+            if (entranceVideo) {
+                const markVideoReady = () => entranceVideo.classList.add('is-ready');
+                if (entranceVideo.readyState >= 3) {
+                    markVideoReady();
+                } else {
+                    entranceVideo.addEventListener('canplay', markVideoReady);
+                }
+
+                // Smooth out loop jump by briefly dipping opacity right before loop restart
+                entranceVideo.addEventListener('timeupdate', () => {
+                    if (entranceVideo.duration && (entranceVideo.duration - entranceVideo.currentTime < 0.8)) {
+                        entranceVideo.style.opacity = '0.3';
+                    } else if (entranceVideo.classList.contains('is-ready')) {
+                        entranceVideo.style.opacity = '';
+                    }
+                });
+            }
+
+            // Trigger festive gold confetti
+            function launchConfetti(x = 0.5, y = 0.5) {
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 35,
+                        spread: 60,
+                        origin: { x: x, y: y },
+                        colors: ['#D4B167', '#B88A3D', '#F7F1E7', '#EDE1D1'],
+                        disableForReducedMotion: true
+                    });
+                }
+            }
+
+            // Play music with audio policy fallback
+            function startMusic() {
+                musicPlayer.play().then(() => {
+                    updateMusicUI(true);
+                }).catch(() => {
+                    updateMusicUI(false);
+                });
+            }
+
+            function updateMusicUI(isPlaying) {
+                if (isPlaying) {
+                    musicIcon.className = 'fa-solid fa-volume-high text-gold-500';
+                    musicText.textContent = 'Music On';
+                } else {
+                    musicIcon.className = 'fa-solid fa-volume-xmark text-cream-100/60';
+                    musicText.textContent = 'Music Off';
+                }
+            }
+
+            function toggleMusic() {
+                if (musicPlayer.paused) {
+                    musicPlayer.play().then(() => {
+                        updateMusicUI(true);
+                    });
+                } else {
+                    musicPlayer.pause();
+                    updateMusicUI(false);
+                }
+            }
+
+            // Countdown redirect timer
+            function updateRedirect() {
+                remainingSeconds -= 1;
+                if (redirectTimer) {
+                    redirectTimer.textContent = String(remainingSeconds);
+                }
+                
+                const progress = (remainingSeconds / redirectSeconds) * 100;
+                if (redirectBar) {
+                    redirectBar.style.width = `${progress}%`;
+                }
+
+                if (remainingSeconds <= 0) {
+                    clearInterval(redirectInterval);
+                    window.location.href = redirectUrl;
+                }
+            }
+
+            // Event Listeners
+            musicToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleMusic();
+                
+                const rect = musicToggle.getBoundingClientRect();
+                const x = (rect.left + rect.width / 2) / window.innerWidth;
+                const y = (rect.top + rect.height / 2) / window.innerHeight;
+                launchConfetti(x, y);
+            });
+
+            document.body.addEventListener('click', (e) => {
+                if (e.target.closest('button') || e.target.closest('a')) return;
+                
+                // Unlock audio if user taps anywhere
+                if (musicPlayer.paused) {
+                    musicPlayer.play().then(() => updateMusicUI(true)).catch(() => {});
+                }
+
+                const x = e.clientX / window.innerWidth;
+                const y = e.clientY / window.innerHeight;
+                launchConfetti(x, y);
+            });
+
+            // Start music and timer
+            startMusic();
+            if (redirectBar) redirectBar.style.width = '100%';
+            redirectInterval = setInterval(updateRedirect, 1000);
+
+            // Subtle initial confetti burst
+            setTimeout(() => {
+                launchConfetti(0.5, 0.4);
+            }, 800);
+        });
+    </script>
+</body>
+</html>

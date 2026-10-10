@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fernanda & Gustavo | Invitación de Boda</title>
+    <title>Nadia & Austin | Wedding Invitation</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,6 +60,7 @@
             color: #2f241e;
         }
 
+        /* blended texture + grain */
         .grain {
             background-image:
                 linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
@@ -221,6 +222,47 @@
             to { opacity: 1; transform: translate(-50%, 0); }
         }
 
+        /* blended: elegant section transitions */
+        .section-soft {
+            background: linear-gradient(180deg, #FDF9F4 0%, #F7F1E7 100%);
+        }
+
+        .section-olive {
+            background: linear-gradient(145deg, #4A382F 0%, #2F241E 100%);
+        }
+
+        /* card consistency */
+        .info-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(212, 177, 103, 0.25);
+            border-radius: 2rem;
+            box-shadow: 0 15px 35px rgba(47, 36, 30, 0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .info-card:hover {
+            box-shadow: 0 22px 45px rgba(47, 36, 30, 0.10);
+        }
+
+        /* timeline dots */
+        .timeline-dot {
+            position: absolute;
+            left: -31px;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            border: 2px solid #695548;
+            background: #EDE1D1;
+            color: #2F241E;
+            font-size: 0.75rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
         @media (max-width: 768px) {
             .story-grid,
             .gallery-grid {
@@ -235,6 +277,16 @@
                 width: 140px;
                 height: 140px;
             }
+
+            .timeline-dot {
+                left: -31px;
+            }
+        }
+
+        /* polished modal backdrop */
+        .modal-backdrop {
+            background: rgba(47, 36, 30, 0.6);
+            backdrop-filter: blur(4px);
         }
     </style>
 </head>
@@ -242,6 +294,7 @@
     <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-80"></canvas>
 
     <main class="relative z-10">
+        <!-- Hero Section -->
         <section class="romantic-shell grain min-h-screen flex items-center justify-center px-5 py-10 text-center relative overflow-hidden">
             <div class="floating-orb left-10 top-10 h-24 w-24"></div>
             <div class="floating-orb right-12 top-24 h-28 w-28"></div>
@@ -257,25 +310,25 @@
                     </div>
 
                     <div class="mt-6">
-                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Fernanda</p>
+                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Nadia</p>
                         <div class="my-3 flex items-center justify-center gap-4 text-gold-600 lg:justify-start">
                             <span class="w-8 h-px bg-gold-500/60"></span>
                             <i class="fa-solid fa-heart text-lg"></i>
                             <span class="w-8 h-px bg-gold-500/60"></span>
                         </div>
-                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Gustavo</p>
+                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Austin</p>
                     </div>
 
                     <h1 class="mt-8 font-script text-6xl text-olive-900 leading-none sm:text-7xl">We are getting married</h1>
 
                     <p class="mt-5 text-sm sm:text-base text-olive-700/80 tracking-[0.2em] uppercase">
-                        Friday, 14 November 2025
+                        Saturday, 11 December 2026
                     </p>
 
                     <div class="mt-8 rounded-[2rem] border border-olive-700/10 bg-white/70 p-5 shadow-soft backdrop-blur-sm lg:max-w-md">
                         <div class="flex items-center justify-center gap-2 text-gold-600 text-xs uppercase tracking-[0.35em] lg:justify-start">
                             <i class="fa-solid fa-cross"></i>
-                            <span>With God’s blessing</span>
+                            <span>With God's blessing</span>
                         </div>
                         <p class="mt-4 text-sm leading-relaxed text-olive-700/85">
                             We invite you to share with us the joy of our religious wedding and celebrate this new chapter together.
@@ -296,8 +349,8 @@
 
                 <div class="order-1 mb-10 lg:order-2 lg:mb-0">
                     <div class="image-stack mx-auto">
-                        <img src="https://i.pinimg.com/736x/35/64/cf/3564cff41511073acf8078ae94bb1f04.jpg" alt="Couple embracing" class="romantic-photo" />
-                        <img src="https://i.pinimg.com/1200x/6e/ff/c3/6effc30988c67824958de6c7defedc13.jpg" alt="Couple smiling together" class="mini-photo" />
+                        <img src="https://i.pinimg.com/736x/cb/5f/2b/cb5f2badaa8fefedebbf07cbe9c70e07.jpg" alt="Couple embracing" class="romantic-photo" />
+                        <img src="https://i.pinimg.com/1200x/a2/8b/7f/a28b7f1fc44cdc15a28ef271497be5f9.jpg" alt="Couple smiling together" class="mini-photo" />
                         <div class="mini-badge text-olive-800">
                             <div class="text-[10px] uppercase tracking-[0.28em] text-olive-700">Together</div>
                             <div class="mt-1 font-script text-3xl text-gold-600">Forever</div>
@@ -307,7 +360,8 @@
             </div>
         </section>
 
-        <section class="bg-cream-100 px-6 py-14 text-center">
+        <!-- Our Story Section -->
+        <section class="section-soft px-6 py-14 text-center">
             <div class="mx-auto max-w-6xl">
                 <div class="mb-8 text-center">
                     <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-600">Our Story</p>
@@ -316,7 +370,7 @@
 
                 <div class="story-grid">
                     <div class="soft-card story-image">
-                        <img src="https://i.pinimg.com/1200x/8a/64/3c/8a643c1171398ec9bdead4bb0fba552b.jpg " alt="Couple walking together" />
+                        <img src="https://i.pinimg.com/1200x/48/d0/28/48d0282c48e2a54290f2b7148ba29170.jpg" alt="Couple walking together" />
                     </div>
 
                     <div class="soft-card story-copy text-left">
@@ -340,19 +394,20 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/31/64/b8/3164b8236cb5b155ff121e259b03c684.jpg " alt="Couple looking at each other" />
+                        <img src="https://i.pinimg.com/736x/36/dd/be/36ddbe27e326f75bace754cea28fc2dd.jpg" alt="Couple looking at each other" />
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/ef/3c/56/ef3c56eddca1c5fd6d637043387f7bf6.jpg " alt="Romantic couple portrait" />
+                        <img src="https://i.pinimg.com/736x/8e/20/c3/8e20c36a9e1c5892ac7e474cfdb39821.jpg" alt="Romantic couple portrait" />
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/83/d2/8d/83d28d233b7541c1bbafe474a9d05555.jpg " alt="Couple holding hands" />
+                        <img src="https://i.pinimg.com/736x/83/d2/8d/83d28d233b7541c1bbafe474a9d05555.jpg" alt="Couple holding hands" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="details" class="bg-olive-700 text-cream-50 py-10 px-6 text-center relative">
+        <!-- Details & Countdown Section -->
+        <section id="details" class="section-olive text-cream-50 py-12 px-6 text-center relative">
             <div class="mx-auto max-w-sm">
                 <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block"></i>
                 <p class="mb-6 text-xs font-light tracking-[0.2em] uppercase text-cream-200">
@@ -360,9 +415,9 @@
                 </p>
 
                 <div class="my-4 flex items-center justify-between border-y border-cream-100/30 py-3 text-cream-100">
-                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Friday</span>
-                    <span class="px-2 font-serif text-4xl font-bold text-gold-500">14</span>
-                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">November 2025</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Saturday</span>
+                    <span class="px-2 font-serif text-4xl font-bold text-gold-500">11</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">December 2026</span>
                 </div>
             </div>
 
@@ -390,30 +445,31 @@
 
             <div class="mx-auto mt-10 max-w-xs rounded-2xl border border-olive-600/30 bg-olive-800/60 p-4">
                 <h4 class="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-cream-100">The Big Day</h4>
-                <p class="mb-3 text-[10px] uppercase tracking-[0.25em] text-gold-500">November 2025</p>
+                <p class="mb-3 text-[10px] uppercase tracking-[0.25em] text-gold-500">December 2026</p>
 
                 <div class="mb-2 grid grid-cols-7 gap-1 text-[10px] font-medium text-cream-200">
                     <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
                 </div>
                 <div class="grid grid-cols-7 gap-1 items-center text-xs text-cream-100">
-                    <span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span><span class="opacity-0"></span>
-                    <span>1</span><span>2</span>
-                    <span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-                    <span>10</span><span>11</span><span>12</span><span>13</span>
+                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
+                    <span>8</span><span>9</span><span>10</span>
                     <div class="relative flex items-center justify-center py-1 font-bold text-gold-500">
                         <i class="fa-solid fa-heart text-2xl text-gold-500/30 absolute pulse-heart"></i>
-                        <span class="relative z-10 font-bold text-cream-50">14</span>
+                        <span class="relative z-10 font-bold text-cream-50">11</span>
                     </div>
-                    <span>15</span><span>16</span>
-                    <span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span>
-                    <span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                    <span>12</span><span>13</span><span>14</span>
+                    <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
+                    <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
+                    <span>29</span><span>30</span><span>31</span>
                 </div>
             </div>
         </section>
 
-        <section class="bg-cream-100 px-6 py-12 text-center">
+        <!-- Ceremony, Reception & Schedule Section -->
+        <section class="section-soft px-6 py-12 text-center">
             <div class="mx-auto max-w-5xl space-y-8">
-                <div class="card-glow overflow-hidden rounded-[2rem] border border-cream-200 bg-white p-6 text-center">
+                <!-- Religious Ceremony Card -->
+                <div class="info-card overflow-hidden p-6 text-center">
                     <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
                         <svg class="h-48 w-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M 20 25 Q 50 20 80 25" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
@@ -448,9 +504,9 @@
                     </div>
 
                     <h3 class="font-script text-4xl text-olive-800">Religious Ceremony</h3>
-                    <p class="mt-2 text-sm font-semibold text-gold-600">4:30 pm</p>
-                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Iglesia San Francisco</p>
-                    <p class="mt-1 text-xs text-gray-500">Santa Cruz de la Sierra</p>
+                    <p class="mt-2 text-sm font-semibold text-gold-600">3:00 pm</p>
+                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Church of Annunciation</p>
+                    <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
 
                     <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
                         <i class="fa-solid fa-location-dot"></i>
@@ -458,14 +514,15 @@
                     </button>
                 </div>
 
-                <div class="card-glow rounded-[2rem] border border-cream-200 bg-white p-6 text-center">
+                <!-- Reception Card -->
+                <div class="info-card p-6 text-center">
                     <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-xl text-olive-700">
                         <i class="fa-solid fa-champagne-glasses"></i>
                     </div>
                     <h3 class="font-script text-4xl text-olive-800">Reception</h3>
-                    <p class="mt-2 text-sm font-semibold text-gold-600">5:30 pm</p>
-                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Salón Vendimia</p>
-                    <p class="mt-1 text-xs text-gray-500">Santa Cruz de la Sierra</p>
+                    <p class="mt-2 text-sm font-semibold text-gold-600">5:00 pm</p>
+                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Reception Venue</p>
+                    <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
 
                     <button onclick="openLocationModal('venue')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
                         <i class="fa-solid fa-location-dot"></i>
@@ -473,63 +530,65 @@
                     </button>
                 </div>
 
-                <div class="card-glow rounded-[2rem] border border-cream-200 bg-white p-6 text-center">
+                <!-- Schedule of Events Card -->
+                <div class="info-card p-6 text-center">
                     <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
 
                     <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
+                            <div class="timeline-dot">
                                 <i class="fa-solid fa-church"></i>
                             </div>
-                            <span class="block text-xs font-bold text-gold-600">4:30 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church</h4>
+                            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
                         </div>
 
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
+                            <div class="timeline-dot">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <span class="block text-xs font-bold text-gold-600">4:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Photo Time</h4>
+                        </div>
+
+                        <div class="relative">
+                            <div class="timeline-dot">
                                 <i class="fa-solid fa-wine-glass"></i>
                             </div>
-                            <span class="block text-xs font-bold text-gold-600">5:30 pm</span>
+                            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
                             <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Welcome Cocktail</h4>
                         </div>
 
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
-                                <i class="fa-solid fa-person-dancing"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">7:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">First Dance & Toast</h4>
-                        </div>
-
-                        <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
+                            <div class="timeline-dot">
                                 <i class="fa-solid fa-utensils"></i>
                             </div>
-                            <span class="block text-xs font-bold text-gold-600">7:30 pm</span>
+                            <span class="block text-xs font-bold text-gold-600">6:00 pm</span>
                             <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dinner</h4>
                         </div>
 
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
-                                <i class="fa-solid fa-compact-disc"></i>
+                            <div class="timeline-dot">
+                                <i class="fa-solid fa-person-dancing"></i>
                             </div>
-                            <span class="block text-xs font-bold text-gold-600">8:30 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Party</h4>
+                            <span class="block text-xs font-bold text-gold-600">7:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">First Dance & Toasts</h4>
                         </div>
 
                         <div class="relative">
-                            <div class="absolute -left-[31px] top-0 flex h-8 w-8 items-center justify-center rounded-full border-2 border-olive-700 bg-cream-200 text-xs text-olive-800 shadow">
-                                <i class="fa-regular fa-clock"></i>
+                            <div class="timeline-dot">
+                                <i class="fa-solid fa-music"></i>
                             </div>
-                            <span class="block text-xs font-bold text-gold-600">3:00 am</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">End</h4>
+                            <span class="block text-xs font-bold text-gold-600">8:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dancing & Celebration</h4>
                         </div>
                     </div>
                 </div>
 
-                <div class="card-glow rounded-[2rem] border border-cream-200 bg-white p-6 text-center">
+                <!-- Dress Code Card -->
+                <div class="info-card p-6 text-center">
                     <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
-                    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant</p>
+                    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
 
                     <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
                         <i class="fa-solid fa-user-tie" title="Elegant suit"></i>
@@ -543,7 +602,8 @@
             </div>
         </section>
 
-        <section class="bg-olive-700 px-6 py-10 text-center text-cream-50">
+        <!-- Gift Suggestion Section -->
+        <section class="section-olive px-6 py-10 text-center text-cream-50">
             <div class="mx-auto max-w-xs">
                 <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
                     <i class="fa-solid fa-gift"></i>
@@ -556,7 +616,7 @@
 
                 <div class="mt-6 inline-block cursor-pointer rounded-[1.75rem] border-2 border-gold-500/40 bg-white p-4 shadow-lg transition hover:scale-[1.01] group" onclick="openGiftModal()">
                     <div class="relative">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://fernandaygustavo.wedding/regalos" alt="Gift QR Code" class="mx-auto h-40 w-40 transition duration-300 group-hover:scale-105" />
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://nadiaandaustin.wedding/gifts" alt="Gift QR Code" class="mx-auto h-40 w-40 transition duration-300 group-hover:scale-105" />
                         <div class="absolute inset-0 flex items-center justify-center rounded-lg bg-olive-900/10 opacity-0 transition-opacity group-hover:opacity-100">
                             <span class="rounded bg-olive-800 px-2 py-1 text-[10px] uppercase tracking-wider text-white shadow">View Details</span>
                         </div>
@@ -571,50 +631,73 @@
             </div>
         </section>
 
-        <section class="bg-cream-100 px-6 py-12 text-center">
-            <div class="mx-auto max-w-sm rounded-[2rem] border border-olive-700 bg-olive-800 p-6 text-cream-50 shadow-md">
-                <div class="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-olive-700 text-lg text-gold-500">
-                    <i class="fa-solid fa-envelope-open-text"></i>
+        <!-- Final RSVP Section -->
+        <section class="relative overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 text-center">
+            <div class="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-gold-500/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-olive-700/10 blur-3xl"></div>
+
+            <div class="relative mx-auto max-w-4xl">
+                <div class="mb-8">
+                    <p class="text-[10px] font-semibold uppercase tracking-[0.35em] text-gold-600">A note for our guests</p>
+                    <h2 class="mt-2 font-script text-5xl text-olive-800 sm:text-6xl">We can't wait to celebrate with you</h2>
+                    <div class="mx-auto mt-4 flex max-w-xs items-center gap-3 text-gold-600">
+                        <span class="h-px flex-1 bg-gold-500/40"></span>
+                        <i class="fa-solid fa-heart text-sm"></i>
+                        <span class="h-px flex-1 bg-gold-500/40"></span>
+                    </div>
                 </div>
 
-                <h3 class="font-script text-4xl text-cream-50">RSVP</h3>
-                <p class="mt-3 text-xs leading-relaxed text-cream-200">
-                    We would be grateful if you could confirm your attendance before <strong>November 1st</strong>.
-                </p>
+                <div class="grid items-stretch gap-5 md:grid-cols-[1.1fr_0.9fr]">
+                    <div class="relative overflow-hidden rounded-[2rem] border border-gold-500/30 bg-olive-800 p-7 text-cream-50 shadow-[0_24px_60px_rgba(47,36,30,0.2)] sm:p-9">
+                        <div class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full border border-gold-500/20"></div>
+                        <div class="pointer-events-none absolute -right-2 -top-2 h-20 w-20 rounded-full border border-gold-500/20"></div>
+                        <div class="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/50 bg-olive-700 text-xl text-gold-500 shadow-inner">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-500">Kindly reply by November 27th</p>
+                        <h3 class="mt-2 font-script text-5xl text-cream-50">RSVP</h3>
+                        <p class="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-cream-200">
+                            Your presence would mean the world to us. Please let us know if you can join our celebration.
+                        </p>
+                        <button onclick="openRSVPModal()" class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-olive-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95">
+                            <i class="fa-solid fa-check-circle"></i>
+                            Confirm your attendance
+                        </button>
+                    </div>
 
-                <button onclick="openRSVPModal()" class="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gold-500 px-6 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-olive-900 shadow-md transition hover:bg-gold-600 active:scale-95">
-                    <i class="fa-solid fa-check-circle"></i>
-                    Confirm here
-                </button>
-            </div>
-
-            <div class="mx-auto mt-8 max-w-md space-y-6 text-center">
-                <div>
-                    <i class="fa-solid fa-heart mb-1 block text-sm text-gold-600"></i>
-                    <h4 class="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-olive-800">Recommendations</h4>
-                    <p class="text-xs text-gray-600">Follow the wedding staff instructions. Please be on time.</p>
-                </div>
-
-                <div class="border-t border-cream-300/60 pt-2">
-                    <h4 class="mb-1 text-[10px] font-bold uppercase tracking-[0.3em] text-olive-800">Adults Only</h4>
-                    <p class="px-2 text-xs leading-relaxed text-gray-600">
-                        An adults-only event is coming soon. So get ready for a night full of fun! We'll leave the kids at home this time.
-                    </p>
+                    <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
+                        <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
+                            <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-gold-500/15 text-gold-600">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">A little reminder</h4>
+                            <p class="mt-2 text-xs leading-relaxed text-gray-600">Please arrive on time and follow the guidance of our wedding team. We appreciate your help making the day run smoothly.</p>
+                        </div>
+                        <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
+                            <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-olive-700/10 text-olive-700">
+                                <i class="fa-solid fa-champagne-glasses"></i>
+                            </div>
+                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">Adults-only celebration</h4>
+                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We look forward to an evening of joy and dancing with our adult guests. Thank you for understanding.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="relative overflow-hidden bg-olive-900 px-6 py-12 text-center text-cream-50">
             <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');"></div>
             <div class="relative z-10">
                 <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500">We hope to count on your presence</p>
                 <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
-                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Fernanda & Gustavo • 2025</p>
+                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Nadia & Austin • 2026</p>
             </div>
         </footer>
     </main>
 
-    <div id="locationModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <!-- Modals -->
+    <div id="locationModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
             <button onclick="closeModal('locationModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
                 <i class="fa-solid fa-xmark"></i>
@@ -635,7 +718,7 @@
         </div>
     </div>
 
-    <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 shadow-2xl">
             <button onclick="closeModal('rsvpModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
                 <i class="fa-solid fa-xmark"></i>
@@ -647,7 +730,7 @@
             <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left">
                 <div>
                     <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
-                    <input type="text" required placeholder="e.g. Ana García" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <input type="text" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
                 <div>
                     <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Will you attend? *</label>
@@ -667,7 +750,7 @@
         </div>
     </div>
 
-    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
+    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
             <button onclick="closeModal('giftModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
                 <i class="fa-solid fa-xmark"></i>
@@ -680,19 +763,19 @@
 
             <div class="mb-4 mt-4 space-y-3 rounded-xl border border-cream-300 bg-white p-4 text-left">
                 <div>
-                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">CBU / Account</span>
+                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
                     <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                        <span class="text-xs font-mono text-gray-700">1234567890123456789012</span>
-                        <button onclick="copyToClipboard('1234567890123456789012')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                        <span class="text-xs font-mono text-gray-700">1234567890123456</span>
+                        <button onclick="copyToClipboard('1234567890123456')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
                             <i class="fa-regular fa-copy"></i>
                         </button>
                     </div>
                 </div>
                 <div>
-                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Alias</span>
+                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Routing Number</span>
                     <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                        <span class="text-xs font-mono text-gray-700">FERNANDA.GUSTAVO.BODA</span>
-                        <button onclick="copyToClipboard('FERNANDA.GUSTAVO.BODA')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                        <span class="text-xs font-mono text-gray-700">021000021</span>
+                        <button onclick="copyToClipboard('021000021')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
                             <i class="fa-regular fa-copy"></i>
                         </button>
                     </div>
@@ -706,6 +789,7 @@
     </div>
 
     <script>
+        // Petal canvas animation (blended, optimized)
         const petalsCanvas = document.getElementById('petalsCanvas');
         const ctx = petalsCanvas.getContext('2d');
         let petals = [];
@@ -796,7 +880,8 @@
         resizeCanvas();
         startPetalShower();
 
-        const targetDate = new Date('November 14, 2025 16:30:00').getTime();
+        // Countdown timer
+        const targetDate = new Date('December 11, 2026 15:00:00').getTime();
 
         function updateTimer() {
             const now = new Date().getTime();
@@ -822,22 +907,23 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
+        // Location data and modals
         const locationsData = {
             church: {
-                title: 'Iglesia San Francisco',
-                time: '4:30 PM',
-                address: 'Calle Ayacucho esq. René Moreno, Santa Cruz de la Sierra',
+                title: 'Church of Annunciation',
+                time: '3:00 PM',
+                address: 'Houston, Texas',
                 icon: 'fa-church',
-                gmapsLink: 'https://maps.google.com/?q=Iglesia+San+Francisco+Santa+Cruz+de+la+Sierra',
-                mapSrc: 'https://maps.google.com/maps?q=Iglesia%20San%20Francisco%20Santa%20Cruz%20de%20la%20Sierra&t=&z=15&ie=UTF8&iwloc=&output=embed'
+                gmapsLink: 'https://maps.google.com/?q=Church+of+Annunciation+Houston+Texas',
+                mapSrc: 'https://maps.google.com/maps?q=Church%20of%20Annunciation%20Houston%20Texas&t=&z=15&ie=UTF8&iwloc=&output=embed'
             },
             venue: {
-                title: 'Salón Vendimia',
-                time: '5:30 PM',
-                address: 'Av. San Martín & 4to Anillo, Santa Cruz de la Sierra',
+                title: 'Reception Venue',
+                time: '5:00 PM',
+                address: 'Houston, Texas',
                 icon: 'fa-champagne-glasses',
-                gmapsLink: 'https://maps.google.com/?q=Salon+Vendimia+Santa+Cruz',
-                mapSrc: 'https://maps.google.com/maps?q=Santa%20Cruz%20de%20la%20Sierra%20Salon&t=&z=14&ie=UTF8&iwloc=&output=embed'
+                gmapsLink: 'https://maps.google.com/?q=Reception+Venue+Houston+Texas',
+                mapSrc: 'https://maps.google.com/maps?q=Houston%20Texas&t=&z=14&ie=UTF8&iwloc=&output=embed'
             }
         };
 
@@ -914,4 +1000,3 @@
     </script>
 </body>
 </html>
-

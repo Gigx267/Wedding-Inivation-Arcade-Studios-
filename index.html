@@ -1,332 +1,219 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fernanda & Gustavo | Invitación de Boda</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        olive: {
-                            900: '#2F241E',
-                            800: '#4A382F',
-                            700: '#695548',
-                            600: '#7E685D',
-                            500: '#9A7E6A',
-                            100: '#F0E6DC',
-                            50: '#F7F2EC'
-                        },
-                        cream: {
-                            50: '#FDF9F4',
-                            100: '#F7F1E7',
-                            200: '#EDE1D1',
-                            300: '#E2D1B3'
-                        },
-                        gold: {
-                            500: '#D4B167',
-                            600: '#B88A3D'
-                        }
-                    },
-                    fontFamily: {
-                        script: ['"Great Vibes"', 'cursive'],
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Montserrat"', 'sans-serif']
-                    },
-                    boxShadow: {
-                        soft: '0 20px 45px rgba(47, 36, 30, 0.10)'
-                    }
-                }
-            }
-        }
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date | Our Love Story</title>
+    <!-- Import Luxurious Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background:
-                radial-gradient(circle at top, rgba(212, 177, 103, 0.14), transparent 30%),
-                linear-gradient(180deg, #f9f4ee 0%, #f4efe9 100%);
-            color: #2f241e;
+        /* Remove default browser padding and margin */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .grain {
-            background-image:
-                linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
-                radial-gradient(circle at 20% 20%, rgba(121, 102, 80, 0.08) 0, rgba(121, 102, 80, 0.08) 1px, transparent 1px);
-            background-size: cover, 16px 16px;
-        }
-
-        .card-glow {
-            box-shadow: 0 18px 40px rgba(79, 62, 50, 0.08);
-        }
-
-        .soft-divider {
-            background: linear-gradient(90deg, transparent, rgba(90, 74, 58, 0.32), transparent);
-            height: 1px;
-        }
-
-        .pulse-heart {
-            animation: pulseHeart 1.8s ease-in-out infinite;
-        }
-
-        .romantic-shell {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floating-orb {
-            position: absolute;
-            border-radius: 9999px;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(212,177,103,0.18));
-            filter: blur(4px);
-            animation: drift 14s ease-in-out infinite alternate;
-        }
-
-        .floating-heart {
-            position: absolute;
-            font-size: 1.2rem;
-            color: rgba(184, 138, 61, 0.45);
-            animation: heartFloat 8s ease-in-out infinite;
-        }
-
-        .image-stack {
-            position: relative;
-            max-width: 430px;
-            margin: 0 auto;
-        }
-
-        .romantic-photo {
+        body, html {
             width: 100%;
-            height: 520px;
-            object-fit: cover;
-            border-radius: 2rem;
-            box-shadow: 0 32px 80px rgba(47, 36, 30, 0.16);
-            border: 8px solid rgba(255,255,255,0.7);
+            height: 100%;
+            overflow: hidden;
+            background-color: #0c080a;
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
-        .mini-photo {
-            position: absolute;
-            bottom: -28px;
-            left: -18px;
-            width: 170px;
-            height: 170px;
+        /* Style the video to cover the entire viewport */
+        .fullscreen-video {
+            width: 100vw;
+            height: 100vh;
             object-fit: cover;
-            border-radius: 1.5rem;
-            border: 6px solid rgba(255,255,255,0.85);
-            box-shadow: 0 18px 40px rgba(47, 36, 30, 0.16);
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: brightness(0.85) contrast(1.05);
+            transition: opacity 1.2s ease;
         }
 
-        .mini-badge {
+        /* Romantic, dreamy overlay with soft ambient lighting */
+        .video-overlay {
             position: absolute;
-            right: 12px;
-            bottom: 20px;
-            border-radius: 9999px;
-            background: rgba(255,255,255,0.82);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 18px 30px rgba(47, 36, 30, 0.08);
-            padding: 0.8rem 1rem;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
             text-align: center;
+            background: radial-gradient(circle at center, rgba(35, 20, 28, 0.45) 0%, rgba(10, 6, 9, 0.82) 100%);
+            backdrop-filter: blur(1.5px);
         }
 
-        .story-grid {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .soft-card {
-            background: rgba(255,255,255,0.8);
-            border: 1px solid rgba(120, 104, 90, 0.12);
-            box-shadow: 0 20px 55px rgba(79, 62, 50, 0.08);
-            border-radius: 2rem;
-            overflow: hidden;
-        }
-
-        .story-image {
-            position: relative;
-            min-height: 360px;
-            overflow: hidden;
-        }
-
-        .story-image img {
+        /* Wrapper for romantic floating animation */
+        .content-box {
+            animation: floatUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(25px);
+            max-width: 800px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+        }
+
+        /* Script style heading */
+        .our-love {
             display: block;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.4rem, 10vw, 8rem);
+            font-weight: normal;
+            font-style: normal;
+            text-transform: none;
+            letter-spacing: 0.04em;
+            color: #ffd1dc;
+            margin-bottom: -0.15em;
+            text-shadow: 0 0 25px rgba(255, 192, 203, 0.6), 0 0 50px rgba(219, 112, 147, 0.3);
+            animation: softPulse 4s ease-in-out infinite alternate;
         }
 
-        .story-copy {
-            padding: 2rem 1.6rem;
+        /* Save the date text */
+        .save-date {
+            color: #fffaf7;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 4.5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            line-height: 1.3;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.35);
         }
 
-        .gallery-grid {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            margin-top: 1.5rem;
+        /* Luxurious dividing line */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 230, 0.8), transparent);
+            margin: 1.8rem auto 0 auto;
+            box-shadow: 0 0 10px rgba(255, 215, 230, 0.5);
         }
 
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1.75rem;
-            height: 280px;
-            box-shadow: 0 18px 35px rgba(47, 36, 30, 0.08);
+        /* Romantic poem */
+        .poem {
+            margin-top: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            line-height: 2;
+            letter-spacing: 0.05em;
+            color: rgba(255, 235, 240, 0.88);
+            text-shadow: 0 0 18px rgba(255, 200, 210, 0.35);
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .poem .line {
             display: block;
-            transition: transform 0.5s ease;
+            opacity: 0;
+            animation: fadeLine 1.4s ease forwards;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.04);
+        .poem .line:nth-child(1) { animation-delay: 1.2s; }
+        .poem .line:nth-child(2) { animation-delay: 1.9s; }
+        .poem .line:nth-child(3) { animation-delay: 2.6s; }
+
+        /* Signature date */
+        .date-sub {
+            margin-top: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(0.75rem, 1.4vw, 1rem);
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: rgba(255, 235, 240, 0.8);
+            text-shadow: 0 0 18px rgba(255, 200, 210, 0.4);
+            opacity: 0;
+            animation: fadeLine 1.4s ease forwards;
+            animation-delay: 3.3s;
         }
 
-        @keyframes pulseHeart {
-            0%, 100% { transform: scale(0.95); opacity: 0.25; }
-            50% { transform: scale(1.1); opacity: 0.55; }
-        }
-
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(18px, -18px) scale(1.12); }
-        }
-
-        @keyframes heartFloat {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.35; }
-            50% { transform: translateY(-14px) scale(1.1); opacity: 0.7; }
-        }
-
-        .toast-slide-up {
-            animation: toastSlide 0.35s ease both;
-        }
-
-        @keyframes toastSlide {
-            from { opacity: 0; transform: translate(-50%, 12px); }
-            to { opacity: 1; transform: translate(-50%, 0); }
-        }
-
-        @media (max-width: 768px) {
-            .story-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
+        /* Animations */
+        @keyframes floatUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
+        }
 
-            .romantic-photo {
-                height: 420px;
+        @keyframes softPulse {
+            0% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 192, 203, 0.5); }
+            100% { transform: scale(1.02); text-shadow: 0 0 35px rgba(255, 192, 203, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); }
+        }
+
+        @keyframes fadeLine {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fallback background when video doesn't load */
+        .video-fallback {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(219, 112, 147, 0.35), transparent 55%),
+                radial-gradient(circle at 75% 70%, rgba(255, 182, 193, 0.25), transparent 50%),
+                linear-gradient(135deg, #1a0f14 0%, #0c080a 100%);
+            z-index: -1;
+        }
+
+        @media (max-width: 640px) {
+            .save-date {
+                letter-spacing: 0.2em;
             }
-
-            .mini-photo {
-                width: 140px;
-                height: 140px;
+            .poem {
+                line-height: 1.9;
             }
         }
     </style>
 </head>
-<body class="min-h-screen antialiased entrance-body">
-    <video id="entranceVideo" class="fixed inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
-        <source src="https://v1.pinimg.com/videos/iht/hls/b8/21/2e/b8212edd135485ea1f38071b22b27050.m3u8 " type="video/mp4" />
+<body>
+
+    <!-- Fallback background -->
+    <div class="video-fallback"></div>
+
+    <!-- Fullscreen Video Element -->
+    <video class="fullscreen-video" autoplay muted playsinline loop id="heroVideo">
+        <source src="vf.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,177,103,0.35),_rgba(15,10,8,0.78))]"></div>
 
-    <div class="relative z-10 flex min-h-screen items-center justify-center px-5 py-10">
-        <div class="w-full max-w-2xl text-center">
-            <p class="text-[11px] uppercase tracking-[0.45em] text-cream-100/85">Save the date</p>
-            <h1 class="mt-6 font-script text-6xl text-cream-50 sm:text-7xl">Fernanda & Gustavo</h1>
-            <div class="mt-6 flex items-center justify-center gap-4 text-gold-500">
-                <span class="h-px w-12 bg-gold-500/70"></span>
-                <i class="fa-solid fa-heart text-xl"></i>
-                <span class="h-px w-12 bg-gold-500/70"></span>
+    <div class="video-overlay">
+        <div class="content-box">
+            <span class="our-love">Our Love</span>
+            <h1 class="save-date">Save the Date</h1>
+            <div class="divider"></div>
+
+            <!-- Short romantic poem -->
+            <div class="poem">
+                <span class="line">Two hearts,</span>
+                <span class="line">one promise,</span>
+                <span class="line">forever.</span>
             </div>
 
-            <p class="mt-6 text-sm uppercase tracking-[0.35em] text-cream-100/80">Friday, 14 November 2025</p>
-
-            <div class="mt-8 inline-block rounded-full border border-white/20 bg-white/5 px-4 py-3 text-xs uppercase tracking-[0.28em] text-cream-100/90">
-                We are getting married
-            </div>
-
-            <div class="mt-8 flex items-center justify-center gap-4">
-                <button id="musicToggle" class="inline-flex items-center gap-2 rounded-full border border-gold-500 bg-gold-500/10 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cream-50 transition hover:bg-gold-500/20">
-                    <i id="musicIcon" class="fa-solid fa-volume-high"></i>
-                    <span id="musicText">Music on</span>
-                </button>
-            </div>
-
-            <div class="mt-6 h-2 w-full overflow-hidden rounded-full bg-white/10">
-                <div id="redirectBar" class="h-full w-full rounded-full bg-gradient-to-r from-gold-500 to-cream-100 transition-all duration-1000 ease-linear"></div>
-            </div>
+            <p class="date-sub">11 · 12 · 2026</p>
         </div>
     </div>
 
-    <audio id="musicPlayer" autoplay loop preload="auto">
-        <source src="m2.mp3" type="audio/mpeg" />
-    </audio>
-
     <script>
-        const redirectUrl = 'invitation.html';
-        const redirectSeconds = 15;
-        const redirectTimer = document.getElementById('redirectTimer');
-        const redirectBar = document.getElementById('redirectBar');
-        const musicPlayer = document.getElementById('musicPlayer');
-        const musicToggle = document.getElementById('musicToggle');
-        const musicIcon = document.getElementById('musicIcon');
-        const musicText = document.getElementById('musicText');
-        let remainingSeconds = redirectSeconds;
-        let redirectInterval = null;
+        // Auto-redirect after 6 seconds (gives time to read the poem)
+        setTimeout(function() {
+            window.location.href = "secondpage.html";
+        }, 6000);
 
-        function startMusic() {
-            musicPlayer.volume = 0.35;
-            musicPlayer.play().catch(() => {
-                document.body.addEventListener('pointerdown', () => {
-                    musicPlayer.play().catch(() => {});
-                }, { once: true });
-            });
-        }
+        // Graceful video fallback: if video fails, keep the gradient background
+        const video = document.getElementById('heroVideo');
+        video.addEventListener('error', () => {
+            video.style.opacity = '0';
+        });
 
-        function toggleMusic() {
-            if (musicPlayer.paused) {
-                musicPlayer.play();
-                musicIcon.className = 'fa-solid fa-volume-high';
-                musicText.textContent = 'Music on';
-            } else {
-                musicPlayer.pause();
-                musicIcon.className = 'fa-solid fa-volume-xmark';
-                musicText.textContent = 'Music off';
-            }
-        }
-
-        function updateRedirect() {
-            remainingSeconds -= 1;
-            if (remainingSeconds <= 0) {
-                clearInterval(redirectInterval);
-                window.location.href = redirectUrl;
-                return;
-            }
-
-            redirectTimer.textContent = String(remainingSeconds);
-            const progress = (remainingSeconds / redirectSeconds) * 100;
-            redirectBar.style.width = `${progress}%`;
-        }
-
-        musicToggle.addEventListener('click', toggleMusic);
-        startMusic();
-        redirectInterval = setInterval(updateRedirect, 1000);
-        redirectBar.style.width = '100%';
+        // Ensure video plays on iOS / low-power mode
+        document.addEventListener('touchstart', () => {
+            video.play().catch(() => {});
+        }, { once: true });
     </script>
+
 </body>
 </html>
