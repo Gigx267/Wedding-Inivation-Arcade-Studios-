@@ -485,109 +485,28 @@
         <!-- ============================= -->
         <!-- CEREMONY, RECEPTION & SCHEDULE -->
         <!-- ============================= -->
-        <section class="section-soft px-6 py-12 text-center">
-            <div class="mx-auto max-w-5xl space-y-8">
-                <!-- Ceremony Card -->
-                <div class="info-card overflow-hidden p-6 text-center">
-                    <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
-                        <svg class="h-48 w-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M 20 25 Q 50 20 80 25" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
-                            <path d="M 120 20 Q 150 15 180 22" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
-                            <path d="M85 70 L85 180 M115 70 L115 180" stroke-width="1.5" stroke-linecap="round"/>
-                            <path d="M100 15 L80 70 L120 70 Z" stroke-width="1.8" stroke-linejoin="round"/>
-                            <path d="M100 3 L100 18 M95 8 L105 8" stroke-width="1.8" stroke-linecap="round"/>
-                            <path d="M92 90 C 92 80, 108 80, 108 90 L108 110 L92 110 Z" stroke-width="1.2"/>
-                            <path d="M97 95 C97 90, 103 90, 103 95 L104 102 L96 102 Z M100 102 L100 105" stroke-width="1"/>
-                            <circle cx="100" cy="130" r="10" stroke-width="1.2"/>
-                            <circle cx="100" cy="130" r="4" stroke-width="0.8" stroke-dasharray="1 1"/>
-                            <line x1="100" y1="120" x2="100" y2="140" stroke-width="0.8"/>
-                            <line x1="90" y1="130" x2="110" y2="130" stroke-width="0.8"/>
-                            <path d="M88 180 C88 152, 112 152, 112 180 Z" stroke-width="1.5"/>
-                            <path d="M94 180 C94 160, 106 160, 106 180 Z" stroke-width="1"/>
-                            <line x1="100" y1="160" x2="100" y2="180" stroke-width="1"/>
-                            <path d="M35 110 L85 100 M35 110 L35 180 L85 180" stroke-width="1.5"/>
-                            <path d="M35 110 L85 70" stroke-width="1.5"/>
-                            <path d="M42 108 L85 74 M52 106 L85 80 M62 104 L85 86" stroke-width="0.8" opacity="0.7"/>
-                            <path d="M45 130 C45 122, 57 122, 57 130 L57 155 L45 155 Z" stroke-width="1.2"/>
-                            <path d="M63 130 C63 122, 75 122, 75 130 L75 155 L63 155 Z" stroke-width="1.2"/>
-                            <path d="M165 110 L115 100 M165 110 L165 180 L115 180" stroke-width="1.5"/>
-                            <path d="M165 110 L115 70" stroke-width="1.5"/>
-                            <path d="M158 108 L115 74 M148 106 L115 80 M138 104 L115 86" stroke-width="0.8" opacity="0.7"/>
-                            <path d="M125 130 C125 122, 137 122, 137 130 L137 155 L125 155 Z" stroke-width="1.2"/>
-                            <path d="M143 130 C143 122, 155 122, 155 130 L155 155 L143 155 Z" stroke-width="1.2"/>
-                            <line x1="15" y1="180" x2="185" y2="180" stroke-width="1.8" stroke-linecap="round"/>
-                            <line x1="25" y1="184" x2="175" y2="184" stroke-width="1" stroke-dasharray="3 2"/>
-                            <line x1="40" y1="188" x2="160" y2="188" stroke-width="0.8" stroke-dasharray="2 3"/>
-                            <path d="M38 160 L42 178 M48 160 L52 178 M148 160 L152 178 M158 160 L162 178" stroke="#4E583E" stroke-width="0.6" opacity="0.6"/>
-                        </svg>
-                    </div>
+        <!-- Ceremony Card -->
+<div class="info-card overflow-hidden p-6 text-center">
+    <!-- Decorative Image -->
+    <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
+        <img 
+            src="cht.jpeg" 
+            alt="Wedding ceremony illustration"
+            class="h-48 w-48 object-cover rounded-xl"
+            loading="lazy"
+        />
+    </div>
 
-                    <h3 class="font-script text-4xl text-olive-800">Wedding Ceremony</h3>
-                    <p class="mt-2 text-sm font-semibold text-gold-600">3:00 pm</p>
-                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Church of Annunciation</p>
-                    <p class="mt-1 text-xs text-gray-500">1618 Texas Ave, Houston, TX 77003</p>
+    <h3 class="font-script text-4xl text-olive-800">Wedding Ceremony</h3>
+    <p class="mt-2 text-sm font-semibold text-gold-600">3:00 pm</p>
+    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Church of Annunciation</p>
+    <p class="mt-1 text-xs text-gray-500">1618 Texas Ave, Houston, TX 77003</p>
 
-                    <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        View location
-                    </button>
-                </div>
-
-                <!-- Dance and Celebration Card -->
-                <div class="info-card p-6 text-center">
-                    <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-xl text-olive-700">
-                        <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
-                    </div>
-                    <h3 class="font-script text-4xl text-olive-800">Dance & Celebration</h3>
-                    <p class="mt-2 text-sm font-semibold text-gold-600">5:00 pm</p>
-                    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Reception Venue</p>
-                    <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
-
-                    <button onclick="openLocationModal('venue')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
-                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                        View location
-                    </button>
-                </div>
-
-                <!-- Schedule Card -->
-                <div class="info-card p-6 text-center">
-                    <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
-
-                    <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-church" aria-hidden="true"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
-                        </div>
-
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-wine-glass" aria-hidden="true"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dance &amp; Celebration</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dress Code Card -->
-                <div class="info-card p-6 text-center">
-                    <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
-                    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
-
-                    <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
-                        <i class="fa-solid fa-user-tie" title="Elegant suit" aria-hidden="true"></i>
-                        <i class="fa-solid fa-user" title="Woman" aria-hidden="true"></i>
-                    </div>
-
-                    <p class="px-4 text-xs italic leading-relaxed text-gray-600">
-                        With love, we kindly ask that you avoid white and similar shades.
-                    </p>
-                </div>
-            </div>
-        </section>
+    <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        View location
+    </button>
+</div>
 
         <!-- ============================= -->
         <!-- GIFT SUGGESTION               -->
