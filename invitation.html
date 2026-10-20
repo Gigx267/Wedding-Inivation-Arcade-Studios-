@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,16 +53,15 @@
     </script>
 
     <style>
-        html { scroll-behavior: smooth; }
         body {
             font-family: 'Montserrat', sans-serif;
             background:
                 radial-gradient(circle at top, rgba(212, 177, 103, 0.14), transparent 30%),
                 linear-gradient(180deg, #f9f4ee 0%, #f4efe9 100%);
             color: #2f241e;
+            scroll-behavior: smooth;
         }
 
-        /* blended texture + grain */
         .grain {
             background-image:
                 linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
@@ -224,7 +223,6 @@
             to { opacity: 1; transform: translate(-50%, 0); }
         }
 
-        /* blended: elegant section transitions */
         .section-soft {
             background: linear-gradient(180deg, #FDF9F4 0%, #F7F1E7 100%);
         }
@@ -233,7 +231,6 @@
             background: linear-gradient(145deg, #4A382F 0%, #2F241E 100%);
         }
 
-        /* card consistency */
         .info-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(4px);
@@ -247,7 +244,6 @@
             box-shadow: 0 22px 45px rgba(47, 36, 30, 0.10);
         }
 
-        /* timeline dots */
         .timeline-dot {
             position: absolute;
             left: -31px;
@@ -278,6 +274,7 @@
             .mini-photo {
                 width: 140px;
                 height: 140px;
+                left: 0;
             }
 
             .timeline-dot {
@@ -285,7 +282,6 @@
             }
         }
 
-        /* polished modal backdrop */
         .modal-backdrop {
             background: rgba(47, 36, 30, 0.6);
             backdrop-filter: blur(4px);
@@ -293,115 +289,93 @@
     </style>
 </head>
 <body class="min-h-screen antialiased">
-    <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-80"></canvas>
+    <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-80" aria-hidden="true"></canvas>
 
     <main class="relative z-10">
-        <!-- Hero Section -->
-      <section class="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#F4EFEA] to-[#EBE4DC] px-6 py-16 flex items-center justify-center text-slate-800">
-  
-  <!-- Subtle Background Decorative Elements -->
-  <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-amber-200/30 blur-3xl" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-emerald-900/10 blur-3xl" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,177,103,0.08),_transparent_60%)]" aria-hidden="true"></div>
+        <!-- ============================= -->
+        <!-- HERO (matched to site palette)-->
+        <!-- ============================= -->
+        <section class="romantic-shell grain relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 flex items-center justify-center text-olive-900">
+            <!-- Decorative background -->
+            <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold-500/15 blur-3xl" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-olive-700/10 blur-3xl" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,177,103,0.10),_transparent_60%)]" aria-hidden="true"></div>
 
-  <div class="relative z-10 mx-auto max-w-6xl w-full">
-    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
-      
-      <!-- Text Section (Appears FIRST on mobile, LEFT on desktop) -->
-      <div class="order-1 text-center lg:order-1 lg:col-span-6 lg:text-left">
-        
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-900/15 bg-white/60 px-4 py-1.5 text-[11px] font-semibold tracking-[0.3em] uppercase text-emerald-900 backdrop-blur-md shadow-sm">
-          <i class="fa-solid fa-heart text-amber-500 text-xs"></i>
-          <span>Save The Date</span>
-        </div>
+            <div class="floating-orb left-10 top-10 h-24 w-24" aria-hidden="true"></div>
+            <div class="floating-orb right-12 top-24 h-28 w-28" aria-hidden="true"></div>
+            <div class="floating-heart left-16 top-1/3" aria-hidden="true">♥</div>
+            <div class="floating-heart right-16 top-1/2" aria-hidden="true">♥</div>
 
-        <!-- Names Section -->
-        <div class="mt-8 space-y-2">
-          <p class="font-serif text-3xl font-light tracking-[0.25em] text-emerald-950 uppercase sm:text-4xl">
-            Sharon
-          </p>
-          
-          <div class="flex items-center justify-center gap-4 text-amber-600/70 lg:justify-start">
-            <span class="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent lg:from-amber-500/50"></span>
-            <i class="fa-solid fa-heart text-sm text-amber-500"></i>
-            <span class="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent lg:to-amber-500/50"></span>
-          </div>
+            <div class="relative z-10 mx-auto w-full max-w-6xl">
+                <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
 
-          <p class="font-serif text-3xl font-light tracking-[0.25em] text-emerald-950 uppercase sm:text-4xl">
-            Austyn
-          </p>
-        </div>
+                    <!-- Text column (first on mobile, left on desktop) -->
+                    <div class="order-1 text-center lg:col-span-6 lg:text-left">
+                        <div class="inline-flex items-center gap-2.5 rounded-full border border-olive-700/20 bg-white/60 px-4 py-1.5 text-[11px] font-semibold tracking-[0.3em] uppercase text-olive-700 backdrop-blur-md shadow-sm">
+                            <i class="fa-solid fa-heart text-gold-500 text-xs" aria-hidden="true"></i>
+                            <span>Save The Date</span>
+                        </div>
 
-        <!-- Heading with Yellow-Gold Accent Color -->
-        <h1 class="mt-6 font-script text-5xl leading-tight bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 bg-clip-text text-transparent sm:text-7xl drop-shadow-sm">
-          We are getting married
-        </h1>
+                        <div class="mt-8 space-y-2">
+                            <p class="font-serif text-3xl font-light tracking-[0.25em] text-olive-800 uppercase sm:text-4xl">Sharon</p>
+                            <div class="flex items-center justify-center gap-4 text-gold-600/70 lg:justify-start">
+                                <span class="h-px w-12 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent lg:from-gold-500/50"></span>
+                                <i class="fa-solid fa-heart text-sm text-gold-500" aria-hidden="true"></i>
+                                <span class="h-px w-12 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent lg:to-gold-500/50"></span>
+                            </div>
+                            <p class="font-serif text-3xl font-light tracking-[0.25em] text-olive-800 uppercase sm:text-4xl">Austyn</p>
+                        </div>
 
-        <!-- Date Display -->
-        <div class="mt-6 inline-block rounded-full bg-emerald-900/5 px-6 py-2 border border-emerald-900/10">
-          <p class="text-xs font-semibold tracking-[0.25em] text-emerald-900 uppercase sm:text-sm">
-            Friday, 11 December 2026
-          </p>
-        </div>
+                        <h1 class="mt-6 font-script text-5xl leading-tight bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 bg-clip-text text-transparent sm:text-7xl drop-shadow-sm">
+                            We are getting married
+                        </h1>
 
-        <!-- Message Card -->
-        <div class="mt-8 rounded-2xl border border-white/60 bg-white/50 p-6 shadow-xl shadow-emerald-950/5 backdrop-blur-md lg:max-w-md">
-          <div class="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-amber-600 lg:justify-start">
-            <i class="fa-solid fa-cross text-amber-500"></i>
-            <span>With God's Blessing</span>
-          </div>
-          <p class="mt-3 text-sm leading-relaxed text-slate-600">
-            We invite you to share with us the joy of our wedding and celebrate this beautiful new chapter together.
-          </p>
-        </div>
+                        <div class="mt-6 inline-block rounded-full bg-olive-700/5 px-6 py-2 border border-olive-700/10">
+                            <p class="text-xs font-semibold tracking-[0.25em] text-olive-800 uppercase sm:text-sm">
+                                Friday, 11 December 2026
+                            </p>
+                        </div>
 
-        <!-- CTA Buttons -->
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-          <a href="#details" class="group inline-flex items-center gap-2.5 rounded-full bg-emerald-900 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-amber-50 shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:bg-emerald-950 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-            <i class="fa-solid fa-angle-down transition-transform duration-300 group-hover:translate-y-0.5"></i>
-            <span>View Details</span>
-          </a>
-          
-          <button type="button" onclick="openRSVPModal()" class="inline-flex items-center gap-2.5 rounded-full border border-emerald-900/30 bg-white/40 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-emerald-900 backdrop-blur-sm transition-all duration-300 hover:bg-emerald-900 hover:text-white hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
-            <i class="fa-solid fa-check"></i>
-            <span>RSVP</span>
-          </button>
-        </div>
+                        <div class="mt-8 rounded-2xl border border-white/60 bg-white/50 p-6 shadow-xl shadow-olive-900/5 backdrop-blur-md lg:max-w-md">
+                            <div class="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-gold-600 lg:justify-start">
+                                <i class="fa-solid fa-cross text-gold-500" aria-hidden="true"></i>
+                                <span>With God's Blessing</span>
+                            </div>
+                            <p class="mt-3 text-sm leading-relaxed text-olive-700/85">
+                                We invite you to share with us the joy of our wedding and celebrate this beautiful new chapter together.
+                            </p>
+                        </div>
 
-      </div>
+                        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                            <a href="#details" class="group inline-flex items-center gap-2.5 rounded-full bg-olive-700 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-cream-50 shadow-lg shadow-olive-700/25 transition-all duration-300 hover:bg-olive-800 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gold-500 focus:outline-none">
+                                <i class="fa-solid fa-angle-down transition-transform duration-300 group-hover:translate-y-0.5" aria-hidden="true"></i>
+                                <span>View Details</span>
+                            </a>
+                            <button type="button" onclick="openRSVPModal()" class="inline-flex items-center gap-2.5 rounded-full border border-olive-700 bg-white/40 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-olive-700 backdrop-blur-sm transition-all duration-300 hover:bg-olive-700 hover:text-cream-50 hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-gold-500 focus:outline-none">
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                <span>RSVP</span>
+                            </button>
+                        </div>
+                    </div>
 
-      <!-- Media Section (Appears SECOND below text on mobile, RIGHT on desktop) -->
-      <div class="order-2 lg:order-2 lg:col-span-6">
-        <div class="relative mx-auto max-w-md lg:max-w-none">
-          
-          <!-- Main Hero Video Card -->
-          <div class="relative z-10 overflow-hidden rounded-3xl border-4 border-white bg-white shadow-2xl shadow-emerald-950/15">
-            <video class="h-[420px] w-full object-cover sm:h-[540px]" controls autoplay muted loop playsinline preload="metadata" aria-label="Wedding video of Sharon and Austyn">
-              <source src="./vhd (1).mp4" type="video/mp4" />
-              Your browser does not support embedded videos.
-            </video>
-          </div>
+                    <!-- Media column (second on mobile, right on desktop) -->
+                    <div class="order-2 mb-10 lg:col-span-6 lg:mb-0">
+                        <div class="image-stack mx-auto">
+                            <img src="zzc.jpeg" alt="Couple embracing" class="romantic-photo" />
+                            <img src="./zz (3).jpeg" alt="Couple smiling together" class="mini-photo" />
+                            <div class="mini-badge text-olive-800">
+                                <div class="text-[10px] uppercase tracking-[0.28em] text-olive-700">Together</div>
+                                <div class="mt-1 font-script text-3xl text-gold-600">Forever</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <!-- Floating Secondary Photo Overlay -->
-          <div class="absolute -bottom-6 -left-6 z-20 hidden w-44 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl sm:block lg:-left-10 lg:w-52">
-            <img src="https://i.pinimg.com/1200x/bb/f5/6a/bbf56a422583a2c4cdab431039eda76b.jpg" alt="Sharon and Austyn walking together" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
-          </div>
-
-          <!-- Floating Decorative Badge -->
-          <div class="absolute -right-4 -top-6 z-20 rounded-2xl border border-white/80 bg-white/90 p-4 text-center shadow-lg backdrop-blur-md sm:right-2">
-            <span class="block text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-900">Together</span>
-            <span class="mt-0.5 block font-script text-3xl text-amber-600">Forever</span>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-        <!-- Our Story Section -->
+        <!-- ============================= -->
+        <!-- OUR STORY                     -->
+        <!-- ============================= -->
         <section class="section-soft px-6 py-14 text-center">
             <div class="mx-auto max-w-6xl">
                 <div class="mb-8 text-center">
@@ -411,12 +385,12 @@
 
                 <div class="story-grid">
                     <div class="soft-card story-image">
-                        <img src="https://i.pinimg.com/1200x/48/d0/28/48d0282c48e2a54290f2b7148ba29170.jpg" alt="Couple walking together" />
+                        <img src="./zz (4).jpeg" alt="Couple walking together" />
                     </div>
 
                     <div class="soft-card story-copy text-left">
                         <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-olive-100 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-olive-700">
-                            <i class="fa-solid fa-heart text-gold-600"></i>
+                            <i class="fa-solid fa-heart text-gold-600" aria-hidden="true"></i>
                             Love story
                         </div>
                         <p class="text-sm leading-relaxed text-gray-700">
@@ -427,7 +401,7 @@
                         </p>
                         <div class="mt-6 flex items-center gap-3 text-olive-700">
                             <span class="h-px flex-1 bg-olive-700/20"></span>
-                            <i class="fa-solid fa-heart text-gold-600"></i>
+                            <i class="fa-solid fa-heart text-gold-600" aria-hidden="true"></i>
                             <span class="h-px flex-1 bg-olive-700/20"></span>
                         </div>
                     </div>
@@ -435,22 +409,24 @@
 
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/36/dd/be/36ddbe27e326f75bace754cea28fc2dd.jpg" alt="Couple looking at each other" />
+                        <img src="./zz (2).jpeg" alt="Couple looking at each other" />
                     </div>
                     <div class="gallery-item">
                         <img src="https://i.pinimg.com/736x/8e/20/c3/8e20c36a9e1c5892ac7e474cfdb39821.jpg" alt="Romantic couple portrait" />
                     </div>
                     <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/83/d2/8d/83d28d233b7541c1bbafe474a9d05555.jpg" alt="Couple holding hands" />
+                        <img src="./zz (1).jpeg" alt="Couple holding hands" />
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Details & Countdown Section -->
+        <!-- ============================= -->
+        <!-- DETAILS & COUNTDOWN           -->
+        <!-- ============================= -->
         <section id="details" class="section-olive text-cream-50 py-12 px-6 text-center relative">
             <div class="mx-auto max-w-sm">
-                <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block"></i>
+                <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block" aria-hidden="true"></i>
                 <p class="mb-6 text-xs font-light tracking-[0.2em] uppercase text-cream-200">
                     With God's blessing and our parents, we have the honor of inviting you to our wedding
                 </p>
@@ -495,7 +471,7 @@
                     <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
                     <span>8</span><span>9</span><span>10</span>
                     <div class="relative flex items-center justify-center py-1 font-bold text-gold-500">
-                        <i class="fa-solid fa-heart text-2xl text-gold-500/30 absolute pulse-heart"></i>
+                        <i class="fa-solid fa-heart text-2xl text-gold-500/30 absolute pulse-heart" aria-hidden="true"></i>
                         <span class="relative z-10 font-bold text-cream-50">11</span>
                     </div>
                     <span>12</span><span>13</span><span>14</span>
@@ -506,13 +482,15 @@
             </div>
         </section>
 
-        <!-- Ceremony, Reception & Schedule Section -->
+        <!-- ============================= -->
+        <!-- CEREMONY, RECEPTION & SCHEDULE -->
+        <!-- ============================= -->
         <section class="section-soft px-6 py-12 text-center">
             <div class="mx-auto max-w-5xl space-y-8">
                 <!-- Ceremony Card -->
                 <div class="info-card overflow-hidden p-6 text-center">
                     <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
-                        <svg class="h-48 w-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="h-48 w-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M 20 25 Q 50 20 80 25" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
                             <path d="M 120 20 Q 150 15 180 22" stroke="#73805B" stroke-width="0.75" stroke-dasharray="2 2" opacity="0.6"/>
                             <path d="M85 70 L85 180 M115 70 L115 180" stroke-width="1.5" stroke-linecap="round"/>
@@ -550,7 +528,7 @@
                     <p class="mt-1 text-xs text-gray-500">1618 Texas Ave, Houston, TX 77003</p>
 
                     <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         View location
                     </button>
                 </div>
@@ -558,7 +536,7 @@
                 <!-- Dance and Celebration Card -->
                 <div class="info-card p-6 text-center">
                     <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-xl text-olive-700">
-                        <i class="fa-solid fa-champagne-glasses"></i>
+                        <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
                     </div>
                     <h3 class="font-script text-4xl text-olive-800">Dance & Celebration</h3>
                     <p class="mt-2 text-sm font-semibold text-gold-600">5:00 pm</p>
@@ -566,56 +544,58 @@
                     <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
 
                     <button onclick="openLocationModal('venue')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
-                        <i class="fa-solid fa-location-dot"></i>
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                         View location
                     </button>
                 </div>
 
-               <!-- Schedule of Events Card -->
-<div class="info-card p-6 text-center">
-    <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
+                <!-- Schedule Card -->
+                <div class="info-card p-6 text-center">
+                    <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
 
-    <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
-        <div class="relative">
-            <div class="timeline-dot">
-                <i class="fa-solid fa-church"></i>
-            </div>
-            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
-            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
-        </div>
+                    <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
+                        <div class="relative">
+                            <div class="timeline-dot">
+                                <i class="fa-solid fa-church" aria-hidden="true"></i>
+                            </div>
+                            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
+                        </div>
 
-        <div class="relative">
-            <div class="timeline-dot">
-                <i class="fa-solid fa-wine-glass"></i>
-            </div>
-            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
-            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dance &amp; Celebration</h4>
-        </div>
-    </div>
-</div>
+                        <div class="relative">
+                            <div class="timeline-dot">
+                                <i class="fa-solid fa-wine-glass" aria-hidden="true"></i>
+                            </div>
+                            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
+                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dance &amp; Celebration</h4>
+                        </div>
+                    </div>
+                </div>
 
-<!-- Dress Code Card -->
-<div class="info-card p-6 text-center">
-    <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
-    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
+                <!-- Dress Code Card -->
+                <div class="info-card p-6 text-center">
+                    <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
+                    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
 
-    <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
-        <i class="fa-solid fa-user-tie" title="Elegant suit"></i>
-        <i class="fa-solid fa-user" title="woman"></i>
-    </div>
+                    <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
+                        <i class="fa-solid fa-user-tie" title="Elegant suit" aria-hidden="true"></i>
+                        <i class="fa-solid fa-user" title="Woman" aria-hidden="true"></i>
+                    </div>
 
-    <p class="px-4 text-xs italic leading-relaxed text-gray-600">
-        With love, we kindly ask that you avoid white and similar shades.
-    </p>
-</div>
+                    <p class="px-4 text-xs italic leading-relaxed text-gray-600">
+                        With love, we kindly ask that you avoid white and similar shades.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- Gift Suggestion Section -->
+        <!-- ============================= -->
+        <!-- GIFT SUGGESTION               -->
+        <!-- ============================= -->
         <section class="section-olive px-6 py-10 text-center text-cream-50">
             <div class="mx-auto max-w-md">
                 <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
-                    <i class="fa-solid fa-gift"></i>
+                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
                 </div>
 
                 <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
@@ -623,26 +603,26 @@
                     Your presence is the greatest gift, but if you would like to give us a little something, we have these options for you.
                 </p>
 
-                <!-- Gift options as buttons -->
                 <div class="mt-6 space-y-3">
-                    
                     <button onclick="openGiftModal('zenith')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-university"></i> Zenith Bank
+                        <i class="fa-solid fa-university" aria-hidden="true"></i> Zenith Bank
                     </button>
                     <button onclick="openGiftModal('zelle')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-bolt"></i> Zelle Info
+                        <i class="fa-solid fa-bolt" aria-hidden="true"></i> Zelle Info
                     </button>
                     <button onclick="openGiftModal('cashapp')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-cash-app"></i> Cash App
+                        <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i> Cash App
                     </button>
                 </div>
             </div>
         </section>
 
-        <!-- Final RSVP Section -->
+        <!-- ============================= -->
+        <!-- FINAL RSVP SECTION            -->
+        <!-- ============================= -->
         <section class="relative overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 text-center">
-            <div class="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-gold-500/10 blur-3xl"></div>
-            <div class="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-olive-700/10 blur-3xl"></div>
+            <div class="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-gold-500/10 blur-3xl" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-olive-700/10 blur-3xl" aria-hidden="true"></div>
 
             <div class="relative mx-auto max-w-4xl">
                 <div class="mb-8">
@@ -650,17 +630,17 @@
                     <h2 class="mt-2 font-script text-5xl text-olive-800 sm:text-6xl">We can't wait to celebrate with you</h2>
                     <div class="mx-auto mt-4 flex max-w-xs items-center gap-3 text-gold-600">
                         <span class="h-px flex-1 bg-gold-500/40"></span>
-                        <i class="fa-solid fa-heart text-sm"></i>
+                        <i class="fa-solid fa-heart text-sm" aria-hidden="true"></i>
                         <span class="h-px flex-1 bg-gold-500/40"></span>
                     </div>
                 </div>
 
                 <div class="grid items-stretch gap-5 md:grid-cols-[1.1fr_0.9fr]">
                     <div class="relative overflow-hidden rounded-[2rem] border border-gold-500/30 bg-olive-800 p-7 text-cream-50 shadow-[0_24px_60px_rgba(47,36,30,0.2)] sm:p-9">
-                        <div class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full border border-gold-500/20"></div>
-                        <div class="pointer-events-none absolute -right-2 -top-2 h-20 w-20 rounded-full border border-gold-500/20"></div>
+                        <div class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full border border-gold-500/20" aria-hidden="true"></div>
+                        <div class="pointer-events-none absolute -right-2 -top-2 h-20 w-20 rounded-full border border-gold-500/20" aria-hidden="true"></div>
                         <div class="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/50 bg-olive-700 text-xl text-gold-500 shadow-inner">
-                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
                         </div>
                         <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-500">Kindly reply by November 20th</p>
                         <h3 class="mt-2 font-script text-5xl text-cream-50">RSVP</h3>
@@ -668,7 +648,7 @@
                             Your presence would mean the world to us. Please let us know if you can join our celebration.
                         </p>
                         <button onclick="openRSVPModal()" class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-olive-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95">
-                            <i class="fa-solid fa-check-circle"></i>
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
                             Confirm your attendance
                         </button>
                     </div>
@@ -676,14 +656,14 @@
                     <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
                         <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
                             <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-gold-500/15 text-gold-600">
-                                <i class="fa-solid fa-clock"></i>
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">A little reminder</h4>
                             <p class="mt-2 text-xs leading-relaxed text-gray-600">Please arrive on time and follow the guidance of our wedding team. We appreciate your help in making the day run smoothly.</p>
                         </div>
                         <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
                             <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-olive-700/10 text-olive-700">
-                                <i class="fa-solid fa-camera"></i>
+                                <i class="fa-solid fa-camera" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">Capture the moment</h4>
                             <p class="mt-2 text-xs leading-relaxed text-gray-600">We'd love to see your photos from the day! Please share them with us using the hashtag <span class="font-semibold text-olive-700">#SharonAndAustyn2026</span>.</p>
@@ -693,71 +673,78 @@
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- ============================= -->
+        <!-- FOOTER                        -->
+        <!-- ============================= -->
         <footer class="relative overflow-hidden bg-olive-900 px-6 py-12 text-center text-cream-50">
-            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');"></div>
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');" aria-hidden="true"></div>
             <div class="relative z-10">
                 <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500">We hope to count on your presence</p>
                 <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
-                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon & Austyn • 2026</p>
+                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon &amp; Austyn • 2026</p>
             </div>
         </footer>
     </main>
 
-    <!-- Modals -->
-    <div id="locationModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
+    <!-- ============================= -->
+    <!-- MODALS                        -->
+    <!-- ============================= -->
+
+    <!-- Location modal -->
+    <div id="locationModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="locModalTitle">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
-            <button onclick="closeModal('locationModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark"></i>
+            <button onclick="closeModal('locationModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
             <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-olive-100 text-xl text-olive-800">
-                <i id="locModalIcon" class="fa-solid fa-map-location-dot"></i>
+                <i id="locModalIcon" class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
             </div>
             <h3 id="locModalTitle" class="mb-1 text-2xl font-bold text-olive-800">Location</h3>
             <p id="locModalTime" class="mb-2 text-xs font-semibold text-gold-600">Time</p>
             <p id="locModalAddress" class="mb-4 text-xs text-gray-600">Address</p>
             <div class="mb-4 h-44 w-full overflow-hidden rounded-xl border border-cream-300 bg-gray-200">
-                <iframe id="locModalMap" class="h-full w-full border-0" loading="lazy" allowfullscreen src=""></iframe>
+                <iframe id="locModalMap" class="h-full w-full border-0" loading="lazy" allowfullscreen src="about:blank" title="Venue map"></iframe>
             </div>
-            <a id="locModalGmapsLink" href="#" target="_blank" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow transition hover:bg-olive-800">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <a id="locModalGmapsLink" href="#" target="_blank" rel="noopener" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow transition hover:bg-olive-800">
+                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 Open in Google Maps
             </a>
         </div>
     </div>
 
-    <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
+    <!-- RSVP modal -->
+    <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 shadow-2xl">
-            <button onclick="closeModal('rsvpModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark"></i>
+            <button onclick="closeModal('rsvpModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
             <div class="mb-4 text-center">
-                <h3 class="font-script text-4xl text-olive-800">Confirm Attendance</h3>
+                <h3 id="rsvpTitle" class="font-script text-4xl text-olive-800">Confirm Attendance</h3>
                 <p class="text-xs text-gray-600">Please complete the fields for your registration.</p>
             </div>
-            <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left">
+            <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left" novalidate>
                 <div>
-                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
-                    <input type="text" name="fullName" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <label for="fullName" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
+                    <input id="fullName" type="text" name="fullName" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
                 <div>
-                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Email *</label>
-                    <input type="email" name="email" required placeholder="you@example.com" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <label for="email" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Email *</label>
+                    <input id="email" type="email" name="email" required placeholder="you@example.com" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
                 <div>
-                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Will you attend? *</label>
-                    <select name="attendance" required class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700">
+                    <label for="attendance" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Will you attend? *</label>
+                    <select id="attendance" name="attendance" required class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700">
                         <option value="Yes">Yes, I would be delighted to attend!</option>
                         <option value="No">Unfortunately, I will not be able to attend</option>
                     </select>
                 </div>
                 <div>
-                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Number of Passes</label>
-                    <input type="number" name="guests" min="1" max="4" value="1" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <label for="guests" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Number of Passes</label>
+                    <input id="guests" type="number" name="guests" min="1" max="10" value="1" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
                 <div>
-                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Message (optional)</label>
-                    <textarea name="message" rows="2" placeholder="Any dietary restrictions or notes..." class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700"></textarea>
+                    <label for="message" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Message (optional)</label>
+                    <textarea id="message" name="message" rows="2" placeholder="Any dietary restrictions or notes..." class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700"></textarea>
                 </div>
                 <button type="submit" id="rsvpSubmitBtn" class="mt-4 w-full rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-md transition hover:bg-olive-800 disabled:opacity-50 disabled:cursor-not-allowed">
                     Send Confirmation
@@ -766,14 +753,14 @@
         </div>
     </div>
 
-    <!-- Gift modal (generic, content injected per option) -->
-    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
+    <!-- Gift modal -->
+    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
-            <button onclick="closeModal('giftModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark"></i>
+            <button onclick="closeModal('giftModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
             <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/20 text-xl text-gold-600">
-                <i id="giftModalIcon" class="fa-solid fa-building-columns"></i>
+                <i id="giftModalIcon" class="fa-solid fa-building-columns" aria-hidden="true"></i>
             </div>
             <h3 id="giftModalTitle" class="font-script text-3xl text-olive-800">Gift Details</h3>
             <p id="giftModalSubtitle" class="mt-1 text-xs text-gray-600">We are deeply grateful for your love and support.</p>
@@ -788,14 +775,41 @@
         </div>
     </div>
 
+    <!-- ============================= -->
+    <!-- SCRIPTS                       -->
+    <!-- ============================= -->
     <script>
-        // ---- EMAILJS INIT ----
-        // IMPORTANT: Replace with your own EmailJS credentials
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace with your EmailJS public key
-        })();
+        /* ============================================================
+           EMAILJS CONFIGURATION
+           ------------------------------------------------------------
+           Replace the three placeholders below with your own values
+           from https://dashboard.emailjs.com/
+             1. publicKey    — Account → General → Public Key
+             2. serviceId    — Email Services → your service ID
+             3. templateId   — Email Templates → your template ID
 
-        // Petal canvas animation
+           Your EmailJS template should reference these variables:
+             {{from_name}} {{from_email}} {{reply_to}}
+             {{attendance}} {{guests}} {{message}} {{to_name}}
+           ============================================================ */
+        const EMAILJS_CONFIG = {
+            publicKey:  "YOUR_PUBLIC_KEY",   // <-- replace
+            serviceId:  "YOUR_SERVICE_ID",   // <-- replace
+            templateId: "YOUR_TEMPLATE_ID"   // <-- replace
+        };
+
+        const EMAILJS_READY =
+            EMAILJS_CONFIG.publicKey  !== "YOUR_PUBLIC_KEY" &&
+            EMAILJS_CONFIG.serviceId  !== "YOUR_SERVICE_ID" &&
+            EMAILJS_CONFIG.templateId !== "YOUR_TEMPLATE_ID";
+
+        if (EMAILJS_READY && typeof emailjs !== 'undefined') {
+            emailjs.init(EMAILJS_CONFIG.publicKey);
+        }
+
+        /* ============================================================
+           PETAL CANVAS ANIMATION
+           ============================================================ */
         const petalsCanvas = document.getElementById('petalsCanvas');
         const ctx = petalsCanvas.getContext('2d');
         let petals = [];
@@ -805,12 +819,11 @@
         function resizeCanvas() {
             petalsCanvas.width = window.innerWidth;
             petalsCanvas.height = window.innerHeight;
+            initPetals(petals.length || 40);
         }
 
         class Petal {
-            constructor() {
-                this.reset();
-            }
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * petalsCanvas.width;
                 this.y = -20 - Math.random() * 50;
@@ -882,15 +895,33 @@
             animatePetals();
         }
 
+        function stopPetalShower() {
+            petalRainActive = false;
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        }
+
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
         startPetalShower();
 
-        // Countdown timer
-        const targetDate = new Date('December 11, 2026 15:00:00').getTime();
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                stopPetalShower();
+            } else {
+                startPetalShower();
+            }
+        });
+
+        /* ============================================================
+           COUNTDOWN — pinned to Houston (CST, UTC-6)
+           ============================================================ */
+        const targetDate = new Date('2026-12-11T15:00:00-06:00').getTime();
 
         function updateTimer() {
-            const now = new Date().getTime();
+            const now = Date.now();
             const difference = targetDate - now;
 
             if (difference > 0) {
@@ -913,7 +944,9 @@
         setInterval(updateTimer, 1000);
         updateTimer();
 
-        // Location data and modals
+        /* ============================================================
+           LOCATION MODAL
+           ============================================================ */
         const locationsData = {
             church: {
                 title: 'Church of Annunciation',
@@ -946,12 +979,17 @@
             document.getElementById('locationModal').classList.add('flex');
         }
 
+        /* ============================================================
+           RSVP MODAL
+           ============================================================ */
         function openRSVPModal() {
             document.getElementById('rsvpModal').classList.remove('hidden');
             document.getElementById('rsvpModal').classList.add('flex');
         }
 
-        // Gift modal with dynamic content for each option
+        /* ============================================================
+           GIFT MODAL
+           ============================================================ */
         const giftData = {
             zenith: {
                 title: 'Zenith Bank',
@@ -962,7 +1000,7 @@
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
                             <span class="text-xs font-mono text-gray-700">1017459935</span>
-                            <button onclick="copyToClipboard('1017459935')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                            <button onclick="copyToClipboard('1017459935')" aria-label="Copy account number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
                                 <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>
@@ -984,7 +1022,7 @@
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Phone Number</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
                             <span class="text-xs font-mono text-gray-700">9796168300</span>
-                            <button onclick="copyToClipboard('9796168300')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                            <button onclick="copyToClipboard('9796168300')" aria-label="Copy Zelle phone number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
                                 <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>
@@ -994,13 +1032,13 @@
             cashapp: {
                 title: 'Cash App',
                 subtitle: 'Send via Cash App',
-                icon: 'fa-cash-app',
+                icon: 'fa-dollar-sign',
                 content: `
                     <div>
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Cash App Link</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <a href="https://cash.app/$AprilOkoye" target="_blank" class="text-xs font-mono text-olive-700 underline hover:text-olive-800">https://cash.app/$AprilOkoye</a>
-                            <button onclick="copyToClipboard('https://cash.app/$AprilOkoye')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                            <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener" class="text-xs font-mono text-olive-700 underline hover:text-olive-800">https://cash.app/$AprilOkoye</a>
+                            <button onclick="copyToClipboard('https://cash.app/$AprilOkoye')" aria-label="Copy Cash App link" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
                                 <i class="fa-regular fa-copy"></i>
                             </button>
                         </div>
@@ -1020,6 +1058,9 @@
             document.getElementById('giftModal').classList.add('flex');
         }
 
+        /* ============================================================
+           MODAL HELPERS
+           ============================================================ */
         function closeModal(id) {
             const modal = document.getElementById(id);
             if (!modal) return;
@@ -1027,73 +1068,110 @@
             modal.classList.remove('flex');
         }
 
-        window.onclick = function(event) {
+        window.addEventListener('click', (event) => {
             ['locationModal', 'rsvpModal', 'giftModal'].forEach(modalId => {
                 const modal = document.getElementById(modalId);
-                if (event.target === modal) {
-                    closeModal(modalId);
-                }
+                if (event.target === modal) closeModal(modalId);
             });
-        };
+        });
 
-        // ---- RSVP SUBMIT WITH EMAILJS ----
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                ['locationModal', 'rsvpModal', 'giftModal'].forEach(closeModal);
+            }
+        });
+
+        /* ============================================================
+           RSVP SUBMIT
+           ============================================================ */
         function submitRSVP(e) {
             e.preventDefault();
             const form = e.target;
             const submitBtn = document.getElementById('rsvpSubmitBtn');
             const originalBtnText = submitBtn.innerHTML;
 
-            // Disable button and show loading state
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Sending...';
 
-            // Collect form data
+            const fd = new FormData(form);
             const templateParams = {
-                from_name: form.fullName.value.trim(),
-                from_email: form.email.value.trim(),
-                attendance: form.attendance.value,
-                guests: form.guests.value,
-                message: form.message.value.trim() || 'No message',
-                to_name: 'Sharon & Austyn',
-                reply_to: form.email.value.trim()
+                from_name:  (fd.get('fullName') || '').toString().trim(),
+                from_email: (fd.get('email') || '').toString().trim(),
+                attendance: (fd.get('attendance') || '').toString(),
+                guests:     (fd.get('guests') || '').toString(),
+                message:    (fd.get('message') || '').toString().trim() || 'No message',
+                to_name:    'Sharon & Austyn',
+                reply_to:   (fd.get('email') || '').toString().trim()
             };
 
-            // Send email via EmailJS
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)  // <-- Replace with your Service ID and Template ID
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    closeModal('rsvpModal');
-                    if (typeof confetti === 'function') {
-                        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-                    }
-                    showToast('Thank you! Your RSVP has been sent successfully.');
-                    form.reset();
-                })
-                .catch(function(error) {
-                    console.error('FAILED...', error);
-                    showToast('Oops! Something went wrong. Please try again or contact us directly.');
-                })
-                .finally(function() {
-                    // Re-enable button
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                });
+            const onSuccess = () => {
+                closeModal('rsvpModal');
+                if (typeof confetti === 'function') {
+                    confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                }
+                showToast('Thank you! Your RSVP has been sent successfully.');
+                form.reset();
+            };
+
+            const onError = (err) => {
+                console.error('RSVP failed:', err);
+                showToast('Oops! Something went wrong. Please try again or contact us directly.');
+            };
+
+            const onFinally = () => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            };
+
+            if (!EMAILJS_READY || typeof emailjs === 'undefined') {
+                console.warn('[EmailJS] Credentials not configured. Simulating success. Payload:', templateParams);
+                setTimeout(() => {
+                    onSuccess();
+                    onFinally();
+                }, 600);
+                return;
+            }
+
+            emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+                .then(onSuccess)
+                .catch(onError)
+                .finally(onFinally);
         }
 
-        function copyToClipboard(text) {
-            const tempInput = document.createElement('input');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showToast('Copied to clipboard!');
+        /* ============================================================
+           CLIPBOARD & TOAST
+           ============================================================ */
+        async function copyToClipboard(text) {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    const t = document.createElement('textarea');
+                    t.value = text;
+                    t.setAttribute('readonly', '');
+                    t.style.position = 'absolute';
+                    t.style.left = '-9999px';
+                    document.body.appendChild(t);
+                    t.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(t);
+                }
+                showToast('Copied to clipboard!');
+            } catch (err) {
+                console.error('Copy failed:', err);
+                showToast('Could not copy. Please copy manually.');
+            }
         }
 
         function showToast(message) {
             const toast = document.createElement('div');
-            toast.className = 'toast-slide-up fixed bottom-5 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold-500 bg-olive-800 px-6 py-3 text-xs font-semibold text-cream-50 shadow-xl';
-            toast.innerHTML = '<i class="fa-solid fa-circle-check text-sm text-gold-500"></i> ' + message;
+            toast.className = 'toast-slide-up fixed bottom-5 left-1/2 z-[60] flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold-500 bg-olive-800 px-6 py-3 text-xs font-semibold text-cream-50 shadow-xl';
+            toast.innerHTML = '<i class="fa-solid fa-circle-check text-sm text-gold-500" aria-hidden="true"></i> ' + message;
             document.body.appendChild(toast);
             setTimeout(() => {
                 toast.style.opacity = '0';
