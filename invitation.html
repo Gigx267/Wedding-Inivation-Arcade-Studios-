@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nadia & Austin | Wedding Invitation</title>
+    <title>Sharon & Austyn | Wedding Invitation</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -295,70 +297,109 @@
 
     <main class="relative z-10">
         <!-- Hero Section -->
-        <section class="romantic-shell grain min-h-screen flex items-center justify-center px-5 py-10 text-center relative overflow-hidden">
-            <div class="floating-orb left-10 top-10 h-24 w-24"></div>
-            <div class="floating-orb right-12 top-24 h-28 w-28"></div>
-            <div class="floating-heart left-16 top-1/3">♥</div>
-            <div class="floating-heart right-16 top-1/2">♥</div>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,177,103,0.18),_transparent_35%)]"></div>
+      <section class="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-[#FAF8F5] via-[#F4EFEA] to-[#EBE4DC] px-6 py-16 flex items-center justify-center text-slate-800">
+  
+  <!-- Subtle Background Decorative Elements -->
+  <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-amber-200/30 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-emerald-900/10 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,177,103,0.08),_transparent_60%)]" aria-hidden="true"></div>
 
-            <div class="relative w-full max-w-6xl items-center gap-12 lg:grid lg:grid-cols-[1.05fr_0.95fr]">
-                <div class="order-2 text-center lg:order-1 lg:text-left">
-                    <div class="inline-flex items-center gap-2 rounded-full border border-olive-700/20 bg-white/50 px-3 py-1 text-[10px] tracking-[0.35em] uppercase text-olive-700 backdrop-blur-sm">
-                        <i class="fa-solid fa-heart text-gold-500"></i>
-                        Save the date
-                    </div>
+  <div class="relative z-10 mx-auto max-w-6xl w-full">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+      
+      <!-- Text Section (Appears FIRST on mobile, LEFT on desktop) -->
+      <div class="order-1 text-center lg:order-1 lg:col-span-6 lg:text-left">
+        
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2.5 rounded-full border border-emerald-900/15 bg-white/60 px-4 py-1.5 text-[11px] font-semibold tracking-[0.3em] uppercase text-emerald-900 backdrop-blur-md shadow-sm">
+          <i class="fa-solid fa-heart text-amber-500 text-xs"></i>
+          <span>Save The Date</span>
+        </div>
 
-                    <div class="mt-6">
-                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Nadia</p>
-                        <div class="my-3 flex items-center justify-center gap-4 text-gold-600 lg:justify-start">
-                            <span class="w-8 h-px bg-gold-500/60"></span>
-                            <i class="fa-solid fa-heart text-lg"></i>
-                            <span class="w-8 h-px bg-gold-500/60"></span>
-                        </div>
-                        <p class="font-serif text-2xl tracking-[0.35em] text-olive-700 uppercase">Austin</p>
-                    </div>
+        <!-- Names Section -->
+        <div class="mt-8 space-y-2">
+          <p class="font-serif text-3xl font-light tracking-[0.25em] text-emerald-950 uppercase sm:text-4xl">
+            Sharon
+          </p>
+          
+          <div class="flex items-center justify-center gap-4 text-amber-600/70 lg:justify-start">
+            <span class="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent lg:from-amber-500/50"></span>
+            <i class="fa-solid fa-heart text-sm text-amber-500"></i>
+            <span class="h-px w-12 bg-gradient-to-r from-transparent via-amber-500/50 to-transparent lg:to-amber-500/50"></span>
+          </div>
 
-                    <h1 class="mt-8 font-script text-6xl text-olive-900 leading-none sm:text-7xl">We are getting married</h1>
+          <p class="font-serif text-3xl font-light tracking-[0.25em] text-emerald-950 uppercase sm:text-4xl">
+            Austyn
+          </p>
+        </div>
 
-                    <p class="mt-5 text-sm sm:text-base text-olive-700/80 tracking-[0.2em] uppercase">
-                        Saturday, 11 December 2026
-                    </p>
+        <!-- Heading with Yellow-Gold Accent Color -->
+        <h1 class="mt-6 font-script text-5xl leading-tight bg-gradient-to-r from-amber-500 via-amber-600 to-yellow-600 bg-clip-text text-transparent sm:text-7xl drop-shadow-sm">
+          We are getting married
+        </h1>
 
-                    <div class="mt-8 rounded-[2rem] border border-olive-700/10 bg-white/70 p-5 shadow-soft backdrop-blur-sm lg:max-w-md">
-                        <div class="flex items-center justify-center gap-2 text-gold-600 text-xs uppercase tracking-[0.35em] lg:justify-start">
-                            <i class="fa-solid fa-cross"></i>
-                            <span>With God's blessing</span>
-                        </div>
-                        <p class="mt-4 text-sm leading-relaxed text-olive-700/85">
-                            We invite you to share with us the joy of our religious wedding and celebrate this new chapter together.
-                        </p>
-                    </div>
+        <!-- Date Display -->
+        <div class="mt-6 inline-block rounded-full bg-emerald-900/5 px-6 py-2 border border-emerald-900/10">
+          <p class="text-xs font-semibold tracking-[0.25em] text-emerald-900 uppercase sm:text-sm">
+            Friday, 11 December 2026
+          </p>
+        </div>
 
-                    <div class="mt-8 flex justify-center gap-4 lg:justify-start">
-                        <a href="#details" class="inline-flex items-center gap-2 rounded-full bg-olive-700 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-cream-50 shadow-lg shadow-olive-700/25 transition hover:bg-olive-800">
-                            <i class="fa-solid fa-angle-down"></i>
-                            View details
-                        </a>
-                        <button onclick="openRSVPModal()" class="inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-3 text-[10px] font-semibold uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-cream-50">
-                            <i class="fa-solid fa-check"></i>
-                            RSVP
-                        </button>
-                    </div>
-                </div>
+        <!-- Message Card -->
+        <div class="mt-8 rounded-2xl border border-white/60 bg-white/50 p-6 shadow-xl shadow-emerald-950/5 backdrop-blur-md lg:max-w-md">
+          <div class="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-amber-600 lg:justify-start">
+            <i class="fa-solid fa-cross text-amber-500"></i>
+            <span>With God's Blessing</span>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">
+            We invite you to share with us the joy of our wedding and celebrate this beautiful new chapter together.
+          </p>
+        </div>
 
-                <div class="order-1 mb-10 lg:order-2 lg:mb-0">
-                    <div class="image-stack mx-auto">
-                        <img src="https://i.pinimg.com/736x/cb/5f/2b/cb5f2badaa8fefedebbf07cbe9c70e07.jpg" alt="Couple embracing" class="romantic-photo" />
-                        <img src="https://i.pinimg.com/1200x/a2/8b/7f/a28b7f1fc44cdc15a28ef271497be5f9.jpg" alt="Couple smiling together" class="mini-photo" />
-                        <div class="mini-badge text-olive-800">
-                            <div class="text-[10px] uppercase tracking-[0.28em] text-olive-700">Together</div>
-                            <div class="mt-1 font-script text-3xl text-gold-600">Forever</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- CTA Buttons -->
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+          <a href="#details" class="group inline-flex items-center gap-2.5 rounded-full bg-emerald-900 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-amber-50 shadow-lg shadow-emerald-900/20 transition-all duration-300 hover:bg-emerald-950 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            <i class="fa-solid fa-angle-down transition-transform duration-300 group-hover:translate-y-0.5"></i>
+            <span>View Details</span>
+          </a>
+          
+          <button type="button" onclick="openRSVPModal()" class="inline-flex items-center gap-2.5 rounded-full border border-emerald-900/30 bg-white/40 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-emerald-900 backdrop-blur-sm transition-all duration-300 hover:bg-emerald-900 hover:text-white hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-amber-500 focus:outline-none">
+            <i class="fa-solid fa-check"></i>
+            <span>RSVP</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Media Section (Appears SECOND below text on mobile, RIGHT on desktop) -->
+      <div class="order-2 lg:order-2 lg:col-span-6">
+        <div class="relative mx-auto max-w-md lg:max-w-none">
+          
+          <!-- Main Hero Video Card -->
+          <div class="relative z-10 overflow-hidden rounded-3xl border-4 border-white bg-white shadow-2xl shadow-emerald-950/15">
+            <video class="h-[420px] w-full object-cover sm:h-[540px]" controls autoplay muted loop playsinline preload="metadata" aria-label="Wedding video of Sharon and Austyn">
+              <source src="./vxd.mp4" type="video/mp4" />
+              Your browser does not support embedded videos.
+            </video>
+          </div>
+
+          <!-- Floating Secondary Photo Overlay -->
+          <div class="absolute -bottom-6 -left-6 z-20 hidden w-44 overflow-hidden rounded-2xl border-4 border-white bg-white shadow-xl sm:block lg:-left-10 lg:w-52">
+            <img src="https://i.pinimg.com/1200x/bb/f5/6a/bbf56a422583a2c4cdab431039eda76b.jpg" alt="Sharon and Austyn walking together" class="h-56 w-full object-cover" loading="lazy" decoding="async" />
+          </div>
+
+          <!-- Floating Decorative Badge -->
+          <div class="absolute -right-4 -top-6 z-20 rounded-2xl border border-white/80 bg-white/90 p-4 text-center shadow-lg backdrop-blur-md sm:right-2">
+            <span class="block text-[10px] font-bold uppercase tracking-[0.25em] text-emerald-900">Together</span>
+            <span class="mt-0.5 block font-script text-3xl text-amber-600">Forever</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         <!-- Our Story Section -->
         <section class="section-soft px-6 py-14 text-center">
@@ -411,11 +452,11 @@
             <div class="mx-auto max-w-sm">
                 <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block"></i>
                 <p class="mb-6 text-xs font-light tracking-[0.2em] uppercase text-cream-200">
-                    With God's blessing and our parents, we have the honor of inviting you to our religious wedding
+                    With God's blessing and our parents, we have the honor of inviting you to our wedding
                 </p>
 
                 <div class="my-4 flex items-center justify-between border-y border-cream-100/30 py-3 text-cream-100">
-                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Saturday</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Friday</span>
                     <span class="px-2 font-serif text-4xl font-bold text-gold-500">11</span>
                     <span class="text-[10px] uppercase tracking-[0.25em] font-medium">December 2026</span>
                 </div>
@@ -468,7 +509,7 @@
         <!-- Ceremony, Reception & Schedule Section -->
         <section class="section-soft px-6 py-12 text-center">
             <div class="mx-auto max-w-5xl space-y-8">
-                <!-- Religious Ceremony Card -->
+                <!-- Ceremony Card -->
                 <div class="info-card overflow-hidden p-6 text-center">
                     <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
                         <svg class="h-48 w-48 text-olive-800" viewBox="0 0 200 220" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -503,10 +544,10 @@
                         </svg>
                     </div>
 
-                    <h3 class="font-script text-4xl text-olive-800">Religious Ceremony</h3>
+                    <h3 class="font-script text-4xl text-olive-800">Wedding Ceremony</h3>
                     <p class="mt-2 text-sm font-semibold text-gold-600">3:00 pm</p>
                     <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Church of Annunciation</p>
-                    <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
+                    <p class="mt-1 text-xs text-gray-500">1618 Texas Ave, Houston, TX 77003</p>
 
                     <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
                         <i class="fa-solid fa-location-dot"></i>
@@ -514,12 +555,12 @@
                     </button>
                 </div>
 
-                <!-- Reception Card -->
+                <!-- Dance and Celebration Card -->
                 <div class="info-card p-6 text-center">
                     <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-xl text-olive-700">
                         <i class="fa-solid fa-champagne-glasses"></i>
                     </div>
-                    <h3 class="font-script text-4xl text-olive-800">Reception</h3>
+                    <h3 class="font-script text-4xl text-olive-800">Dance & Celebration</h3>
                     <p class="mt-2 text-sm font-semibold text-gold-600">5:00 pm</p>
                     <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Reception Venue</p>
                     <p class="mt-1 text-xs text-gray-500">Houston, Texas</p>
@@ -530,102 +571,69 @@
                     </button>
                 </div>
 
-                <!-- Schedule of Events Card -->
-                <div class="info-card p-6 text-center">
-                    <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
+               <!-- Schedule of Events Card -->
+<div class="info-card p-6 text-center">
+    <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
 
-                    <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-church"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
-                        </div>
+    <div class="relative mx-auto mt-8 max-w-xs border-l-2 border-olive-700/30 pl-6 text-left space-y-8">
+        <div class="relative">
+            <div class="timeline-dot">
+                <i class="fa-solid fa-church"></i>
+            </div>
+            <span class="block text-xs font-bold text-gold-600">3:00 pm</span>
+            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Church Ceremony</h4>
+        </div>
 
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-camera"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">4:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Photo Time</h4>
-                        </div>
+        <div class="relative">
+            <div class="timeline-dot">
+                <i class="fa-solid fa-wine-glass"></i>
+            </div>
+            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
+            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dance &amp; Celebration</h4>
+        </div>
+    </div>
+</div>
 
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-wine-glass"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">5:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Welcome Cocktail</h4>
-                        </div>
+<!-- Dress Code Card -->
+<div class="info-card p-6 text-center">
+    <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
+    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
 
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-utensils"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">6:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dinner</h4>
-                        </div>
+    <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
+        <i class="fa-solid fa-user-tie" title="Elegant suit"></i>
+        <i class="fa-solid fa-user" title="woman"></i>
+    </div>
 
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-person-dancing"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">7:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">First Dance & Toasts</h4>
-                        </div>
-
-                        <div class="relative">
-                            <div class="timeline-dot">
-                                <i class="fa-solid fa-music"></i>
-                            </div>
-                            <span class="block text-xs font-bold text-gold-600">8:00 pm</span>
-                            <h4 class="text-sm font-bold uppercase tracking-wide text-gray-800">Dancing & Celebration</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dress Code Card -->
-                <div class="info-card p-6 text-center">
-                    <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
-                    <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
-
-                    <div class="my-4 flex items-center justify-center gap-6 text-4xl text-olive-700">
-                        <i class="fa-solid fa-user-tie" title="Elegant suit"></i>
-                        <i class="fa-solid fa-person-dress" title="Evening dress"></i>
-                    </div>
-
-                    <p class="px-4 text-xs italic leading-relaxed text-gray-600">
-                        With love, we kindly ask that you avoid white and similar shades.
-                    </p>
-                </div>
+    <p class="px-4 text-xs italic leading-relaxed text-gray-600">
+        With love, we kindly ask that you avoid white and similar shades.
+    </p>
+</div>
             </div>
         </section>
 
         <!-- Gift Suggestion Section -->
         <section class="section-olive px-6 py-10 text-center text-cream-50">
-            <div class="mx-auto max-w-xs">
+            <div class="mx-auto max-w-md">
                 <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
                     <i class="fa-solid fa-gift"></i>
                 </div>
 
                 <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
                 <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
-                    Your presence is the greatest gift, but if you would like to give us a little something, we have this option for you.
+                    Your presence is the greatest gift, but if you would like to give us a little something, we have these options for you.
                 </p>
 
-                <div class="mt-6 inline-block cursor-pointer rounded-[1.75rem] border-2 border-gold-500/40 bg-white p-4 shadow-lg transition hover:scale-[1.01] group" onclick="openGiftModal()">
-                    <div class="relative">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://nadiaandaustin.wedding/gifts" alt="Gift QR Code" class="mx-auto h-40 w-40 transition duration-300 group-hover:scale-105" />
-                        <div class="absolute inset-0 flex items-center justify-center rounded-lg bg-olive-900/10 opacity-0 transition-opacity group-hover:opacity-100">
-                            <span class="rounded bg-olive-800 px-2 py-1 text-[10px] uppercase tracking-wider text-white shadow">View Details</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-5">
-                    <button onclick="openGiftModal()" class="text-[10px] font-medium uppercase tracking-[0.2em] text-gold-500 underline transition hover:text-cream-50">
-                        View bank details / transfer
+                <!-- Gift options as buttons -->
+                <div class="mt-6 space-y-3">
+                    
+                    <button onclick="openGiftModal('zenith')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-university"></i> Zenith Bank
+                    </button>
+                    <button onclick="openGiftModal('zelle')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-bolt"></i> Zelle Info
+                    </button>
+                    <button onclick="openGiftModal('cashapp')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-cash-app"></i> Cash App
                     </button>
                 </div>
             </div>
@@ -654,7 +662,7 @@
                         <div class="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/50 bg-olive-700 text-xl text-gold-500 shadow-inner">
                             <i class="fa-solid fa-envelope-open-text"></i>
                         </div>
-                        <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-500">Kindly reply by November 27th</p>
+                        <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-500">Kindly reply by November 20th</p>
                         <h3 class="mt-2 font-script text-5xl text-cream-50">RSVP</h3>
                         <p class="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-cream-200">
                             Your presence would mean the world to us. Please let us know if you can join our celebration.
@@ -671,14 +679,14 @@
                                 <i class="fa-solid fa-clock"></i>
                             </div>
                             <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">A little reminder</h4>
-                            <p class="mt-2 text-xs leading-relaxed text-gray-600">Please arrive on time and follow the guidance of our wedding team. We appreciate your help making the day run smoothly.</p>
+                            <p class="mt-2 text-xs leading-relaxed text-gray-600">Please arrive on time and follow the guidance of our wedding team. We appreciate your help in making the day run smoothly.</p>
                         </div>
                         <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
                             <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-olive-700/10 text-olive-700">
-                                <i class="fa-solid fa-champagne-glasses"></i>
+                                <i class="fa-solid fa-camera"></i>
                             </div>
-                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">Adults-only celebration</h4>
-                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We look forward to an evening of joy and dancing with our adult guests. Thank you for understanding.</p>
+                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">Capture the moment</h4>
+                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We'd love to see your photos from the day! Please share them with us using the hashtag <span class="font-semibold text-olive-700">#SharonAndAustyn2026</span>.</p>
                         </div>
                     </div>
                 </div>
@@ -691,7 +699,7 @@
             <div class="relative z-10">
                 <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500">We hope to count on your presence</p>
                 <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
-                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Nadia & Austin • 2026</p>
+                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon & Austyn • 2026</p>
             </div>
         </footer>
     </main>
@@ -730,56 +738,48 @@
             <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left">
                 <div>
                     <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
-                    <input type="text" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <input type="text" name="fullName" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                </div>
+                <div>
+                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Email *</label>
+                    <input type="email" name="email" required placeholder="you@example.com" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
                 <div>
                     <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Will you attend? *</label>
-                    <select required class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700">
-                        <option value="si">Yes, I would be delighted to attend!</option>
-                        <option value="no">Unfortunately, I will not be able to attend</option>
+                    <select name="attendance" required class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700">
+                        <option value="Yes">Yes, I would be delighted to attend!</option>
+                        <option value="No">Unfortunately, I will not be able to attend</option>
                     </select>
                 </div>
                 <div>
                     <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Number of Passes</label>
-                    <input type="number" min="1" max="4" value="1" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
+                    <input type="number" name="guests" min="1" max="4" value="1" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
                 </div>
-                <button type="submit" class="mt-4 w-full rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-md transition hover:bg-olive-800">
+                <div>
+                    <label class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Message (optional)</label>
+                    <textarea name="message" rows="2" placeholder="Any dietary restrictions or notes..." class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700"></textarea>
+                </div>
+                <button type="submit" id="rsvpSubmitBtn" class="mt-4 w-full rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-md transition hover:bg-olive-800 disabled:opacity-50 disabled:cursor-not-allowed">
                     Send Confirmation
                 </button>
             </form>
         </div>
     </div>
 
+    <!-- Gift modal (generic, content injected per option) -->
     <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
         <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
             <button onclick="closeModal('giftModal')" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/20 text-xl text-gold-600">
-                <i class="fa-solid fa-building-columns"></i>
+                <i id="giftModalIcon" class="fa-solid fa-building-columns"></i>
             </div>
-            <h3 class="font-script text-3xl text-olive-800">Bank Details</h3>
-            <p class="mt-1 text-xs text-gray-600">We are deeply grateful for your love and support.</p>
+            <h3 id="giftModalTitle" class="font-script text-3xl text-olive-800">Gift Details</h3>
+            <p id="giftModalSubtitle" class="mt-1 text-xs text-gray-600">We are deeply grateful for your love and support.</p>
 
-            <div class="mb-4 mt-4 space-y-3 rounded-xl border border-cream-300 bg-white p-4 text-left">
-                <div>
-                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
-                    <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                        <span class="text-xs font-mono text-gray-700">1234567890123456</span>
-                        <button onclick="copyToClipboard('1234567890123456')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                            <i class="fa-regular fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
-                <div>
-                    <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Routing Number</span>
-                    <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                        <span class="text-xs font-mono text-gray-700">021000021</span>
-                        <button onclick="copyToClipboard('021000021')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                            <i class="fa-regular fa-copy"></i>
-                        </button>
-                    </div>
-                </div>
+            <div id="giftModalContent" class="mb-4 mt-4 space-y-3 rounded-xl border border-cream-300 bg-white p-4 text-left">
+                <!-- dynamic content injected here -->
             </div>
 
             <button onclick="closeModal('giftModal')" class="w-full rounded-full bg-olive-700 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-olive-800">
@@ -789,7 +789,13 @@
     </div>
 
     <script>
-        // Petal canvas animation (blended, optimized)
+        // ---- EMAILJS INIT ----
+        // IMPORTANT: Replace with your own EmailJS credentials
+        (function() {
+            emailjs.init("YOUR_PUBLIC_KEY"); // <-- Replace with your EmailJS public key
+        })();
+
+        // Petal canvas animation
         const petalsCanvas = document.getElementById('petalsCanvas');
         const ctx = petalsCanvas.getContext('2d');
         let petals = [];
@@ -912,10 +918,10 @@
             church: {
                 title: 'Church of Annunciation',
                 time: '3:00 PM',
-                address: 'Houston, Texas',
+                address: '1618 Texas Ave, Houston, TX 77003',
                 icon: 'fa-church',
-                gmapsLink: 'https://maps.google.com/?q=Church+of+Annunciation+Houston+Texas',
-                mapSrc: 'https://maps.google.com/maps?q=Church%20of%20Annunciation%20Houston%20Texas&t=&z=15&ie=UTF8&iwloc=&output=embed'
+                gmapsLink: 'https://maps.google.com/?q=Church+of+Annunciation+1618+Texas+Ave+Houston+TX+77003',
+                mapSrc: 'https://maps.google.com/maps?q=Church%20of%20Annunciation%201618%20Texas%20Ave%20Houston%20TX%2077003&t=&z=15&ie=UTF8&iwloc=&output=embed'
             },
             venue: {
                 title: 'Reception Venue',
@@ -945,7 +951,71 @@
             document.getElementById('rsvpModal').classList.add('flex');
         }
 
-        function openGiftModal() {
+        // Gift modal with dynamic content for each option
+        const giftData = {
+            zenith: {
+                title: 'Zenith Bank',
+                subtitle: 'Account details',
+                icon: 'fa-university',
+                content: `
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
+                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
+                            <span class="text-xs font-mono text-gray-700">1017459935</span>
+                            <button onclick="copyToClipboard('1017459935')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Name</span>
+                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
+                            <span class="text-xs font-mono text-gray-700">Suave Properties Limited</span>
+                        </div>
+                    </div>
+                `
+            },
+            zelle: {
+                title: 'Zelle Info',
+                subtitle: 'Send via Zelle',
+                icon: 'fa-bolt',
+                content: `
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Phone Number</span>
+                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
+                            <span class="text-xs font-mono text-gray-700">9796168300</span>
+                            <button onclick="copyToClipboard('9796168300')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                `
+            },
+            cashapp: {
+                title: 'Cash App',
+                subtitle: 'Send via Cash App',
+                icon: 'fa-cash-app',
+                content: `
+                    <div>
+                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Cash App Link</span>
+                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
+                            <a href="https://cash.app/$AprilOkoye" target="_blank" class="text-xs font-mono text-olive-700 underline hover:text-olive-800">https://cash.app/$AprilOkoye</a>
+                            <button onclick="copyToClipboard('https://cash.app/$AprilOkoye')" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openGiftModal(type) {
+            const data = giftData[type];
+            if (!data) return;
+            document.getElementById('giftModalTitle').textContent = data.title;
+            document.getElementById('giftModalSubtitle').textContent = data.subtitle;
+            document.getElementById('giftModalIcon').className = `fa-solid ${data.icon}`;
+            document.getElementById('giftModalContent').innerHTML = data.content;
             document.getElementById('giftModal').classList.remove('hidden');
             document.getElementById('giftModal').classList.add('flex');
         }
@@ -966,14 +1036,48 @@
             });
         };
 
+        // ---- RSVP SUBMIT WITH EMAILJS ----
         function submitRSVP(e) {
             e.preventDefault();
-            closeModal('rsvpModal');
-            if (typeof confetti === 'function') {
-                confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-            }
-            showToast('Thank you! Your RSVP has been received.');
-            document.getElementById('rsvpForm').reset();
+            const form = e.target;
+            const submitBtn = document.getElementById('rsvpSubmitBtn');
+            const originalBtnText = submitBtn.innerHTML;
+
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Sending...';
+
+            // Collect form data
+            const templateParams = {
+                from_name: form.fullName.value.trim(),
+                from_email: form.email.value.trim(),
+                attendance: form.attendance.value,
+                guests: form.guests.value,
+                message: form.message.value.trim() || 'No message',
+                to_name: 'Sharon & Austyn',
+                reply_to: form.email.value.trim()
+            };
+
+            // Send email via EmailJS
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)  // <-- Replace with your Service ID and Template ID
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    closeModal('rsvpModal');
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                    }
+                    showToast('Thank you! Your RSVP has been sent successfully.');
+                    form.reset();
+                })
+                .catch(function(error) {
+                    console.error('FAILED...', error);
+                    showToast('Oops! Something went wrong. Please try again or contact us directly.');
+                })
+                .finally(function() {
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                });
         }
 
         function copyToClipboard(text) {
