@@ -1,1103 +1,220 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sharon & Austyn | Wedding Invitation</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        olive: {
-                            900: '#2F241E',
-                            800: '#4A382F',
-                            700: '#695548',
-                            600: '#7E685D',
-                            500: '#9A7E6A',
-                            100: '#F0E6DC',
-                            50: '#F7F2EC'
-                        },
-                        cream: {
-                            50: '#FDF9F4',
-                            100: '#F7F1E7',
-                            200: '#EDE1D1',
-                            300: '#E2D1B3'
-                        },
-                        gold: {
-                            500: '#D4B167',
-                            600: '#B88A3D'
-                        }
-                    },
-                    fontFamily: {
-                        script: ['"Great Vibes"', 'cursive'],
-                        serif: ['"Cormorant Garamond"', 'serif'],
-                        sans: ['"Montserrat"', 'sans-serif']
-                    },
-                    boxShadow: {
-                        soft: '0 20px 45px rgba(47, 36, 30, 0.10)'
-                    }
-                }
-            }
-        }
-    </script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date | Our Love Story</title>
+    <!-- Import Luxurious Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background:
-                radial-gradient(circle at top, rgba(212, 177, 103, 0.14), transparent 30%),
-                linear-gradient(180deg, #f9f4ee 0%, #f4efe9 100%);
-            color: #2f241e;
-            scroll-behavior: smooth;
+        /* Remove default browser padding and margin */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .grain {
-            background-image:
-                linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
-                radial-gradient(circle at 20% 20%, rgba(121, 102, 80, 0.08) 0, rgba(121, 102, 80, 0.08) 1px, transparent 1px);
-            background-size: cover, 16px 16px;
-        }
-
-        .card-glow {
-            box-shadow: 0 18px 40px rgba(79, 62, 50, 0.08);
-        }
-
-        .soft-divider {
-            background: linear-gradient(90deg, transparent, rgba(90, 74, 58, 0.32), transparent);
-            height: 1px;
-        }
-
-        .pulse-heart {
-            animation: pulseHeart 1.8s ease-in-out infinite;
-        }
-
-        .romantic-shell {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floating-orb {
-            position: absolute;
-            border-radius: 9999px;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.7), rgba(212,177,103,0.18));
-            filter: blur(4px);
-            animation: drift 14s ease-in-out infinite alternate;
-        }
-
-        .floating-heart {
-            position: absolute;
-            font-size: 1.2rem;
-            color: rgba(184, 138, 61, 0.45);
-            animation: heartFloat 8s ease-in-out infinite;
-        }
-
-        .image-stack {
-            position: relative;
-            max-width: 430px;
-            margin: 0 auto;
-        }
-
-        .romantic-photo {
-            width: 100%;
-            height: 520px;
-            object-fit: cover;
-            border-radius: 2rem;
-            box-shadow: 0 32px 80px rgba(47, 36, 30, 0.16);
-            border: 8px solid rgba(255,255,255,0.7);
-        }
-
-        .mini-photo {
-            position: absolute;
-            bottom: -28px;
-            left: -18px;
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 1.5rem;
-            border: 6px solid rgba(255,255,255,0.85);
-            box-shadow: 0 18px 40px rgba(47, 36, 30, 0.16);
-        }
-
-        .mini-badge {
-            position: absolute;
-            right: 12px;
-            bottom: 20px;
-            border-radius: 9999px;
-            background: rgba(255,255,255,0.82);
-            backdrop-filter: blur(8px);
-            box-shadow: 0 18px 30px rgba(47, 36, 30, 0.08);
-            padding: 0.8rem 1rem;
-            text-align: center;
-        }
-
-        .story-grid {
-            display: grid;
-            gap: 1.5rem;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .soft-card {
-            background: rgba(255,255,255,0.8);
-            border: 1px solid rgba(120, 104, 90, 0.12);
-            box-shadow: 0 20px 55px rgba(79, 62, 50, 0.08);
-            border-radius: 2rem;
-            overflow: hidden;
-        }
-
-        .story-image {
-            position: relative;
-            min-height: 360px;
-            overflow: hidden;
-        }
-
-        .story-image img {
+        body, html {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .story-copy {
-            padding: 2rem 1.6rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            gap: 1rem;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            margin-top: 1.5rem;
-        }
-
-        .gallery-item {
-            position: relative;
             overflow: hidden;
-            border-radius: 1.75rem;
-            height: 280px;
-            box-shadow: 0 18px 35px rgba(47, 36, 30, 0.08);
+            background-color: #0c080a;
+            font-family: 'Playfair Display', Georgia, serif;
         }
 
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
+        /* Style the video to cover the entire viewport */
+        .fullscreen-video {
+            width: 100vw;
+            height: 100vh;
             object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.04);
-        }
-
-        @keyframes pulseHeart {
-            0%, 100% { transform: scale(0.95); opacity: 0.25; }
-            50% { transform: scale(1.1); opacity: 0.55; }
-        }
-
-        @keyframes drift {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(18px, -18px) scale(1.12); }
-        }
-
-        @keyframes heartFloat {
-            0%, 100% { transform: translateY(0) scale(1); opacity: 0.35; }
-            50% { transform: translateY(-14px) scale(1.1); opacity: 0.7; }
-        }
-
-        .toast-slide-up {
-            animation: toastSlide 0.35s ease both;
-        }
-
-        @keyframes toastSlide {
-            from { opacity: 0; transform: translate(-50%, 12px); }
-            to { opacity: 1; transform: translate(-50%, 0); }
-        }
-
-        .section-soft {
-            background: linear-gradient(180deg, #FDF9F4 0%, #F7F1E7 100%);
-        }
-
-        .section-olive {
-            background: linear-gradient(145deg, #4A382F 0%, #2F241E 100%);
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(212, 177, 103, 0.25);
-            border-radius: 2rem;
-            box-shadow: 0 15px 35px rgba(47, 36, 30, 0.06);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .info-card:hover {
-            box-shadow: 0 22px 45px rgba(47, 36, 30, 0.10);
-        }
-
-        .timeline-dot {
             position: absolute;
-            left: -31px;
             top: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 9999px;
-            border: 2px solid #695548;
-            background: #EDE1D1;
-            color: #2F241E;
-            font-size: 0.75rem;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            left: 0;
+            filter: brightness(0.85) contrast(1.05);
+            transition: opacity 1.2s ease;
         }
 
-        @media (max-width: 768px) {
-            .story-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
+        /* Romantic, dreamy overlay with soft ambient lighting */
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(35, 20, 28, 0.45) 0%, rgba(10, 6, 9, 0.82) 100%);
+            backdrop-filter: blur(1.5px);
+        }
 
-            .romantic-photo {
-                height: 420px;
-            }
+        /* Wrapper for romantic floating animation */
+        .content-box {
+            animation: floatUp 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(25px);
+            max-width: 800px;
+            width: 100%;
+        }
 
-            .mini-photo {
-                width: 140px;
-                height: 140px;
-                left: 0;
-            }
+        /* Script style heading */
+        .our-love {
+            display: block;
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.4rem, 10vw, 8rem);
+            font-weight: normal;
+            font-style: normal;
+            text-transform: none;
+            letter-spacing: 0.04em;
+            color: #ffd1dc;
+            margin-bottom: -0.15em;
+            text-shadow: 0 0 25px rgba(255, 192, 203, 0.6), 0 0 50px rgba(219, 112, 147, 0.3);
+            animation: softPulse 4s ease-in-out infinite alternate;
+        }
 
-            .timeline-dot {
-                left: -31px;
+        /* Save the date text */
+        .save-date {
+            color: #fffaf7;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 4.5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: 0.3em;
+            line-height: 1.3;
+            text-transform: uppercase;
+            text-shadow: 0 0 30px rgba(255, 182, 193, 0.35);
+        }
+
+        /* Luxurious dividing line */
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 230, 0.8), transparent);
+            margin: 1.8rem auto 0 auto;
+            box-shadow: 0 0 10px rgba(255, 215, 230, 0.5);
+        }
+
+        /* Romantic poem */
+        .poem {
+            margin-top: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-style: italic;
+            font-size: clamp(0.9rem, 1.6vw, 1.15rem);
+            line-height: 2;
+            letter-spacing: 0.05em;
+            color: rgba(255, 235, 240, 0.88);
+            text-shadow: 0 0 18px rgba(255, 200, 210, 0.35);
+        }
+
+        .poem .line {
+            display: block;
+            opacity: 0;
+            animation: fadeLine 1.4s ease forwards;
+        }
+
+        .poem .line:nth-child(1) { animation-delay: 1.2s; }
+        .poem .line:nth-child(2) { animation-delay: 1.9s; }
+        .poem .line:nth-child(3) { animation-delay: 2.6s; }
+
+        /* Signature date */
+        .date-sub {
+            margin-top: 2rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(0.75rem, 1.4vw, 1rem);
+            letter-spacing: 0.5em;
+            text-transform: uppercase;
+            color: rgba(255, 235, 240, 0.8);
+            text-shadow: 0 0 18px rgba(255, 200, 210, 0.4);
+            opacity: 0;
+            animation: fadeLine 1.4s ease forwards;
+            animation-delay: 3.3s;
+        }
+
+        /* Animations */
+        @keyframes floatUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .modal-backdrop {
-            background: rgba(47, 36, 30, 0.6);
-            backdrop-filter: blur(4px);
+        @keyframes softPulse {
+            0% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 192, 203, 0.5); }
+            100% { transform: scale(1.02); text-shadow: 0 0 35px rgba(255, 192, 203, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); }
+        }
+
+        @keyframes fadeLine {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Fallback background when video doesn't load */
+        .video-fallback {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 40%, rgba(219, 112, 147, 0.35), transparent 55%),
+                radial-gradient(circle at 75% 70%, rgba(255, 182, 193, 0.25), transparent 50%),
+                linear-gradient(135deg, #1a0f14 0%, #0c080a 100%);
+            z-index: -1;
+        }
+
+        @media (max-width: 640px) {
+            .save-date {
+                letter-spacing: 0.2em;
+            }
+            .poem {
+                line-height: 1.9;
+            }
         }
     </style>
 </head>
-<body class="min-h-screen antialiased">
-    <canvas id="petalsCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-80" aria-hidden="true"></canvas>
+<body>
 
-    <main class="relative z-10">
-        <!-- ============================= -->
-        <!-- HERO (matched to site palette)-->
-        <!-- ============================= -->
-        <section class="romantic-shell grain relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 flex items-center justify-center text-olive-900">
-            <!-- Decorative background -->
-            <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold-500/15 blur-3xl" aria-hidden="true"></div>
-            <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-olive-700/10 blur-3xl" aria-hidden="true"></div>
-            <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,177,103,0.10),_transparent_60%)]" aria-hidden="true"></div>
+    <!-- Fallback background -->
+    <div class="video-fallback"></div>
 
-            <div class="floating-orb left-10 top-10 h-24 w-24" aria-hidden="true"></div>
-            <div class="floating-orb right-12 top-24 h-28 w-28" aria-hidden="true"></div>
-            <div class="floating-heart left-16 top-1/3" aria-hidden="true">♥</div>
-            <div class="floating-heart right-16 top-1/2" aria-hidden="true">♥</div>
+    <!-- Fullscreen Video Element -->
+    <video class="fullscreen-video" autoplay muted playsinline loop id="heroVideo">
+        <source src="vf.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-            <div class="relative z-10 mx-auto w-full max-w-6xl">
-                <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+    <div class="video-overlay">
+        <div class="content-box">
+            <span class="our-love">Our Love</span>
+            <h1 class="save-date">Save the Date</h1>
+            <div class="divider"></div>
 
-                    <!-- Text column (first on mobile, left on desktop) -->
-                    <div class="order-1 text-center lg:col-span-6 lg:text-left">
-                        <div class="inline-flex items-center gap-2.5 rounded-full border border-olive-700/20 bg-white/60 px-4 py-1.5 text-[11px] font-semibold tracking-[0.3em] uppercase text-olive-700 backdrop-blur-md shadow-sm">
-                            <i class="fa-solid fa-heart text-gold-500 text-xs" aria-hidden="true"></i>
-                            <span>Save The Date</span>
-                        </div>
-
-                        <div class="mt-8 space-y-2">
-                            <p class="font-serif text-3xl font-light tracking-[0.25em] text-olive-800 uppercase sm:text-4xl">Sharon</p>
-                            <div class="flex items-center justify-center gap-4 text-gold-600/70 lg:justify-start">
-                                <span class="h-px w-12 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent lg:from-gold-500/50"></span>
-                                <i class="fa-solid fa-heart text-sm text-gold-500" aria-hidden="true"></i>
-                                <span class="h-px w-12 bg-gradient-to-r from-transparent via-gold-500/50 to-transparent lg:to-gold-500/50"></span>
-                            </div>
-                            <p class="font-serif text-3xl font-light tracking-[0.25em] text-olive-800 uppercase sm:text-4xl">Austyn</p>
-                        </div>
-
-                        <h1 class="mt-6 font-script text-5xl leading-tight bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 bg-clip-text text-transparent sm:text-7xl drop-shadow-sm">
-                            We are getting married
-                        </h1>
-
-                        <div class="mt-6 inline-block rounded-full bg-olive-700/5 px-6 py-2 border border-olive-700/10">
-                            <p class="text-xs font-semibold tracking-[0.25em] text-olive-800 uppercase sm:text-sm">
-                                Friday, 11 December 2026
-                            </p>
-                        </div>
-
-                        <div class="mt-8 rounded-2xl border border-white/60 bg-white/50 p-6 shadow-xl shadow-olive-900/5 backdrop-blur-md lg:max-w-md">
-                            <div class="flex items-center justify-center gap-2 text-xs font-medium uppercase tracking-[0.3em] text-gold-600 lg:justify-start">
-                                <i class="fa-solid fa-cross text-gold-500" aria-hidden="true"></i>
-                                <span>With God's Blessing</span>
-                            </div>
-                            <p class="mt-3 text-sm leading-relaxed text-olive-700/85">
-                                We invite you to share with us the joy of our wedding and celebrate this beautiful new chapter together.
-                            </p>
-                        </div>
-
-                        <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-                            <a href="#details" class="group inline-flex items-center gap-2.5 rounded-full bg-olive-700 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-cream-50 shadow-lg shadow-olive-700/25 transition-all duration-300 hover:bg-olive-800 hover:shadow-xl hover:-translate-y-0.5 focus:ring-2 focus:ring-gold-500 focus:outline-none">
-                                <i class="fa-solid fa-angle-down transition-transform duration-300 group-hover:translate-y-0.5" aria-hidden="true"></i>
-                                <span>View Details</span>
-                            </a>
-                            <button type="button" onclick="openRSVPModal()" class="inline-flex items-center gap-2.5 rounded-full border border-olive-700 bg-white/40 px-7 py-3.5 text-xs font-semibold tracking-[0.2em] uppercase text-olive-700 backdrop-blur-sm transition-all duration-300 hover:bg-olive-700 hover:text-cream-50 hover:shadow-lg hover:-translate-y-0.5 focus:ring-2 focus:ring-gold-500 focus:outline-none">
-                                <i class="fa-solid fa-check" aria-hidden="true"></i>
-                                <span>RSVP</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Media column (second on mobile, right on desktop) -->
-                    <div class="order-2 mb-10 lg:col-span-6 lg:mb-0">
-                        <div class="image-stack mx-auto">
-                            <img src="zzc.jpeg" alt="Couple embracing" class="romantic-photo" />
-                            <img src="./zz (3).jpeg" alt="Couple smiling together" class="mini-photo" />
-                            <div class="mini-badge text-olive-800">
-                                <div class="text-[10px] uppercase tracking-[0.28em] text-olive-700">Together</div>
-                                <div class="mt-1 font-script text-3xl text-gold-600">Forever</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================= -->
-        <!-- OUR STORY                     -->
-        <!-- ============================= -->
-        <section class="section-soft px-6 py-14 text-center">
-            <div class="mx-auto max-w-6xl">
-                <div class="mb-8 text-center">
-                    <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-600">Our Story</p>
-                    <h2 class="mt-3 font-script text-5xl text-olive-800">A love that grew beautifully</h2>
-                </div>
-
-                <div class="story-grid">
-                    <div class="soft-card story-image">
-                        <img src="./zz (4).jpeg" alt="Couple walking together" />
-                    </div>
-
-                    <div class="soft-card story-copy text-left">
-                        <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-olive-100 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-olive-700">
-                            <i class="fa-solid fa-heart text-gold-600" aria-hidden="true"></i>
-                            Love story
-                        </div>
-                        <p class="text-sm leading-relaxed text-gray-700">
-                            From the first hello to this beautiful moment, every step has been a small miracle. Our story is made of laughter, patience, meaningful glances, and dreams that became reality.
-                        </p>
-                        <p class="mt-4 text-sm leading-relaxed text-gray-700">
-                            We are grateful for the love that has brought us here, and for the people who have walked beside us. We would be honored to celebrate this next chapter with you.
-                        </p>
-                        <div class="mt-6 flex items-center gap-3 text-olive-700">
-                            <span class="h-px flex-1 bg-olive-700/20"></span>
-                            <i class="fa-solid fa-heart text-gold-600" aria-hidden="true"></i>
-                            <span class="h-px flex-1 bg-olive-700/20"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="./zz (2).jpeg" alt="Couple looking at each other" />
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://i.pinimg.com/736x/8e/20/c3/8e20c36a9e1c5892ac7e474cfdb39821.jpg" alt="Romantic couple portrait" />
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./zz (1).jpeg" alt="Couple holding hands" />
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================= -->
-        <!-- DETAILS & COUNTDOWN           -->
-        <!-- ============================= -->
-        <section id="details" class="section-olive text-cream-50 py-12 px-6 text-center relative">
-            <div class="mx-auto max-w-sm">
-                <i class="fa-solid fa-cross text-gold-500 text-xl mb-3 block" aria-hidden="true"></i>
-                <p class="mb-6 text-xs font-light tracking-[0.2em] uppercase text-cream-200">
-                    With God's blessing and our parents, we have the honor of inviting you to our wedding
-                </p>
-
-                <div class="my-4 flex items-center justify-between border-y border-cream-100/30 py-3 text-cream-100">
-                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">Friday</span>
-                    <span class="px-2 font-serif text-4xl font-bold text-gold-500">11</span>
-                    <span class="text-[10px] uppercase tracking-[0.25em] font-medium">December 2026</span>
-                </div>
+            <!-- Short romantic poem -->
+            <div class="poem">
+                <span class="line">Two hearts,</span>
+                <span class="line">one promise,</span>
+                <span class="line">forever.</span>
             </div>
 
-            <div class="mt-8">
-                <h3 class="mb-4 text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-500">Countdown</h3>
-                <div class="mx-auto grid max-w-xs grid-cols-4 gap-2 text-center">
-                    <div class="rounded-2xl border border-olive-600/40 bg-olive-800/80 p-2">
-                        <span id="timerDays" class="block font-serif text-2xl font-bold text-cream-50">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Days</span>
-                    </div>
-                    <div class="rounded-2xl border border-olive-600/40 bg-olive-800/80 p-2">
-                        <span id="timerHours" class="block font-serif text-2xl font-bold text-cream-50">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Hours</span>
-                    </div>
-                    <div class="rounded-2xl border border-olive-600/40 bg-olive-800/80 p-2">
-                        <span id="timerMinutes" class="block font-serif text-2xl font-bold text-cream-50">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Min</span>
-                    </div>
-                    <div class="rounded-2xl border border-olive-600/40 bg-olive-800/80 p-2">
-                        <span id="timerSeconds" class="block font-serif text-2xl font-bold text-cream-50">00</span>
-                        <span class="text-[10px] uppercase tracking-wider text-cream-300">Sec</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mx-auto mt-10 max-w-xs rounded-2xl border border-olive-600/30 bg-olive-800/60 p-4">
-                <h4 class="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-cream-100">The Big Day</h4>
-                <p class="mb-3 text-[10px] uppercase tracking-[0.25em] text-gold-500">December 2026</p>
-
-                <div class="mb-2 grid grid-cols-7 gap-1 text-[10px] font-medium text-cream-200">
-                    <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
-                </div>
-                <div class="grid grid-cols-7 gap-1 items-center text-xs text-cream-100">
-                    <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span>
-                    <span>8</span><span>9</span><span>10</span>
-                    <div class="relative flex items-center justify-center py-1 font-bold text-gold-500">
-                        <i class="fa-solid fa-heart text-2xl text-gold-500/30 absolute pulse-heart" aria-hidden="true"></i>
-                        <span class="relative z-10 font-bold text-cream-50">11</span>
-                    </div>
-                    <span>12</span><span>13</span><span>14</span>
-                    <span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span>
-                    <span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span>
-                    <span>29</span><span>30</span><span>31</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================= -->
-        <!-- CEREMONY, RECEPTION & SCHEDULE -->
-        <!-- ============================= -->
-        <!-- Ceremony Card -->
-<div class="info-card overflow-hidden p-6 text-center">
-    <!-- Decorative Image -->
-    <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
-        <img 
-            src="cht.jpeg" 
-            alt="Wedding ceremony illustration"
-            class="h-48 w-48 object-cover rounded-xl"
-            loading="lazy"
-        />
-    </div>
-
-    <h3 class="font-script text-4xl text-olive-800">Wedding Ceremony</h3>
-    <p class="mt-2 text-sm font-semibold text-gold-600">3:00 pm</p>
-    <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Church of Annunciation</p>
-    <p class="mt-1 text-xs text-gray-500">1618 Texas Ave, Houston, TX 77003</p>
-
-    <button onclick="openLocationModal('church')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
-        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-        View location
-    </button>
-</div>
-
-        <!-- ============================= -->
-        <!-- GIFT SUGGESTION               -->
-        <!-- ============================= -->
-        <section class="section-olive px-6 py-10 text-center text-cream-50">
-            <div class="mx-auto max-w-md">
-                <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
-                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
-                </div>
-
-                <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
-                <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
-                    Your presence is the greatest gift, but if you would like to give us a little something, we have these options for you.
-                </p>
-
-                <div class="mt-6 space-y-3">
-                    <button onclick="openGiftModal('zenith')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-university" aria-hidden="true"></i> Zenith Bank
-                    </button>
-                    <button onclick="openGiftModal('zelle')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-bolt" aria-hidden="true"></i> Zelle Info
-                    </button>
-                    <button onclick="openGiftModal('cashapp')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i> Cash App
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================= -->
-        <!-- FINAL RSVP SECTION            -->
-        <!-- ============================= -->
-        <section class="relative overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 text-center">
-            <div class="pointer-events-none absolute -left-20 top-10 h-56 w-56 rounded-full bg-gold-500/10 blur-3xl" aria-hidden="true"></div>
-            <div class="pointer-events-none absolute -right-16 bottom-0 h-64 w-64 rounded-full bg-olive-700/10 blur-3xl" aria-hidden="true"></div>
-
-            <div class="relative mx-auto max-w-4xl">
-                <div class="mb-8">
-                    <p class="text-[10px] font-semibold uppercase tracking-[0.35em] text-gold-600">A note for our guests</p>
-                    <h2 class="mt-2 font-script text-5xl text-olive-800 sm:text-6xl">We can't wait to celebrate with you</h2>
-                    <div class="mx-auto mt-4 flex max-w-xs items-center gap-3 text-gold-600">
-                        <span class="h-px flex-1 bg-gold-500/40"></span>
-                        <i class="fa-solid fa-heart text-sm" aria-hidden="true"></i>
-                        <span class="h-px flex-1 bg-gold-500/40"></span>
-                    </div>
-                </div>
-
-                <div class="grid items-stretch gap-5 md:grid-cols-[1.1fr_0.9fr]">
-                    <div class="relative overflow-hidden rounded-[2rem] border border-gold-500/30 bg-olive-800 p-7 text-cream-50 shadow-[0_24px_60px_rgba(47,36,30,0.2)] sm:p-9">
-                        <div class="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full border border-gold-500/20" aria-hidden="true"></div>
-                        <div class="pointer-events-none absolute -right-2 -top-2 h-20 w-20 rounded-full border border-gold-500/20" aria-hidden="true"></div>
-                        <div class="relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-gold-500/50 bg-olive-700 text-xl text-gold-500 shadow-inner">
-                            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
-                        </div>
-                        <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-500">Kindly reply by November 20th</p>
-                        <h3 class="mt-2 font-script text-5xl text-cream-50">RSVP</h3>
-                        <p class="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-cream-200">
-                            Your presence would mean the world to us. Please let us know if you can join our celebration.
-                        </p>
-                        <button onclick="openRSVPModal()" class="mt-7 inline-flex items-center justify-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-olive-900 shadow-lg transition hover:-translate-y-0.5 hover:bg-gold-600 active:scale-95">
-                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
-                            Confirm your attendance
-                        </button>
-                    </div>
-
-                    <div class="grid gap-5 sm:grid-cols-2 md:grid-cols-1">
-                        <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
-                            <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-gold-500/15 text-gold-600">
-                                <i class="fa-solid fa-clock" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">A little reminder</h4>
-                            <p class="mt-2 text-xs leading-relaxed text-gray-600">Please arrive on time and follow the guidance of our wedding team. We appreciate your help in making the day run smoothly.</p>
-                        </div>
-                        <div class="flex flex-col justify-center rounded-[2rem] border border-cream-300 bg-white/75 p-6 shadow-soft backdrop-blur-sm">
-                            <div class="mx-auto mb-3 flex h-11 w-11 items-center justify-center rounded-full bg-olive-700/10 text-olive-700">
-                                <i class="fa-solid fa-camera" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">Capture the moment</h4>
-                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We'd love to see your photos from the day! Please share them with us using the hashtag <span class="font-semibold text-olive-700">#SharonAndAustyn2026</span>.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============================= -->
-        <!-- FOOTER                        -->
-        <!-- ============================= -->
-        <footer class="relative overflow-hidden bg-olive-900 px-6 py-12 text-center text-cream-50">
-            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');" aria-hidden="true"></div>
-            <div class="relative z-10">
-                <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500">We hope to count on your presence</p>
-                <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
-                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon &amp; Austyn • 2026</p>
-            </div>
-        </footer>
-    </main>
-
-    <!-- ============================= -->
-    <!-- MODALS                        -->
-    <!-- ============================= -->
-
-    <!-- Location modal -->
-    <div id="locationModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="locModalTitle">
-        <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
-            <button onclick="closeModal('locationModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-olive-100 text-xl text-olive-800">
-                <i id="locModalIcon" class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-            </div>
-            <h3 id="locModalTitle" class="mb-1 text-2xl font-bold text-olive-800">Location</h3>
-            <p id="locModalTime" class="mb-2 text-xs font-semibold text-gold-600">Time</p>
-            <p id="locModalAddress" class="mb-4 text-xs text-gray-600">Address</p>
-            <div class="mb-4 h-44 w-full overflow-hidden rounded-xl border border-cream-300 bg-gray-200">
-                <iframe id="locModalMap" class="h-full w-full border-0" loading="lazy" allowfullscreen src="about:blank" title="Venue map"></iframe>
-            </div>
-            <a id="locModalGmapsLink" href="#" target="_blank" rel="noopener" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow transition hover:bg-olive-800">
-                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                Open in Google Maps
-            </a>
+            <p class="date-sub">11 · 12 · 2026</p>
         </div>
     </div>
 
-    <!-- RSVP modal -->
-    <div id="rsvpModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="rsvpTitle">
-        <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 shadow-2xl">
-            <button onclick="closeModal('rsvpModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <div class="mb-4 text-center">
-                <h3 id="rsvpTitle" class="font-script text-4xl text-olive-800">Confirm Attendance</h3>
-                <p class="text-xs text-gray-600">Please complete the fields for your registration.</p>
-            </div>
-            <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left" novalidate>
-                <div>
-                    <label for="fullName" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
-                    <input id="fullName" type="text" name="fullName" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
-                </div>
-                <div>
-                    <label for="email" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Email *</label>
-                    <input id="email" type="email" name="email" required placeholder="you@example.com" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
-                </div>
-                <div>
-                    <label for="attendance" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Will you attend? *</label>
-                    <select id="attendance" name="attendance" required class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700">
-                        <option value="Yes">Yes, I would be delighted to attend!</option>
-                        <option value="No">Unfortunately, I will not be able to attend</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="guests" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Number of Passes</label>
-                    <input id="guests" type="number" name="guests" min="1" max="10" value="1" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
-                </div>
-                <div>
-                    <label for="message" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Message (optional)</label>
-                    <textarea id="message" name="message" rows="2" placeholder="Any dietary restrictions or notes..." class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700"></textarea>
-                </div>
-                <button type="submit" id="rsvpSubmitBtn" class="mt-4 w-full rounded-full bg-olive-700 px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white shadow-md transition hover:bg-olive-800 disabled:opacity-50 disabled:cursor-not-allowed">
-                    Send Confirmation
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Gift modal -->
-    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
-        <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
-            <button onclick="closeModal('giftModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/20 text-xl text-gold-600">
-                <i id="giftModalIcon" class="fa-solid fa-building-columns" aria-hidden="true"></i>
-            </div>
-            <h3 id="giftModalTitle" class="font-script text-3xl text-olive-800">Gift Details</h3>
-            <p id="giftModalSubtitle" class="mt-1 text-xs text-gray-600">We are deeply grateful for your love and support.</p>
-
-            <div id="giftModalContent" class="mb-4 mt-4 space-y-3 rounded-xl border border-cream-300 bg-white p-4 text-left">
-                <!-- dynamic content injected here -->
-            </div>
-
-            <button onclick="closeModal('giftModal')" class="w-full rounded-full bg-olive-700 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-olive-800">
-                Got it
-            </button>
-        </div>
-    </div>
-
-    <!-- ============================= -->
-    <!-- SCRIPTS                       -->
-    <!-- ============================= -->
     <script>
-        /* ============================================================
-           EMAILJS CONFIGURATION
-           ------------------------------------------------------------
-           Replace the three placeholders below with your own values
-           from https://dashboard.emailjs.com/
-             1. publicKey    — Account → General → Public Key
-             2. serviceId    — Email Services → your service ID
-             3. templateId   — Email Templates → your template ID
+        // Auto-redirect after 6 seconds (gives time to read the poem)
+        setTimeout(function() {
+            window.location.href = "secondpage.html";
+        }, 6000);
 
-           Your EmailJS template should reference these variables:
-             {{from_name}} {{from_email}} {{reply_to}}
-             {{attendance}} {{guests}} {{message}} {{to_name}}
-           ============================================================ */
-        const EMAILJS_CONFIG = {
-            publicKey:  "YOUR_PUBLIC_KEY",   // <-- replace
-            serviceId:  "YOUR_SERVICE_ID",   // <-- replace
-            templateId: "YOUR_TEMPLATE_ID"   // <-- replace
-        };
-
-        const EMAILJS_READY =
-            EMAILJS_CONFIG.publicKey  !== "YOUR_PUBLIC_KEY" &&
-            EMAILJS_CONFIG.serviceId  !== "YOUR_SERVICE_ID" &&
-            EMAILJS_CONFIG.templateId !== "YOUR_TEMPLATE_ID";
-
-        if (EMAILJS_READY && typeof emailjs !== 'undefined') {
-            emailjs.init(EMAILJS_CONFIG.publicKey);
-        }
-
-        /* ============================================================
-           PETAL CANVAS ANIMATION
-           ============================================================ */
-        const petalsCanvas = document.getElementById('petalsCanvas');
-        const ctx = petalsCanvas.getContext('2d');
-        let petals = [];
-        let petalRainActive = true;
-        let animationFrameId = null;
-
-        function resizeCanvas() {
-            petalsCanvas.width = window.innerWidth;
-            petalsCanvas.height = window.innerHeight;
-            initPetals(petals.length || 40);
-        }
-
-        class Petal {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * petalsCanvas.width;
-                this.y = -20 - Math.random() * 50;
-                this.size = 8 + Math.random() * 12;
-                this.speedY = 0.8 + Math.random() * 1.4;
-                this.speedX = (Math.random() - 0.5) * 1.2;
-                this.rotation = Math.random() * 360;
-                this.rotationSpeed = (Math.random() - 0.5) * 1.5;
-                this.oscillation = Math.random() * Math.PI * 2;
-                this.oscillationSpeed = 0.01 + Math.random() * 0.02;
-                const colors = [
-                    'rgba(255, 248, 240, 0.85)',
-                    'rgba(250, 235, 230, 0.8)',
-                    'rgba(240, 220, 215, 0.75)',
-                    'rgba(215, 225, 205, 0.7)'
-                ];
-                this.color = colors[Math.floor(Math.random() * colors.length)];
-            }
-            update() {
-                this.y += this.speedY;
-                this.oscillation += this.oscillationSpeed;
-                this.x += Math.sin(this.oscillation) * 0.8 + this.speedX;
-                this.rotation += this.rotationSpeed;
-                if (this.y > petalsCanvas.height + 30) this.reset();
-            }
-            draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate((this.rotation * Math.PI) / 180);
-                ctx.beginPath();
-                ctx.fillStyle = this.color;
-                ctx.moveTo(0, 0);
-                ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, 0, 0, this.size * 1.3);
-                ctx.bezierCurveTo(-this.size, 0, -this.size / 2, -this.size / 2, 0, 0);
-                ctx.fill();
-                ctx.beginPath();
-                ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-                ctx.lineWidth = 0.6;
-                ctx.moveTo(0, 0);
-                ctx.lineTo(0, this.size * 0.9);
-                ctx.stroke();
-                ctx.restore();
-            }
-        }
-
-        function initPetals(count = 40) {
-            petals = [];
-            for (let i = 0; i < count; i++) {
-                const petal = new Petal();
-                petal.y = Math.random() * petalsCanvas.height;
-                petals.push(petal);
-            }
-        }
-
-        function animatePetals() {
-            if (!petalRainActive) return;
-            ctx.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
-            petals.forEach(petal => {
-                petal.update();
-                petal.draw();
-            });
-            animationFrameId = requestAnimationFrame(animatePetals);
-        }
-
-        function startPetalShower() {
-            petalRainActive = true;
-            initPetals(40);
-            if (animationFrameId) cancelAnimationFrame(animationFrameId);
-            animatePetals();
-        }
-
-        function stopPetalShower() {
-            petalRainActive = false;
-            if (animationFrameId) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null;
-            }
-        }
-
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        startPetalShower();
-
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                stopPetalShower();
-            } else {
-                startPetalShower();
-            }
+        // Graceful video fallback: if video fails, keep the gradient background
+        const video = document.getElementById('heroVideo');
+        video.addEventListener('error', () => {
+            video.style.opacity = '0';
         });
 
-        /* ============================================================
-           COUNTDOWN — pinned to Houston (CST, UTC-6)
-           ============================================================ */
-        const targetDate = new Date('2026-12-11T15:00:00-06:00').getTime();
-
-        function updateTimer() {
-            const now = Date.now();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                document.getElementById('timerDays').textContent = String(days).padStart(2, '0');
-                document.getElementById('timerHours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('timerMinutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('timerSeconds').textContent = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('timerDays').textContent = '00';
-                document.getElementById('timerHours').textContent = '00';
-                document.getElementById('timerMinutes').textContent = '00';
-                document.getElementById('timerSeconds').textContent = '00';
-            }
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        /* ============================================================
-           LOCATION MODAL
-           ============================================================ */
-        const locationsData = {
-            church: {
-                title: 'Church of Annunciation',
-                time: '3:00 PM',
-                address: '1618 Texas Ave, Houston, TX 77003',
-                icon: 'fa-church',
-                gmapsLink: 'https://maps.google.com/?q=Church+of+Annunciation+1618+Texas+Ave+Houston+TX+77003',
-                mapSrc: 'https://maps.google.com/maps?q=Church%20of%20Annunciation%201618%20Texas%20Ave%20Houston%20TX%2077003&t=&z=15&ie=UTF8&iwloc=&output=embed'
-            },
-            venue: {
-                title: 'Reception Venue',
-                time: '5:00 PM',
-                address: 'Houston, Texas',
-                icon: 'fa-champagne-glasses',
-                gmapsLink: 'https://maps.google.com/?q=Reception+Venue+Houston+Texas',
-                mapSrc: 'https://maps.google.com/maps?q=Houston%20Texas&t=&z=14&ie=UTF8&iwloc=&output=embed'
-            }
-        };
-
-        function openLocationModal(type) {
-            const data = locationsData[type];
-            if (!data) return;
-            document.getElementById('locModalTitle').textContent = data.title;
-            document.getElementById('locModalTime').textContent = data.time;
-            document.getElementById('locModalAddress').textContent = data.address;
-            document.getElementById('locModalIcon').className = `fa-solid ${data.icon}`;
-            document.getElementById('locModalGmapsLink').href = data.gmapsLink;
-            document.getElementById('locModalMap').src = data.mapSrc;
-            document.getElementById('locationModal').classList.remove('hidden');
-            document.getElementById('locationModal').classList.add('flex');
-        }
-
-        /* ============================================================
-           RSVP MODAL
-           ============================================================ */
-        function openRSVPModal() {
-            document.getElementById('rsvpModal').classList.remove('hidden');
-            document.getElementById('rsvpModal').classList.add('flex');
-        }
-
-        /* ============================================================
-           GIFT MODAL
-           ============================================================ */
-        const giftData = {
-            zenith: {
-                title: 'Zenith Bank',
-                subtitle: 'Account details',
-                icon: 'fa-university',
-                content: `
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">1017459935</span>
-                            <button onclick="copyToClipboard('1017459935')" aria-label="Copy account number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Name</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">Suave Properties Limited</span>
-                        </div>
-                    </div>
-                `
-            },
-            zelle: {
-                title: 'Zelle Info',
-                subtitle: 'Send via Zelle',
-                icon: 'fa-bolt',
-                content: `
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Phone Number</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">9796168300</span>
-                            <button onclick="copyToClipboard('9796168300')" aria-label="Copy Zelle phone number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                `
-            },
-            cashapp: {
-                title: 'Cash App',
-                subtitle: 'Send via Cash App',
-                icon: 'fa-dollar-sign',
-                content: `
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Cash App Link</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener" class="text-xs font-mono text-olive-700 underline hover:text-olive-800">https://cash.app/$AprilOkoye</a>
-                            <button onclick="copyToClipboard('https://cash.app/$AprilOkoye')" aria-label="Copy Cash App link" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                `
-            }
-        };
-
-        function openGiftModal(type) {
-            const data = giftData[type];
-            if (!data) return;
-            document.getElementById('giftModalTitle').textContent = data.title;
-            document.getElementById('giftModalSubtitle').textContent = data.subtitle;
-            document.getElementById('giftModalIcon').className = `fa-solid ${data.icon}`;
-            document.getElementById('giftModalContent').innerHTML = data.content;
-            document.getElementById('giftModal').classList.remove('hidden');
-            document.getElementById('giftModal').classList.add('flex');
-        }
-
-        /* ============================================================
-           MODAL HELPERS
-           ============================================================ */
-        function closeModal(id) {
-            const modal = document.getElementById(id);
-            if (!modal) return;
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        window.addEventListener('click', (event) => {
-            ['locationModal', 'rsvpModal', 'giftModal'].forEach(modalId => {
-                const modal = document.getElementById(modalId);
-                if (event.target === modal) closeModal(modalId);
-            });
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                ['locationModal', 'rsvpModal', 'giftModal'].forEach(closeModal);
-            }
-        });
-
-        /* ============================================================
-           RSVP SUBMIT
-           ============================================================ */
-        function submitRSVP(e) {
-            e.preventDefault();
-            const form = e.target;
-            const submitBtn = document.getElementById('rsvpSubmitBtn');
-            const originalBtnText = submitBtn.innerHTML;
-
-            if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-            }
-
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Sending...';
-
-            const fd = new FormData(form);
-            const templateParams = {
-                from_name:  (fd.get('fullName') || '').toString().trim(),
-                from_email: (fd.get('email') || '').toString().trim(),
-                attendance: (fd.get('attendance') || '').toString(),
-                guests:     (fd.get('guests') || '').toString(),
-                message:    (fd.get('message') || '').toString().trim() || 'No message',
-                to_name:    'Sharon & Austyn',
-                reply_to:   (fd.get('email') || '').toString().trim()
-            };
-
-            const onSuccess = () => {
-                closeModal('rsvpModal');
-                if (typeof confetti === 'function') {
-                    confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
-                }
-                showToast('Thank you! Your RSVP has been sent successfully.');
-                form.reset();
-            };
-
-            const onError = (err) => {
-                console.error('RSVP failed:', err);
-                showToast('Oops! Something went wrong. Please try again or contact us directly.');
-            };
-
-            const onFinally = () => {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            };
-
-            if (!EMAILJS_READY || typeof emailjs === 'undefined') {
-                console.warn('[EmailJS] Credentials not configured. Simulating success. Payload:', templateParams);
-                setTimeout(() => {
-                    onSuccess();
-                    onFinally();
-                }, 600);
-                return;
-            }
-
-            emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
-                .then(onSuccess)
-                .catch(onError)
-                .finally(onFinally);
-        }
-
-        /* ============================================================
-           CLIPBOARD & TOAST
-           ============================================================ */
-        async function copyToClipboard(text) {
-            try {
-                if (navigator.clipboard && window.isSecureContext) {
-                    await navigator.clipboard.writeText(text);
-                } else {
-                    const t = document.createElement('textarea');
-                    t.value = text;
-                    t.setAttribute('readonly', '');
-                    t.style.position = 'absolute';
-                    t.style.left = '-9999px';
-                    document.body.appendChild(t);
-                    t.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(t);
-                }
-                showToast('Copied to clipboard!');
-            } catch (err) {
-                console.error('Copy failed:', err);
-                showToast('Could not copy. Please copy manually.');
-            }
-        }
-
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.className = 'toast-slide-up fixed bottom-5 left-1/2 z-[60] flex -translate-x-1/2 items-center gap-2 rounded-full border border-gold-500 bg-olive-800 px-6 py-3 text-xs font-semibold text-cream-50 shadow-xl';
-            toast.innerHTML = '<i class="fa-solid fa-circle-check text-sm text-gold-500" aria-hidden="true"></i> ' + message;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transition = 'opacity 0.4s ease';
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
+        // Ensure video plays on iOS / low-power mode
+        document.addEventListener('touchstart', () => {
+            video.play().catch(() => {});
+        }, { once: true });
     </script>
+
 </body>
 </html>
