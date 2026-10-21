@@ -197,8 +197,35 @@
             transition: transform 0.5s ease;
         }
 
-        .gallery-item:hover img {
+        .gallery-item video {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #2f241e;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img,
+        .gallery-item:hover video {
             transform: scale(1.04);
+        }
+
+        .gallery-item:focus-within {
+            outline: 3px solid #d4b167;
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gallery-item img,
+            .gallery-item video {
+                transition: none;
+            }
+
+            .gallery-item:hover img,
+            .gallery-item:hover video {
+                transform: none;
+            }
         }
 
         @keyframes pulseHeart {
@@ -414,7 +441,7 @@
                         <img src="./zz (2).jpeg" alt="Couple looking at each other" />
                     </div>
                     <div class="gallery-item">
-                        <img src="./dfsfd.jpeg" alt="Romantic couple portrait" />
+                        <video src="./xvv (1).mp4" controls playsinline preload="none" aria-label="Romantic couple video" title="Watch our romantic couple video"></video>
                     </div>
                     <div class="gallery-item">
                         <img src="./zz (1).jpeg" alt="Couple holding hands" />
@@ -426,30 +453,132 @@
         <!-- ============================= -->
         <!-- DETAILS & COUNTDOWN           -->
         <!-- ============================= -->
-    <div class="mx-auto mt-10 max-w-xs rounded-2xl border border-olive-600/30 bg-olive-800/60 p-4">
-    <h4 class="mb-1 text-[10px] font-bold uppercase tracking-[0.2em] text-cream-100">The Big Day</h4>
-    <p class="mb-3 text-[10px] uppercase tracking-[0.25em] text-gold-500">December 2026</p>
+<div class="mx-auto max-w-sm rounded-3xl bg-[#2a1f1b] p-8 text-center text-[#e8ded1] shadow-2xl font-sans border border-[#3d2e28]">
 
-    <div class="mb-2 grid grid-cols-7 gap-1 text-center text-[10px] font-medium text-cream-200">
-        <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
-    </div>
-    <div class="grid grid-cols-7 items-center gap-1 text-center text-xs text-cream-100">
-        <!-- December 1, 2026 falls on a Tuesday -->
-        <span class="opacity-30">30</span>
-        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
-
-        <span>7</span><span>8</span><span>9</span><span>10</span>
-        <div class="relative flex items-center justify-center py-1 font-bold text-gold-500">
-            <i class="fa-solid fa-heart text-2xl text-gold-500/30 absolute pulse-heart" aria-hidden="true"></i>
-            <span class="relative z-10 font-bold text-cream-50">11</span>
+    <!-- Main Header / Invitation Section -->
+    <div class="mb-8 flex flex-col items-center">
+        <!-- Gold Cross Icon -->
+        <div class="mb-4 text-xl text-[#c5a059]">
+            <i class="fa-solid fa-cross"></i>
         </div>
-        <span>12</span><span>13</span>
 
-        <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
-        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
-        <span>28</span><span>29</span><span>30</span><span>31</span>
-        <span></span><span></span><span></span>
+        <p class="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#c0b5a6] leading-relaxed max-w-[280px]">
+            With God's blessing and our parents, we have the honor of inviting you to our religious wedding
+        </p>
+
+        <!-- Divider Line -->
+        <div class="w-full h-[1px] bg-[#3e2f29] mb-6"></div>
+
+        <!-- Date Banner -->
+        <div class="flex items-center justify-between w-full px-2 text-xs uppercase tracking-[0.25em] text-[#e8ded1] font-light">
+            <span>Saturday</span>
+            <span class="font-serif text-xl tracking-widest text-[#c5a059] font-normal">11</span>
+            <span>December 2026</span>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="w-full h-[1px] bg-[#3e2f29] mt-6"></div>
     </div>
+
+    <!-- Countdown Header -->
+    <h3 class="mb-4 text-[11px] uppercase tracking-[0.3em] font-medium text-[#c5a059]">
+        Countdown
+    </h3>
+
+    <!-- Countdown Timer Grid -->
+    <div class="grid grid-cols-4 gap-2 mb-8">
+        <!-- Days -->
+        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+            <span class="font-serif text-2xl font-normal text-white mb-1">52</span>
+            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Days</span>
+        </div>
+        <!-- Hours -->
+        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+            <span class="font-serif text-2xl font-normal text-white mb-1">15</span>
+            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Hours</span>
+        </div>
+        <!-- Minutes -->
+        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+            <span class="font-serif text-2xl font-normal text-white mb-1">58</span>
+            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Min</span>
+        </div>
+        <!-- Seconds -->
+        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+            <span class="font-serif text-2xl font-normal text-white mb-1">35</span>
+            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Sec</span>
+        </div>
+    </div>
+
+    <!-- Calendar Card Container -->
+    <div class="rounded-2xl bg-[#342722] p-6 border border-[#42312a] shadow-inner">
+        <!-- Titles -->
+        <h4 class="mb-1 text-[11px] font-bold uppercase tracking-[0.25em] text-[#e8ded1]">
+            The Big Day
+        </h4>
+        <p class="mb-5 text-[10px] font-medium uppercase tracking-[0.25em] text-[#c5a059]">
+            December 2026
+        </p>
+
+        <!-- Days of Week Header -->
+        <div class="mb-3 grid grid-cols-7 gap-y-2 text-center text-[10px] font-medium tracking-wider text-[#b8ab9b]">
+            <span>MON</span>
+            <span>TUE</span>
+            <span>WED</span>
+            <span>THU</span>
+            <span>FRI</span>
+            <span>SAT</span>
+            <span>SUN</span>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="grid grid-cols-7 items-center gap-y-3.5 text-center text-xs text-[#e8ded1] font-light">
+            <!-- Dec 1 starts on Tuesday -->
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+
+            <!-- Special Highlighted 11th (Friday) -->
+            <div class="relative flex items-center justify-center">
+                <svg class="absolute h-7 w-7 text-[#231a17]" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+                <span class="relative z-10 font-semibold text-white">11</span>
+            </div>
+
+            <span>12</span>
+            <span>13</span>
+
+            <span>14</span>
+            <span>15</span>
+            <span>16</span>
+            <span>17</span>
+            <span>18</span>
+            <span>19</span>
+            <span>20</span>
+
+            <span>21</span>
+            <span>22</span>
+            <span>23</span>
+            <span>24</span>
+            <span>25</span>
+            <span>26</span>
+            <span>27</span>
+
+            <span>28</span>
+            <span>29</span>
+            <span>30</span>
+            <span>31</span>
+        </div>
+    </div>
+
 </div>
 
         <!-- ============================= -->
@@ -620,7 +749,9 @@ Houston ,TX 77063 </p>
         <!-- FOOTER                        -->
         <!-- ============================= -->
         <footer class="relative overflow-hidden bg-olive-900 px-6 py-12 text-center text-cream-50">
-            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80');" aria-hidden="true"></div>
+            <video class="absolute inset-0 h-full w-full object-cover opacity-20" autoplay muted loop playsinline aria-hidden="true" tabindex="-1">
+                <source src="xvv (2).mp4" type="video/mp4">
+            </video>
             <div class="relative z-10">
                 <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500">We hope to count on your presence</p>
                 <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
