@@ -426,7 +426,7 @@
             <div class="mx-auto max-w-6xl">
                 <div class="mb-8 text-center">
                     <p class="text-[10px] font-semibold uppercase tracking-[0.32em] text-gold-600">Our Story</p>
-                    <h2 class="mt-3 font-script text-5xl text-olive-800">A love that grew beautifully</h2>
+                    <h2 class="mt-3 font-serif text-5xl text-olive-800">A love that grew beautifully</h2>
                 </div>
 
                 <div class="story-grid">
@@ -682,30 +682,52 @@ Houston ,TX 77063 </p>
         <!-- ============================= -->
         <!-- GIFT SUGGESTION               -->
         <!-- ============================= -->
-        <section class="section-olive px-6 py-10 text-center text-cream-50">
-            <div class="mx-auto max-w-md">
-                <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
-                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
+       <section class="section-olive px-6 py-10 text-center text-cream-50">
+    <div class="mx-auto max-w-md">
+        <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
+            <i class="fa-solid fa-gift" aria-hidden="true"></i>
+        </div>
+
+        <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
+        <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
+            Your presence is the greatest gift. If you would like to give us a token, we have these options for you.
+        </p>
+
+        <div class="mt-6 space-y-3">
+            <!-- Zenith Bank Card -->
+            <div class="rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm">
+                <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                    <i class="fa-solid fa-university"></i> Zenith Bank
                 </div>
-
-                <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
-                <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
-                    Your presence is the greatest gift, but if you like to give us a token we have these options for you .
-                </p>
-
-                <div class="mt-6 space-y-3">
-                    <button onclick="openGiftModal('zenith')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-university" aria-hidden="true"></i> Zenith Bank
-                    </button>
-                    <button onclick="openGiftModal('zelle')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-bolt" aria-hidden="true"></i> Zelle Info
-                    </button>
-                    <button onclick="openGiftModal('cashapp')" class="w-full rounded-full border-2 border-gold-500/60 bg-olive-800/80 px-5 py-3 text-sm font-medium text-cream-50 transition hover:bg-gold-500 hover:text-olive-900 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i> Cash App
-                    </button>
+                <div class="mt-1 text-xs text-cream-200">
+                    <p class="font-medium text-cream-50">Suave Properties Limited</p>
+                    <p class="font-mono text-sm font-bold text-gold-400 select-all">1017459935</p>
                 </div>
             </div>
-        </section>
+
+            <!-- Zelle Info Card -->
+            <div class="rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm">
+                <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                    <i class="fa-solid fa-bolt"></i> Zelle Info
+                </div>
+                <div class="mt-1 text-xs text-cream-200">
+                    <p class="font-mono text-sm font-bold text-gold-400 select-all">9796168300</p>
+                </div>
+            </div>
+
+            <!-- Cash App Link Button -->
+            <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener noreferrer" class="w-full rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm transition hover:border-gold-500 hover:bg-olive-800 flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                        <i class="fa-solid fa-dollar-sign"></i> Cash App
+                    </div>
+                    <p class="mt-1 font-mono text-sm font-bold text-gold-400">$AprilOkoye</p>
+                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-cream-200"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
         <!-- ============================= -->
         <!-- FINAL RSVP SECTION            -->
@@ -875,26 +897,23 @@ Houston ,TX 77063 </p>
         /* ============================================================
            EMAILJS CONFIGURATION
            ------------------------------------------------------------
-           Replace the three placeholders below with your own values
-           from https://dashboard.emailjs.com/
-             1. publicKey    — Account → General → Public Key
-             2. serviceId    — Email Services → your service ID
-             3. templateId   — Email Templates → your template ID
+                     Set serviceId to the ID of the EmailJS service connected to your template.
 
            Your EmailJS template should reference these variables:
              {{from_name}} {{from_email}} {{reply_to}}
              {{attendance}} {{guests}} {{message}} {{to_name}}
            ============================================================ */
         const EMAILJS_CONFIG = {
-            publicKey:  "YOUR_PUBLIC_KEY",   // <-- replace
-            serviceId:  "YOUR_SERVICE_ID",   // <-- replace
-            templateId: "YOUR_TEMPLATE_ID"   // <-- replace
+            publicKey:  "G9h0DhPGQSiLaAt5h",
+            serviceId:  "service_2rse72c",
+            templateId: "template_ve8mh0c"
         };
 
         const EMAILJS_READY =
-            EMAILJS_CONFIG.publicKey  !== "YOUR_PUBLIC_KEY" &&
-            EMAILJS_CONFIG.serviceId  !== "YOUR_SERVICE_ID" &&
-            EMAILJS_CONFIG.templateId !== "YOUR_TEMPLATE_ID";
+            EMAILJS_CONFIG.publicKey &&
+            EMAILJS_CONFIG.serviceId !== "YOUR_SERVICE_ID" &&
+            EMAILJS_CONFIG.serviceId.trim() !== '' &&
+            EMAILJS_CONFIG.templateId;
 
         if (EMAILJS_READY && typeof emailjs !== 'undefined') {
             emailjs.init(EMAILJS_CONFIG.publicKey);
@@ -1257,11 +1276,9 @@ Houston ,TX 77063 </p>
             };
 
             if (!EMAILJS_READY || typeof emailjs === 'undefined') {
-                console.warn('[EmailJS] Credentials not configured. Simulating success. Payload:', templateParams);
-                setTimeout(() => {
-                    onSuccess();
-                    onFinally();
-                }, 600);
+                console.error('[EmailJS] Configure a valid service ID and ensure the EmailJS SDK is available.');
+                showToast('Email service is not configured. Please try again later.');
+                onFinally();
                 return;
             }
 
@@ -1307,6 +1324,16 @@ Houston ,TX 77063 </p>
                 setTimeout(() => toast.remove(), 400);
             }, 3000);
         }
+
+        // Expose handlers explicitly for buttons using inline onclick attributes.
+        Object.assign(window, {
+            openGiftModal,
+            openRSVPModal,
+            openLocationModal,
+            closeModal,
+            copyToClipboard,
+            submitRSVP
+        });
     </script>
 </body>
 </html>
