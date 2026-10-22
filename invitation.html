@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script>
         tailwind.config = {
@@ -325,10 +321,9 @@
 
     <main class="relative z-10">
         <!-- ============================= -->
-        <!-- HERO (matched to site palette)-->
+        <!-- HERO                          -->
         <!-- ============================= -->
         <section class="romantic-shell grain relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-cream-50 via-cream-100 to-cream-200 px-6 py-16 flex items-center justify-center text-olive-900">
-            <!-- Decorative background -->
             <div class="pointer-events-none absolute -top-24 -left-24 h-96 w-96 rounded-full bg-gold-500/15 blur-3xl" aria-hidden="true"></div>
             <div class="pointer-events-none absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-olive-700/10 blur-3xl" aria-hidden="true"></div>
             <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,177,103,0.10),_transparent_60%)]" aria-hidden="true"></div>
@@ -341,22 +336,11 @@
             <div class="relative z-10 mx-auto w-full max-w-6xl">
                 <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
 
-                    <!-- Text column (first on mobile, left on desktop) -->
                     <div class="order-1 text-center lg:col-span-6 lg:text-left">
                         <div class="inline-flex items-center gap-2.5 rounded-full border border-olive-700/20 bg-white/60 px-4 py-1.5 text-[11px] font-semibold tracking-[0.3em] uppercase text-olive-700 backdrop-blur-md shadow-sm">
                             <i class="fa-solid fa-heart text-gold-500 text-xs" aria-hidden="true"></i>
                             <span>Save The Date</span>
                         </div>
-
-
-
-
-
-
-
-
-
-
 
                         <div class="mt-8 space-y-2">
                             <p class="font-serif text-3xl font-light tracking-[0.25em] text-olive-800 uppercase sm:text-4xl">Sharon</p>
@@ -400,7 +384,6 @@
                         </div>
                     </div>
 
-                    <!-- Media column (second on mobile, right on desktop) -->
                     <div class="order-2 mb-10 lg:col-span-6 lg:mb-0">
                         <div class="image-stack mx-auto">
                             <img src="FXX (2).jpeg" alt="Couple embracing" class="romantic-photo" />
@@ -457,7 +440,7 @@
                     <div class="gallery-item">
                         <img src="./zz (2).jpeg" alt="Couple looking at each other" />
                     </div>
-                     <div class="gallery-item">
+                    <div class="gallery-item">
                         <img src="./FXX (1).jpeg" alt="Couple looking at each other" />
                     </div>
                     <div class="gallery-item">
@@ -470,144 +453,126 @@
         <!-- ============================= -->
         <!-- DETAILS & COUNTDOWN           -->
         <!-- ============================= -->
-<div class="mx-auto max-w-sm rounded-3xl bg-[#2a1f1b] p-8 text-center text-[#e8ded1] shadow-2xl font-sans border border-[#3d2e28]">
+        <div id="details" class="mx-auto max-w-sm rounded-3xl bg-[#2a1f1b] p-8 text-center text-[#e8ded1] shadow-2xl font-sans border border-[#3d2e28]">
 
-    <!-- Main Header / Invitation Section -->
-    <div class="mb-8 flex flex-col items-center">
-        <!-- Gold Cross Icon -->
-        <div class="mb-4 text-xl text-[#c5a059]">
-            <i class="fa-solid fa-cross"></i>
-        </div>
+            <div class="mb-8 flex flex-col items-center">
+                <div class="mb-4 text-xl text-[#c5a059]">
+                    <i class="fa-solid fa-cross"></i>
+                </div>
 
-        <p class="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#c0b5a6] leading-relaxed max-w-[280px]">
-            With God's blessing and our parents, we have the honor of inviting you to our  wedding
-        </p>
+                <p class="mb-6 text-[11px] uppercase tracking-[0.22em] text-[#c0b5a6] leading-relaxed max-w-[280px]">
+                    With God's blessing and our parents, we have the honor of inviting you to our wedding
+                </p>
 
-        <!-- Divider Line -->
-        <div class="w-full h-[1px] bg-[#3e2f29] mb-6"></div>
+                <div class="w-full h-[1px] bg-[#3e2f29] mb-6"></div>
 
-        <!-- Date Banner -->
-        <div class="flex items-center justify-between w-full px-2 text-xs uppercase tracking-[0.25em] text-[#e8ded1] font-light">
-            <span>Friday</span>
-            <span class="font-serif text-xl tracking-widest text-[#c5a059] font-normal">11</span>
-            <span>December 2026</span>
-        </div>
+                <div class="flex items-center justify-between w-full px-2 text-xs uppercase tracking-[0.25em] text-[#e8ded1] font-light">
+                    <span>Friday</span>
+                    <span class="font-serif text-xl tracking-widest text-[#c5a059] font-normal">11</span>
+                    <span>December 2026</span>
+                </div>
 
-        <!-- Divider Line -->
-        <div class="w-full h-[1px] bg-[#3e2f29] mt-6"></div>
-    </div>
-
-    <!-- Countdown Header -->
-    <h3 class="mb-4 text-[11px] uppercase tracking-[0.3em] font-medium text-[#c5a059]">
-        Countdown
-    </h3>
-
-    <!-- Countdown Timer Grid -->
-    <div class="grid grid-cols-4 gap-2 mb-8">
-        <!-- Days -->
-        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
-            <span id="countdownDays" class="font-serif text-2xl font-normal text-white mb-1">0</span>
-            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Days</span>
-        </div>
-        <!-- Hours -->
-        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
-            <span id="countdownHours" class="font-serif text-2xl font-normal text-white mb-1">0</span>
-            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Hours</span>
-        </div>
-        <!-- Minutes -->
-        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
-            <span id="countdownMinutes" class="font-serif text-2xl font-normal text-white mb-1">0</span>
-            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Min</span>
-        </div>
-        <!-- Seconds -->
-        <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
-            <span id="countdownSeconds" class="font-serif text-2xl font-normal text-white mb-1">0</span>
-            <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Sec</span>
-        </div>
-    </div>
-
-    <!-- Calendar Card Container -->
-    <div class="rounded-2xl bg-[#342722] p-6 border border-[#42312a] shadow-inner">
-        <!-- Titles -->
-        <h4 class="mb-1 text-[11px] font-bold uppercase tracking-[0.25em] text-[#e8ded1]">
-            The Big Day
-        </h4>
-        <p class="mb-5 text-[10px] font-medium uppercase tracking-[0.25em] text-[#c5a059]">
-            December 2026
-        </p>
-
-        <!-- Days of Week Header -->
-        <div class="mb-3 grid grid-cols-7 gap-y-2 text-center text-[10px] font-medium tracking-wider text-[#b8ab9b]">
-            <span>MON</span>
-            <span>TUE</span>
-            <span>WED</span>
-            <span>THU</span>
-            <span>FRI</span>
-            <span>SAT</span>
-            <span>SUN</span>
-        </div>
-
-        <!-- Calendar Grid -->
-        <div class="grid grid-cols-7 items-center gap-y-3.5 text-center text-xs text-[#e8ded1] font-light">
-            <!-- Dec 1 starts on Tuesday -->
-            <span aria-hidden="true"></span>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>10</span>
-
-            <!-- Special Highlighted 11th (Friday) -->
-            <div class="relative flex items-center justify-center">
-                <svg class="absolute h-7 w-7 text-[#231a17]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                </svg>
-                <span class="relative z-10 font-semibold text-white">11</span>
+                <div class="w-full h-[1px] bg-[#3e2f29] mt-6"></div>
             </div>
 
-            <span>12</span>
-            <span>13</span>
+            <h3 class="mb-4 text-[11px] uppercase tracking-[0.3em] font-medium text-[#c5a059]">
+                Countdown
+            </h3>
 
-            <span>14</span>
-            <span>15</span>
-            <span>16</span>
-            <span>17</span>
-            <span>18</span>
-            <span>19</span>
-            <span>20</span>
+            <div class="grid grid-cols-4 gap-2 mb-8">
+                <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+                    <span id="countdownDays" class="font-serif text-2xl font-normal text-white mb-1">0</span>
+                    <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Days</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+                    <span id="countdownHours" class="font-serif text-2xl font-normal text-white mb-1">0</span>
+                    <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Hours</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+                    <span id="countdownMinutes" class="font-serif text-2xl font-normal text-white mb-1">0</span>
+                    <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Min</span>
+                </div>
+                <div class="flex flex-col items-center justify-center p-3 rounded-2xl bg-[#352722] border border-[#43322b]">
+                    <span id="countdownSeconds" class="font-serif text-2xl font-normal text-white mb-1">0</span>
+                    <span class="text-[9px] uppercase tracking-widest text-[#a89b8c]">Sec</span>
+                </div>
+            </div>
 
-            <span>21</span>
-            <span>22</span>
-            <span>23</span>
-            <span>24</span>
-            <span>25</span>
-            <span>26</span>
-            <span>27</span>
+            <div class="rounded-2xl bg-[#342722] p-6 border border-[#42312a] shadow-inner">
+                <h4 class="mb-1 text-[11px] font-bold uppercase tracking-[0.25em] text-[#e8ded1]">
+                    The Big Day
+                </h4>
+                <p class="mb-5 text-[10px] font-medium uppercase tracking-[0.25em] text-[#c5a059]">
+                    December 2026
+                </p>
 
-            <span>28</span>
-            <span>29</span>
-            <span>30</span>
-            <span>31</span>
+                <div class="mb-3 grid grid-cols-7 gap-y-2 text-center text-[10px] font-medium tracking-wider text-[#b8ab9b]">
+                    <span>MON</span>
+                    <span>TUE</span>
+                    <span>WED</span>
+                    <span>THU</span>
+                    <span>FRI</span>
+                    <span>SAT</span>
+                    <span>SUN</span>
+                </div>
+
+                <div class="grid grid-cols-7 items-center gap-y-3.5 text-center text-xs text-[#e8ded1] font-light">
+                    <span aria-hidden="true"></span>
+                    <span>1</span>
+                    <span>2</span>
+                    <span>3</span>
+                    <span>4</span>
+                    <span>5</span>
+                    <span>6</span>
+
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+
+                    <div class="relative flex items-center justify-center">
+                        <svg class="absolute h-7 w-7 text-[#231a17]" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        <span class="relative z-10 font-semibold text-white">11</span>
+                    </div>
+
+                    <span>12</span>
+                    <span>13</span>
+
+                    <span>14</span>
+                    <span>15</span>
+                    <span>16</span>
+                    <span>17</span>
+                    <span>18</span>
+                    <span>19</span>
+                    <span>20</span>
+
+                    <span>21</span>
+                    <span>22</span>
+                    <span>23</span>
+                    <span>24</span>
+                    <span>25</span>
+                    <span>26</span>
+                    <span>27</span>
+
+                    <span>28</span>
+                    <span>29</span>
+                    <span>30</span>
+                    <span>31</span>
+                </div>
+            </div>
+
         </div>
-    </div>
-
-</div>
 
         <!-- ============================= -->
         <!-- CEREMONY, RECEPTION & SCHEDULE -->
         <!-- ============================= -->
         <section class="section-soft px-6 py-12 text-center">
             <div class="mx-auto max-w-5xl space-y-8">
-                <!-- Ceremony Card -->
                 <div class="info-card overflow-hidden p-6 text-center">
                     <div class="mb-5 flex w-full items-center justify-center rounded-2xl border border-cream-300/80 bg-cream-50/80 p-4">
-                        <img class="h-48 w-48 rounded-xl object-cover" src="cht.jpeg " alt="Church interior" loading="lazy">
+                        <img class="h-48 w-48 rounded-xl object-cover" src="cht.jpeg" alt="Church interior" loading="lazy">
                     </div>
 
                     <h3 class="font-script text-4xl text-olive-800">Church Ceremony</h3>
@@ -621,17 +586,16 @@
                     </button>
                 </div>
 
-                <!-- Dance and Celebration Card -->
                 <div class="info-card p-6 text-center">
                     <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-cream-200 text-xl text-olive-700">
                         <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
                     </div>
-                    <h3 class="font-script text-4xl text-olive-800">Dance & Celebration</h3>
+                    <h3 class="font-script text-4xl text-olive-800">Dance &amp; Celebration</h3>
                     <p class="mt-2 text-sm font-semibold text-gold-600">5:00 pm</p>
                     <p class="mt-2 text-sm font-bold uppercase tracking-wide text-gray-800">Reception Venue</p>
                     <p class="mt-1 text-xs text-gray-500">DOMAIN 8208 event venue <br>
 8208 Westpark drive <br>
-Houston ,TX 77063 </p>
+Houston, TX 77063</p>
 
                     <button onclick="window.open('https://www.google.com/maps/search/?api=1&query=DOMAIN%208208%20event%20venue%2C%208208%20Westpark%20Dr%2C%20Houston%2C%20TX%2077063', '_blank', 'noopener')" class="mt-5 inline-flex items-center gap-2 rounded-full border border-olive-700 px-5 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-olive-700 transition hover:bg-olive-700 hover:text-white">
                         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
@@ -639,7 +603,6 @@ Houston ,TX 77063 </p>
                     </button>
                 </div>
 
-                <!-- Schedule Card -->
                 <div class="info-card p-6 text-center">
                     <h3 class="font-script text-4xl text-olive-800">Schedule of Events</h3>
 
@@ -662,7 +625,6 @@ Houston ,TX 77063 </p>
                     </div>
                 </div>
 
-                <!-- Dress Code Card -->
                 <div class="info-card p-6 text-center">
                     <h3 class="font-script text-4xl text-olive-800">Dress Code</h3>
                     <p class="mt-2 text-base font-bold uppercase tracking-[0.2em] text-gray-800">Elegant Formal</p>
@@ -682,52 +644,57 @@ Houston ,TX 77063 </p>
         <!-- ============================= -->
         <!-- GIFT SUGGESTION               -->
         <!-- ============================= -->
-       <section class="section-olive px-6 py-10 text-center text-cream-50">
-    <div class="mx-auto max-w-md">
-        <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
-            <i class="fa-solid fa-gift" aria-hidden="true"></i>
-        </div>
-
-        <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
-        <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
-            Your presence is the greatest gift. If you would like to give us a token, we have these options for you.
-        </p>
-
-        <div class="mt-6 space-y-3">
-            <!-- Zenith Bank Card -->
-            <div class="rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm">
-                <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
-                    <i class="fa-solid fa-university"></i> Zenith Bank
+        <section class="section-olive px-6 py-10 text-center text-cream-50">
+            <div class="mx-auto max-w-md">
+                <div class="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full border border-olive-600 bg-olive-800 text-2xl text-gold-500">
+                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
                 </div>
-                <div class="mt-1 text-xs text-cream-200">
-                    <p class="font-medium text-cream-50">Suave Properties Limited</p>
-                    <p class="font-mono text-sm font-bold text-gold-400 select-all">1017459935</p>
-                </div>
-            </div>
 
-            <!-- Zelle Info Card -->
-            <div class="rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm">
-                <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
-                    <i class="fa-solid fa-bolt"></i> Zelle Info
-                </div>
-                <div class="mt-1 text-xs text-cream-200">
-                    <p class="font-mono text-sm font-bold text-gold-400 select-all">9796168300</p>
-                </div>
-            </div>
+                <h3 class="font-script text-4xl text-cream-50">Gift Suggestion</h3>
+                <p class="mt-3 text-xs font-light leading-relaxed text-cream-200">
+                    Your presence is the greatest gift. If you would like to give us a token, we have these options for you.
+                </p>
 
-            <!-- Cash App Link Button -->
-            <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener noreferrer" class="w-full rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm transition hover:border-gold-500 hover:bg-olive-800 flex items-center justify-between">
-                <div>
-                    <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
-                        <i class="fa-solid fa-dollar-sign"></i> Cash App
+                <div class="mt-6 space-y-3">
+
+                    <div class="rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm">
+                        <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                            <i class="fa-solid fa-university"></i> Zenith Bank
+                        </div>
+                        <div class="mt-1 text-xs text-cream-200">
+                            <p class="font-medium text-cream-50">Suave Properties Limited</p>
+                            <p class="font-mono text-sm font-bold text-gold-400 select-all">1017459935</p>
+                        </div>
+                        <button onclick="copyToClipboard('1017459935')" class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gold-500/40 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-gold-400 transition hover:bg-gold-500/10">
+                            <i class="fa-regular fa-copy"></i> Copy Account Number
+                        </button>
                     </div>
-                    <p class="mt-1 font-mono text-sm font-bold text-gold-400">$AprilOkoye</p>
+
+                    <button type="button" onclick="copyToClipboard('9796168300')" class="w-full rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm transition hover:border-gold-500 hover:bg-olive-800 flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                                <i class="fa-solid fa-bolt"></i> Zelle Info
+                            </div>
+                            <p class="mt-1 font-mono text-sm font-bold text-gold-400">9796168300</p>
+                            <p class="mt-1 text-[10px] text-cream-200/70">Tap to copy &middot; open your bank app to send</p>
+                        </div>
+                        <i class="fa-regular fa-copy text-xs text-cream-200"></i>
+                    </button>
+
+                    <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener noreferrer" class="w-full rounded-2xl border border-gold-500/40 bg-olive-800/80 p-4 text-left shadow-sm transition hover:border-gold-500 hover:bg-olive-800 flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center gap-2 text-gold-500 font-semibold text-sm">
+                                <i class="fa-solid fa-dollar-sign"></i> Cash App
+                            </div>
+                            <p class="mt-1 font-mono text-sm font-bold text-gold-400">$AprilOkoye</p>
+                            <p class="mt-1 text-[10px] text-cream-200/70">Opens Cash App with the tag filled in</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-cream-200"></i>
+                    </a>
+
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-cream-200"></i>
-            </a>
-        </div>
-    </div>
-</section>
+            </div>
+        </section>
 
         <!-- ============================= -->
         <!-- FINAL RSVP SECTION            -->
@@ -778,8 +745,7 @@ Houston ,TX 77063 </p>
                                 <i class="fa-solid fa-camera" aria-hidden="true"></i>
                             </div>
                             <h4 class="text-[10px] font-bold uppercase tracking-[0.28em] text-olive-800">See you soon!</h4>
-                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We look forward to celebrating our 
-                                special day with you!  <span class="font-semibold text-olive-700"></span>.</p>
+                            <p class="mt-2 text-xs leading-relaxed text-gray-600">We look forward to celebrating our special day with you!</p>
                         </div>
                     </div>
                 </div>
@@ -796,7 +762,7 @@ Houston ,TX 77063 </p>
             <div class="relative z-10">
                 <p class="mb-2 text-[10px] font-medium uppercase tracking-[0.3em] text-gold-500"></p>
                 <h2 class="font-script text-5xl text-cream-50">Thank You!</h2>
-                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon &amp; Austyn • 2026</p>
+                <p class="mt-4 text-[10px] uppercase tracking-[0.3em] text-cream-300/70">Sharon &amp; Austyn &bull; 2026</p>
             </div>
         </footer>
     </main>
@@ -838,6 +804,9 @@ Houston ,TX 77063 </p>
                 <p class="text-xs text-gray-600">Please complete the fields for your registration.</p>
             </div>
             <form id="rsvpForm" onsubmit="submitRSVP(event)" class="space-y-3 text-left" novalidate>
+                <!-- Hidden field so Formspree CCs both recipients -->
+                <input type="hidden" name="_cc" value="Sharonmarisha@yahoo.com,Austyn1@ymail.com" />
+
                 <div>
                     <label for="fullName" class="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-700">Full Name *</label>
                     <input id="fullName" type="text" name="fullName" required placeholder="e.g. John Smith" class="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-olive-700" />
@@ -868,59 +837,19 @@ Houston ,TX 77063 </p>
         </div>
     </div>
 
-    <!-- Gift modal -->
-    <div id="giftModal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4" role="dialog" aria-modal="true" aria-labelledby="giftModalTitle">
-        <div class="relative w-full max-w-sm rounded-2xl bg-cream-50 p-6 text-center shadow-2xl">
-            <button onclick="closeModal('giftModal')" aria-label="Close" class="absolute right-4 top-4 text-lg text-gray-400 hover:text-gray-700">
-                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-            </button>
-            <div class="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-gold-500/20 text-xl text-gold-600">
-                <i id="giftModalIcon" class="fa-solid fa-building-columns" aria-hidden="true"></i>
-            </div>
-            <h3 id="giftModalTitle" class="font-script text-3xl text-olive-800">Gift Details</h3>
-            <p id="giftModalSubtitle" class="mt-1 text-xs text-gray-600">We are deeply grateful for your love and support.</p>
-
-            <div id="giftModalContent" class="mb-4 mt-4 space-y-3 rounded-xl border border-cream-300 bg-white p-4 text-left">
-                <!-- dynamic content injected here -->
-            </div>
-
-            <button onclick="closeModal('giftModal')" class="w-full rounded-full bg-olive-700 px-4 py-2.5 text-[10px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-olive-800">
-                Got it
-            </button>
-        </div>
-    </div>
-
     <!-- ============================= -->
     <!-- SCRIPTS                       -->
     <!-- ============================= -->
     <script>
         /* ============================================================
-           EMAILJS CONFIGURATION
-           ------------------------------------------------------------
-                     Set serviceId to the ID of the EmailJS service connected to your template.
-
-           Your EmailJS template should reference these variables:
-             {{from_name}} {{from_email}} {{reply_to}}
-             {{attendance}} {{guests}} {{message}} {{to_name}}
+           FORMSPREE CONFIGURATION
+           Form ID: xjyybzeb (from https://formspree.io/f/xjyybzeb)
            ============================================================ */
-        const EMAILJS_CONFIG = {
-            publicKey:  "G9h0DhPGQSiLaAt5h",
-            serviceId:  "service_2rse72c",
-            templateId: "template_ve8mh0c"
-        };
-
-        const EMAILJS_READY =
-            EMAILJS_CONFIG.publicKey &&
-            EMAILJS_CONFIG.serviceId !== "YOUR_SERVICE_ID" &&
-            EMAILJS_CONFIG.serviceId.trim() !== '' &&
-            EMAILJS_CONFIG.templateId;
-
-        if (EMAILJS_READY && typeof emailjs !== 'undefined') {
-            emailjs.init(EMAILJS_CONFIG.publicKey);
-        }
+        const FORMSPREE_FORM_ID = "xjyybzeb";
+        const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
 
         /* ============================================================
-           LIVE WEDDING COUNTDOWN (2:00 PM Houston time)
+           LIVE WEDDING COUNTDOWN (2:00 PM Houston time, CST UTC-6)
            ============================================================ */
         const weddingDate = new Date('2026-12-11T14:00:00-06:00').getTime();
 
@@ -931,10 +860,15 @@ Houston ,TX 77063 </p>
             const minutes = Math.floor((remaining % 3600000) / 60000);
             const seconds = Math.floor((remaining % 60000) / 1000);
 
-            document.getElementById('countdownDays').textContent = days;
-            document.getElementById('countdownHours').textContent = hours;
-            document.getElementById('countdownMinutes').textContent = minutes;
-            document.getElementById('countdownSeconds').textContent = seconds;
+            const d = document.getElementById('countdownDays');
+            const h = document.getElementById('countdownHours');
+            const m = document.getElementById('countdownMinutes');
+            const s = document.getElementById('countdownSeconds');
+
+            if (d) d.textContent = days;
+            if (h) h.textContent = hours;
+            if (m) m.textContent = minutes;
+            if (s) s.textContent = seconds;
         }
 
         updateCountdown();
@@ -1049,160 +983,11 @@ Houston ,TX 77063 </p>
         });
 
         /* ============================================================
-           COUNTDOWN — pinned to Houston (CST, UTC-6)
-           ============================================================ */
-        const targetDate = new Date('2026-12-11T15:00:00-06:00').getTime();
-
-        function updateTimer() {
-            const now = Date.now();
-            const difference = targetDate - now;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-                document.getElementById('timerDays').textContent = String(days).padStart(2, '0');
-                document.getElementById('timerHours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('timerMinutes').textContent = String(minutes).padStart(2, '0');
-                document.getElementById('timerSeconds').textContent = String(seconds).padStart(2, '0');
-            } else {
-                document.getElementById('timerDays').textContent = '00';
-                document.getElementById('timerHours').textContent = '00';
-                document.getElementById('timerMinutes').textContent = '00';
-                document.getElementById('timerSeconds').textContent = '00';
-            }
-        }
-
-        setInterval(updateTimer, 1000);
-        updateTimer();
-
-        /* ============================================================
-           LOCATION MODAL
-           ============================================================ */
-        const locationsData = {
-            church: {
-                title: 'Church of Annunciation',
-                time: '3:00 PM',
-                address: '1618 Texas Ave, Houston, TX 77003',
-                icon: 'fa-church',
-                gmapsLink: 'https://maps.google.com/?q=Church+of+Annunciation+1618+Texas+Ave+Houston+TX+77003',
-                mapSrc: 'https://maps.google.com/maps?q=Church%20of%20Annunciation%201618%20Texas%20Ave%20Houston%20TX%2077003&t=&z=15&ie=UTF8&iwloc=&output=embed'
-            },
-            venue: {
-                title: 'Reception Venue',
-                time: '5:00 PM',
-                address: 'Houston, Texas',
-                icon: 'fa-champagne-glasses',
-                gmapsLink: 'https://maps.google.com/?q=Reception+Venue+Houston+Texas',
-                mapSrc: 'https://maps.google.com/maps?q=Houston%20Texas&t=&z=14&ie=UTF8&iwloc=&output=embed'
-            }
-        };
-
-        function openLocationModal(type) {
-            const data = locationsData[type];
-            if (!data) return;
-            document.getElementById('locModalTitle').textContent = data.title;
-            document.getElementById('locModalTime').textContent = data.time;
-            document.getElementById('locModalAddress').textContent = data.address;
-            document.getElementById('locModalIcon').className = `fa-solid ${data.icon}`;
-            document.getElementById('locModalGmapsLink').href = data.gmapsLink;
-            document.getElementById('locModalMap').src = data.mapSrc;
-            document.getElementById('locationModal').classList.remove('hidden');
-            document.getElementById('locationModal').classList.add('flex');
-        }
-
-        /* ============================================================
            RSVP MODAL
            ============================================================ */
         function openRSVPModal() {
             document.getElementById('rsvpModal').classList.remove('hidden');
             document.getElementById('rsvpModal').classList.add('flex');
-        }
-
-        /* ============================================================
-           GIFT MODAL
-           ============================================================ */
-        const giftData = {
-            zenith: {
-                title: 'Zenith Bank',
-                subtitle: 'Account details',
-                icon: 'fa-university',
-                content: `
-                    <div class="text-center">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('Zenith Bank | Account Name: Suave Properties Limited | Account Number: 1017459935')}" alt="QR code with Zenith Bank transfer details" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
-                        <p class="mt-2 text-[10px] text-gray-500">Scan for bank transfer details</p>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">1017459935</span>
-                            <button onclick="copyToClipboard('1017459935')" aria-label="Copy account number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Name</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">Suave Properties Limited</span>
-                        </div>
-                    </div>
-                `
-            },
-            zelle: {
-                title: 'Zelle Info',
-                subtitle: 'Send via Zelle',
-                icon: 'fa-bolt',
-                content: `
-                    <div class="text-center">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('Zelle | Send to phone number: 9796168300')}" alt="QR code with Zelle payment details" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
-                        <p class="mt-2 text-[10px] text-gray-500">Scan for Zelle payment details</p>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Phone Number</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <span class="text-xs font-mono text-gray-700">9796168300</span>
-                            <button onclick="copyToClipboard('9796168300')" aria-label="Copy Zelle phone number" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                `
-            },
-            cashapp: {
-                title: 'Cash App',
-                subtitle: 'Send via Cash App',
-                icon: 'fa-dollar-sign',
-                content: `
-                    <div class="text-center">
-                        <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener noreferrer" aria-label="Open Cash App payment link">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('https://cash.app/$AprilOkoye')}" alt="QR code to pay via Cash App" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
-                        </a>
-                        <p class="mt-2 text-[10px] text-gray-500">Scan to open Cash App</p>
-                    </div>
-                    <div>
-                        <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Cash App Link</span>
-                        <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
-                            <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener" class="text-xs font-mono text-olive-700 underline hover:text-olive-800">https://cash.app/$AprilOkoye</a>
-                            <button onclick="copyToClipboard('https://cash.app/$AprilOkoye')" aria-label="Copy Cash App link" class="text-xs font-semibold text-olive-700 hover:text-olive-800">
-                                <i class="fa-regular fa-copy"></i>
-                            </button>
-                        </div>
-                    </div>
-                `
-            }
-        };
-
-        function openGiftModal(type) {
-            const data = giftData[type];
-            if (!data) return;
-            document.getElementById('giftModalTitle').textContent = data.title;
-            document.getElementById('giftModalSubtitle').textContent = data.subtitle;
-            document.getElementById('giftModalIcon').className = `fa-solid ${data.icon}`;
-            document.getElementById('giftModalContent').innerHTML = data.content;
-            document.getElementById('giftModal').classList.remove('hidden');
-            document.getElementById('giftModal').classList.add('flex');
         }
 
         /* ============================================================
@@ -1216,7 +1001,7 @@ Houston ,TX 77063 </p>
         }
 
         window.addEventListener('click', (event) => {
-            ['locationModal', 'rsvpModal', 'giftModal'].forEach(modalId => {
+            ['locationModal', 'rsvpModal'].forEach(modalId => {
                 const modal = document.getElementById(modalId);
                 if (event.target === modal) closeModal(modalId);
             });
@@ -1224,14 +1009,14 @@ Houston ,TX 77063 </p>
 
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Escape') {
-                ['locationModal', 'rsvpModal', 'giftModal'].forEach(closeModal);
+                ['locationModal', 'rsvpModal'].forEach(closeModal);
             }
         });
 
         /* ============================================================
-           RSVP SUBMIT
+           RSVP SUBMIT (FORMSPREE AJAX)
            ============================================================ */
-        function submitRSVP(e) {
+        async function submitRSVP(e) {
             e.preventDefault();
             const form = e.target;
             const submitBtn = document.getElementById('rsvpSubmitBtn');
@@ -1245,47 +1030,36 @@ Houston ,TX 77063 </p>
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> Sending...';
 
-            const fd = new FormData(form);
-            const templateParams = {
-                from_name:  (fd.get('fullName') || '').toString().trim(),
-                from_email: (fd.get('email') || '').toString().trim(),
-                attendance: (fd.get('attendance') || '').toString(),
-                guests:     (fd.get('guests') || '').toString(),
-                message:    (fd.get('message') || '').toString().trim() || 'No message',
-                to_name:    'Sharon & Austyn',
-                reply_to:   (fd.get('email') || '').toString().trim()
-            };
+            try {
+                const formData = new FormData(form);
+                const response = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
 
-            const onSuccess = () => {
-                closeModal('rsvpModal');
-                if (typeof confetti === 'function') {
-                    confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                if (response.ok) {
+                    closeModal('rsvpModal');
+                    if (typeof confetti === 'function') {
+                        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
+                    }
+                    showToast('Thank you! Your RSVP has been sent successfully.');
+                    form.reset();
+                } else {
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error('Formspree submission failed:', errorData);
+                    const errorMessage = errorData.errors
+                        ? errorData.errors.map(err => err.message).join(', ')
+                        : 'Please check your details and try again.';
+                    showToast('Could not send RSVP: ' + errorMessage);
                 }
-                showToast('Thank you! Your RSVP has been sent successfully.');
-                form.reset();
-            };
-
-            const onError = (err) => {
-                console.error('RSVP failed:', err);
-                showToast('Oops! Something went wrong. Please try again or contact us directly.');
-            };
-
-            const onFinally = () => {
+            } catch (error) {
+                console.error('Network error during RSVP submission:', error);
+                showToast('A network error occurred. Please check your connection and try again.');
+            } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnText;
-            };
-
-            if (!EMAILJS_READY || typeof emailjs === 'undefined') {
-                console.error('[EmailJS] Configure a valid service ID and ensure the EmailJS SDK is available.');
-                showToast('Email service is not configured. Please try again later.');
-                onFinally();
-                return;
             }
-
-            emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
-                .then(onSuccess)
-                .catch(onError)
-                .finally(onFinally);
         }
 
         /* ============================================================
@@ -1306,7 +1080,7 @@ Houston ,TX 77063 </p>
                     document.execCommand('copy');
                     document.body.removeChild(t);
                 }
-                showToast('Copied to clipboard!');
+                showToast('Copied: ' + text);
             } catch (err) {
                 console.error('Copy failed:', err);
                 showToast('Could not copy. Please copy manually.');
@@ -1325,11 +1099,9 @@ Houston ,TX 77063 </p>
             }, 3000);
         }
 
-        // Expose handlers explicitly for buttons using inline onclick attributes.
+        /* Expose handlers for inline onclick attributes */
         Object.assign(window, {
-            openGiftModal,
             openRSVPModal,
-            openLocationModal,
             closeModal,
             copyToClipboard,
             submitRSVP
@@ -1337,10 +1109,3 @@ Houston ,TX 77063 </p>
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
