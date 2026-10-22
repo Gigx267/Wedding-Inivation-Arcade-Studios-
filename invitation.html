@@ -1110,6 +1110,10 @@ Houston ,TX 77063 </p>
                 subtitle: 'Account details',
                 icon: 'fa-university',
                 content: `
+                    <div class="text-center">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('Zenith Bank | Account Name: Suave Properties Limited | Account Number: 1017459935')}" alt="QR code with Zenith Bank transfer details" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
+                        <p class="mt-2 text-[10px] text-gray-500">Scan for bank transfer details</p>
+                    </div>
                     <div>
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Account Number</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
@@ -1132,6 +1136,10 @@ Houston ,TX 77063 </p>
                 subtitle: 'Send via Zelle',
                 icon: 'fa-bolt',
                 content: `
+                    <div class="text-center">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('Zelle | Send to phone number: 9796168300')}" alt="QR code with Zelle payment details" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
+                        <p class="mt-2 text-[10px] text-gray-500">Scan for Zelle payment details</p>
+                    </div>
                     <div>
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Phone Number</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
@@ -1148,6 +1156,12 @@ Houston ,TX 77063 </p>
                 subtitle: 'Send via Cash App',
                 icon: 'fa-dollar-sign',
                 content: `
+                    <div class="text-center">
+                        <a href="https://cash.app/$AprilOkoye" target="_blank" rel="noopener noreferrer" aria-label="Open Cash App payment link">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&amp;data=${encodeURIComponent('https://cash.app/$AprilOkoye')}" alt="QR code to pay via Cash App" class="mx-auto h-36 w-36 rounded-lg border border-cream-300 p-2" loading="lazy" />
+                        </a>
+                        <p class="mt-2 text-[10px] text-gray-500">Scan to open Cash App</p>
+                    </div>
                     <div>
                         <span class="block text-[10px] uppercase tracking-[0.25em] text-gray-400">Cash App Link</span>
                         <div class="mt-1 flex items-center justify-between rounded border bg-gray-50 p-2">
